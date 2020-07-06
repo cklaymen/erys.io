@@ -1,12 +1,13 @@
 import React from "react";
 
 import GlobalStyle from "../shared/UI/GlobalStyle";
+import Home from "../Home";
 
 function App() {
   return (
     <div>
       <GlobalStyle />
-      _APP_
+      <Home />
     </div>
   );
 }
