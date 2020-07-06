@@ -1,5 +1,11 @@
 import React, { FC } from "react";
 
-const Home: FC = () => <div>_HOME_</div>;
+import Message from "../Message";
+
+const Home: FC = () => (
+  <div>
+    <Message />
+  </div>
+);
 
 export default Home;
