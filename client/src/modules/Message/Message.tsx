@@ -1,5 +1,11 @@
 import React, { FC } from "react";
 
-const Message: FC = () => <div>_MESSAGE_</div>;
+import Bubble from "./Bubble";
+
+const Message: FC = () => (
+  <div>
+    <Bubble />
+  </div>
+);
 
 export default Message;
