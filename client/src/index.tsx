@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 
 import App from "./modules/App";
 import * as serviceWorker from "./serviceWorker";
+import initTranslations from "./modules/Translations";
+
+initTranslations();
 
 ReactDOM.render(
   <React.StrictMode>
