@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "path": "client"
+    },
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  }
+}
