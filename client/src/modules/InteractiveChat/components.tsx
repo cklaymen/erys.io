@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MessageWrapper = styled.div`
+export const InteractiveChatWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   margin-right: 45px;

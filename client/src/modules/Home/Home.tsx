@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 
-import Message from "../Message";
+import InteractiveChat from "../InteractiveChat";
 
 const Home: FC = () => (
   <div>
-    <Message />
+    <InteractiveChat />
   </div>
 );
 

@@ -7,7 +7,7 @@ import {
 } from "src/modules/shared/UI/defaults";
 import colors from "src/modules/shared/UI/colors";
 
-export const BubbleWrapper = styled.div`
+export const MessageWrapper = styled.div`
   ${defaultBorderRadius()}
   ${defaultPadding()}
   ${defaultFontSize()}

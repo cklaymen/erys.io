@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { Trans } from "react-i18next";
 
-import { BubbleWrapper, Link } from "./components";
+import { MessageWrapper, Link } from "./components";
 
 const Bubble: FC = () => {
   return (
-    <BubbleWrapper>
+    <MessageWrapper>
       <Trans i18nKey="INIT_BUBBLE_MESSAGE">
         Zajmuję się tworzeniem oprogramowania (złożonych{" "}
         <Link>aplikacji webowych</Link> jak i prostych{" "}
@@ -16,7 +16,7 @@ const Bubble: FC = () => {
         odpowiednie <Link>wykształcenie</Link> oraz <Link>doświadczenie</Link> w
         tym kierunku. Więcej o mnie dowiesz się <Link>tutaj</Link>.
       </Trans>
-    </BubbleWrapper>
+    </MessageWrapper>
   );
 };
 
