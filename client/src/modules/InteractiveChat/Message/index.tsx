@@ -3,7 +3,7 @@ import { Trans } from "react-i18next";
 
 import { MessageWrapper, Link } from "./components";
 
-const Bubble: FC = () => {
+const Message: FC = () => {
   return (
     <MessageWrapper>
       <Trans i18nKey="INIT_BUBBLE_MESSAGE">
@@ -20,4 +20,4 @@ const Bubble: FC = () => {
   );
 };
 
-export default Bubble;
+export default Message;
