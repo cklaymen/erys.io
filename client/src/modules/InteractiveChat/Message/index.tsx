@@ -1,21 +1,30 @@
-import React, { FC } from "react";
-import { Trans } from "react-i18next";
+import React, { FC, useState, useEffect } from "react";
 
-import { MessageWrapper, Link } from "./components";
+import { MessageWrapper } from "./components";
+import { WRITING_MESSAGE_TIME_IN_MS } from "./config";
 
-const Message: FC = () => {
+export interface MessageProps {
+  author: "erys" | "user";
+  writingBeforeShowMessage?: boolean;
+}
+
+const Message: FC<MessageProps> = ({
+  author,
+  writingBeforeShowMessage = true,
+  children,
+}) => {
+  const [loading, setLoading] = useState(writingBeforeShowMessage);
+  useEffect(() => {
+    if (loading) {
+      const t = setTimeout(() => {
+        setLoading(false);
+      }, WRITING_MESSAGE_TIME_IN_MS);
+      return () => clearTimeout(t);
+    }
+  }, [loading, setLoading]);
   return (
-    <MessageWrapper>
-      <Trans i18nKey="INIT_BUBBLE_MESSAGE">
-        Zajmuję się tworzeniem oprogramowania (złożonych{" "}
-        <Link>aplikacji webowych</Link> jak i prostych{" "}
-        <Link>stron internetowych</Link>). Chętnie podejmuję się realizacji
-        dedykowanych rozwiązań, które mogą zautomatyzować bądź usprawnić zadania
-        w Państwa działalności. Wykorzystuję <Link>nowoczesne technologie</Link>
-        , które zapewniają sprawne i bezpieczne działanie programu. Posiadam
-        odpowiednie <Link>wykształcenie</Link> oraz <Link>doświadczenie</Link> w
-        tym kierunku. Więcej o mnie dowiesz się <Link>tutaj</Link>.
-      </Trans>
+    <MessageWrapper author={author}>
+      {loading ? "..." : children}
     </MessageWrapper>
   );
 };

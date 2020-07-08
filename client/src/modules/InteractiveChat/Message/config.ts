@@ -1,0 +1,1 @@
+export const WRITING_MESSAGE_TIME_IN_MS = 1200;

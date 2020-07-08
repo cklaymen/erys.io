@@ -7,8 +7,6 @@ const Avatar = styled.div`
   background-size: cover;
   width: 55px;
   height: 55px;
-  min-width: 55px;
-  min-height: 55px;
   border-radius: 50%;
 `;
 
