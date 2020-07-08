@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useRef } from "react";
 
 import { MessageWrapper } from "./components";
 import { WRITING_MESSAGE_TIME_IN_MS } from "./config";
@@ -13,8 +13,10 @@ const Message: FC<MessageProps> = ({
   writingBeforeShowMessage = true,
   children,
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(writingBeforeShowMessage);
   useEffect(() => {
+    ref.current?.scrollIntoView();
     if (loading) {
       const t = setTimeout(() => {
         setLoading(false);
@@ -23,7 +25,7 @@ const Message: FC<MessageProps> = ({
     }
   }, [loading, setLoading]);
   return (
-    <MessageWrapper author={author}>
+    <MessageWrapper author={author} ref={ref}>
       {loading ? "..." : children}
     </MessageWrapper>
   );
