@@ -20,6 +20,7 @@ const pl: Translation = {
     "Jakie doświadczenie Pan posiada?",
   [TranslationKey.ANSWER_ABOUT_EXPERIENCE]:
     "Przez ponad dwa lata pracowałem w firmie (Gorrion Software House w Gliwicach) wytwarzającej oprogramowanie. Pracowałem nad projektem serwisu społecznościowego private.center, który brał udział w kampanii Kickstarter. W 2013 roku stworzyłem serwis do testów na prawo jazdy (prawkobazapytan). Ponadto mam na swoim koncie kilka własnych projektów, w tym gry na przeglądarkę internetową, które tworzyłem będąc jeszcze w liceum.",
+  [TranslationKey.SERVICES]: "Usługi",
 };
 
 export default pl;
