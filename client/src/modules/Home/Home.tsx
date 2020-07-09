@@ -2,12 +2,13 @@ import React, { FC } from "react";
 
 import InteractiveChat from "../InteractiveChat";
 import Services from "src/modules/Home/Services";
+import { HomeWrapper } from "src/modules/Home/components";
 
 const Home: FC = () => (
-  <div>
+  <HomeWrapper>
     <InteractiveChat />
     <Services />
-  </div>
+  </HomeWrapper>
 );
 
 export default Home;
