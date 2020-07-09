@@ -21,6 +21,8 @@ const pl: Translation = {
   [TranslationKey.ANSWER_ABOUT_EXPERIENCE]:
     "Przez ponad dwa lata pracowałem w firmie (Gorrion Software House w Gliwicach) wytwarzającej oprogramowanie. Pracowałem nad projektem serwisu społecznościowego private.center, który brał udział w kampanii Kickstarter. W 2013 roku stworzyłem serwis do testów na prawo jazdy (prawkobazapytan). Ponadto mam na swoim koncie kilka własnych projektów, w tym gry na przeglądarkę internetową, które tworzyłem będąc jeszcze w liceum.",
   [TranslationKey.SERVICES]: "Usługi",
+  [TranslationKey.SERVICES_SHORT_DESCRIPTION]:
+    "Świadczę usługi z zakresu szeroko pojętego programowania, skupiając się na mojej specjalizacji - czyli technologiach internetowych. Wyróżniłem 3 główne grupy zadań, którymi się trudnię.",
 };
 
 export default pl;

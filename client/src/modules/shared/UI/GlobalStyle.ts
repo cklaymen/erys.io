@@ -14,7 +14,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
+    
+    font-size: 12px;
     color: ${colors.black}
   }
 
