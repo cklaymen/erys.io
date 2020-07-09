@@ -11,7 +11,6 @@ export const MessageWrapper = styled.div<{ author: "erys" | "user" }>`
   ${defaultBorderRadius()}
   ${defaultPadding()}
   ${defaultFontSize()}
-  color: ${colors.black};
   display: inline-block;
   & + & {
     margin-top: 15px;
