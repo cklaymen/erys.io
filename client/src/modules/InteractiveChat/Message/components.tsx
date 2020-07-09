@@ -3,14 +3,12 @@ import styled, { css } from "styled-components";
 import {
   defaultBorderRadius,
   defaultPadding,
-  defaultFontSize,
 } from "src/modules/shared/UI/defaults";
 import colors from "src/modules/shared/UI/colors";
 
 export const MessageWrapper = styled.div<{ author: "erys" | "user" }>`
   ${defaultBorderRadius()}
   ${defaultPadding()}
-  ${defaultFontSize()}
   display: inline-block;
   & + & {
     margin-top: 15px;
