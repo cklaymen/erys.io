@@ -5,6 +5,11 @@ import colors from "src/modules/shared/UI/colors";
 
 const GlobalStyle = createGlobalStyle`
   ${fontFace()};
+
+  html {
+    font-size: 10px;
+    /* -webkit-text-size-adjust: 100%; */
+  }
   
   body {
     margin: 0;
@@ -14,9 +19,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
-    font-size: 12px;
-    color: ${colors.black}
+
+    font-size: 1.2rem;
+    color: ${colors.black};
   }
 
   code {

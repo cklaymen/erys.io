@@ -8,7 +8,7 @@ export const TileWrapper = styled.div`
 `;
 
 export const TileTitle = styled.h2`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin: 0 0 0 15px;
 `;
