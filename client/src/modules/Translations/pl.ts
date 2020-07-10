@@ -23,6 +23,15 @@ const pl: Translation = {
   [TranslationKey.SERVICES]: "Usługi",
   [TranslationKey.SERVICES_SHORT_DESCRIPTION]:
     "Świadczę usługi z zakresu szeroko pojętego programowania, skupiając się na mojej specjalizacji - czyli technologiach internetowych. Wyróżniłem 3 główne grupy zadań, którymi się trudnię.",
+  [TranslationKey.WEB_APPS_SITES]: "Aplikacje webowe | Strony internetowe",
+  [TranslationKey.WEB_APPS_SITES_SERVICE_SHORT_DESCRIPTION]:
+    "Projektowanie oraz tworzenie w pełni funkcjonalnych aplikacji webowych i stron internetowych. Rozwiązania dopasowane do indywidualnych potrzeb klienta.",
+  [TranslationKey.CODING]: "Programowanie",
+  [TranslationKey.CODING_SERVICE_SHORT_DESCRIPTION]:
+    "Realizacja zadań związanych z rozwijaniem oprogramowania w technologiach webowych, takich jak m.in.: JavaScript (TypeScript), ReactJS, NodeJS z zachowaniem dobrych praktyk i czystego kodu.",
+  [TranslationKey.SERVER_DOMAIN]: "Serwer oraz domena",
+  [TranslationKey.SERVER_DOMAIN_SERVICE_SHORT_DESCRIPTION]:
+    "Administracja serwerem, konfiguracja domeny oraz wszystko inne związane z poprawnym działaniem aplikacji.",
 };
 
 export default pl;
