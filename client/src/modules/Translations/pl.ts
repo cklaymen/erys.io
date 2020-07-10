@@ -33,6 +33,9 @@ const pl: Translation = {
   [TranslationKey.SERVER_DOMAIN_SERVICE_SHORT_DESCRIPTION]:
     "Administracja serwerem, konfiguracja domeny oraz wszystko inne związane z poprawnym działaniem aplikacji.",
   [TranslationKey.MORE_ABOUT_SERVICES]: "Dowiedz się więcej o usługach",
+  [TranslationKey.STEPS]: "Etapy współpracy",
+  [TranslationKey.STEPS_SHORT_DESCRIPTION]:
+    "Proces związany z tworzeniem oprogramowania będzie się różnił w zależności od projektu, jednak w każdym z nich wyróżnić można następujące etapy:",
 };
 
 export default pl;
