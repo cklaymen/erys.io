@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
-  ServicesWrapper,
   TilesWrapper,
   TileWithMargin,
   ButtonWrapper,
@@ -11,11 +10,12 @@ import Heading from "src/modules/shared/UI/Heading";
 import { TranslationKey } from "src/modules/Translations/Translation";
 import P from "src/modules/shared/UI/Paragraph";
 import Button from "src/modules/shared/UI/Button";
+import { SectionWrapper } from "src/modules/Home/shared/components";
 
 const Services: FC = () => {
   const { t } = useTranslation();
   return (
-    <ServicesWrapper>
+    <SectionWrapper>
       <Heading>{t(TranslationKey.SERVICES)}</Heading>
       <P>{t(TranslationKey.SERVICES_SHORT_DESCRIPTION)}</P>
       <TilesWrapper>
@@ -38,7 +38,7 @@ const Services: FC = () => {
       <ButtonWrapper>
         <Button>{t(TranslationKey.MORE_ABOUT_SERVICES)}</Button>
       </ButtonWrapper>
-    </ServicesWrapper>
+    </SectionWrapper>
   );
 };
 
