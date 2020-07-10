@@ -14,18 +14,24 @@ const Button = styled.button`
   transition: color ${DEFAULT_TRANSITION_TIME},
     background-color ${DEFAULT_TRANSITION_TIME},
     transform ${DEFAULT_TRANSITION_TIME};
+  user-select: none;
 
   &:hover,
   &:focus {
     background-color: ${colors.lightYellow};
     color: ${colors.lightBlack};
     cursor: pointer;
-    outline: none;
   }
 
   &:active {
     transform: scale(0.95);
     opacity: 0.9;
+  }
+
+  &:focus {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-shadow: 0 0 5px ${colors.lightYellow};
   }
 `;
 
