@@ -32,6 +32,7 @@ const pl: Translation = {
   [TranslationKey.SERVER_DOMAIN]: "Serwer oraz domena",
   [TranslationKey.SERVER_DOMAIN_SERVICE_SHORT_DESCRIPTION]:
     "Administracja serwerem, konfiguracja domeny oraz wszystko inne związane z poprawnym działaniem aplikacji.",
+  [TranslationKey.MORE_ABOUT_SERVICES]: "Dowiedz się więcej o usługach",
 };
 
 export default pl;

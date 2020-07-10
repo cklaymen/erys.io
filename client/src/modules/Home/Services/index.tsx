@@ -5,10 +5,12 @@ import {
   ServicesWrapper,
   TilesWrapper,
   TileWithMargin,
+  ButtonWrapper,
 } from "src/modules/Home/Services/components";
 import Heading from "src/modules/shared/UI/Heading";
 import { TranslationKey } from "src/modules/Translations/Translation";
 import P from "src/modules/shared/UI/Paragraph";
+import Button from "src/modules/shared/UI/Button";
 
 const Services: FC = () => {
   const { t } = useTranslation();
@@ -33,6 +35,9 @@ const Services: FC = () => {
           illustrationType="Server"
         />
       </TilesWrapper>
+      <ButtonWrapper>
+        <Button>{t(TranslationKey.MORE_ABOUT_SERVICES)}</Button>
+      </ButtonWrapper>
     </ServicesWrapper>
   );
 };
