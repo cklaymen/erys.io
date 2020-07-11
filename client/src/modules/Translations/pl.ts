@@ -36,6 +36,18 @@ const pl: Translation = {
   [TranslationKey.STEPS]: "Etapy współpracy",
   [TranslationKey.STEPS_SHORT_DESCRIPTION]:
     "Proces związany z tworzeniem oprogramowania będzie się różnił w zależności od projektu, jednak w każdym z nich wyróżnić można następujące etapy:",
+  [TranslationKey.NEED_ANALYSIS_STEP_TITLE]: "Analiza potrzeb",
+  [TranslationKey.NEED_ANALYSIS_STEP_DESCRIPTION]:
+    "Napisz czym się zajmujesz oraz czego potrzebujesz. Przedstawię możliwości oraz najlepiej dopasowane rozwiązanie.",
+  [TranslationKey.GRAPHIC_DESIGN_STEP_TITLE]: "Projekt wizualny",
+  [TranslationKey.GRAPHIC_DESIGN_STEP_DESCRIPTION]:
+    "Przygotowany zostanie projekt graficzny aplikacji lub, gdy posiadasz własny projekt, upewnię się czy jest zgodny z ustaleniami.",
+  [TranslationKey.CREATING_APP_STEP_TITLE]: "Tworzenie aplikacji",
+  [TranslationKey.CREATING_APP_STEP_DESCRIPTION]:
+    "Na podstawie projektu wizualnego zostanie stworzona w pełni funkcjonalna aplikacja.",
+  [TranslationKey.SUPPORT_STEP_TITLE]: "Wsparcie",
+  [TranslationKey.SUPPORT_STEP_DESCRIPTION]:
+    "Po zaakceptowaniu gotowej aplikacji zostaje ona zainstalowana na serwerze. Udzielone zostaje wsparcie na jej prawidłowe działanie.",
 };
 
 export default pl;
