@@ -3,7 +3,9 @@ import styled from "styled-components";
 import colors from "src/modules/shared/UI/colors";
 import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
 
-const Button = styled.button`
+const Button = styled.button.attrs((props) => ({
+  onTouchStart: props.onTouchStart || (() => {}), // workaround for iOS to trigger :active pseudo-class
+}))`
   border: none;
   border-radius: 15px;
   background-color: ${colors.yellow};
@@ -15,6 +17,7 @@ const Button = styled.button`
     background-color ${DEFAULT_TRANSITION_TIME},
     transform ${DEFAULT_TRANSITION_TIME};
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover,
   &:focus {
@@ -29,7 +32,6 @@ const Button = styled.button`
   }
 
   &:focus {
-    -webkit-tap-highlight-color: transparent;
     outline: none;
     box-shadow: 0 0 5px ${colors.lightYellow};
   }
