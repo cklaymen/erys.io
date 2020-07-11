@@ -48,6 +48,9 @@ const pl: Translation = {
   [TranslationKey.SUPPORT_STEP_TITLE]: "Wsparcie",
   [TranslationKey.SUPPORT_STEP_DESCRIPTION]:
     "Po zaakceptowaniu gotowej aplikacji zostaje ona zainstalowana na serwerze. Udzielone zostaje wsparcie na jej prawidłowe działanie.",
+  [TranslationKey.TECHNOLOGIES]: "Technologie",
+  [TranslationKey.TECHNOLOGIES_SHORT_DESCRIPTION]:
+    "W swoich realizacjach wykorzystuję nowoczesne technologie. Jestem na bieżąco z coraz to nowszymi rozwiązanami z dziedziny webdev. Dzięki temu tworzone przeze mnie oprogramowanie jest wydajne, bezpieczne oraz przyjemne w obsłudze.",
 };
 
 export default pl;
