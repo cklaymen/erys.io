@@ -1,18 +1,16 @@
 import { css } from "styled-components";
 
-const minBreakpoints = {
-  small: "576px",
-  medium: "768px",
-  large: "992px",
-  extraLarge: "1200px",
-};
+import {
+  minSizeBreakpointsInPx,
+  SizeBreakpoint,
+} from "src/modules/shared/sizeBreakpoints";
 
-export type MediaBreakpoint = keyof typeof minBreakpoints;
-
-function getMedia(minBreakpoint: MediaBreakpoint): typeof css {
+function getMedia(minBreakpoint: SizeBreakpoint): typeof css {
   const result = (...args: any[]) =>
     css`
-      @media (min-width: ${minBreakpoints[minBreakpoint]}) {
+      @media only screen and (min-width: ${minSizeBreakpointsInPx[
+          minBreakpoint
+        ]}px) {
         ${css(...(args as [any, ...any[]]))};
       }
     `;
