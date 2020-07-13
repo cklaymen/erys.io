@@ -1,16 +1,18 @@
 import { css } from "styled-components";
 
-const settings = {
-  tablet: "(min-width: 768px)",
-  desktop: "(min-width: 1024px)",
+const minBreakpoints = {
+  small: "576px",
+  medium: "768px",
+  large: "992px",
+  extraLarge: "1200px",
 };
 
-export type MediaSetting = keyof typeof settings;
+export type MediaBreakpoint = keyof typeof minBreakpoints;
 
-function getMedia(setting: MediaSetting): typeof css {
+function getMedia(minBreakpoint: MediaBreakpoint): typeof css {
   const result = (...args: any[]) =>
     css`
-      @media ${settings[setting]} {
+      @media (min-width: ${minBreakpoints[minBreakpoint]}) {
         ${css(...(args as [any, ...any[]]))};
       }
     `;
@@ -18,8 +20,10 @@ function getMedia(setting: MediaSetting): typeof css {
 }
 
 const media = {
-  tablet: getMedia("tablet"),
-  desktop: getMedia("desktop"),
+  small: getMedia("small"),
+  medium: getMedia("medium"),
+  large: getMedia("large"),
+  extraLarge: getMedia("extraLarge"),
 };
 
 export default media;

@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 import Tile from "src/modules/shared/UI/Tile";
-import { HOME_PADDING_MOBILE } from "src/modules/Home/components";
+import { HOME_PADDING_EXTRA_SMALL } from "src/modules/Home/components";
 import colors from "src/modules/shared/UI/colors";
 
 export const TilesWrapper = styled.div`
   position: relative;
-  margin: 0 -${HOME_PADDING_MOBILE} 0 -${HOME_PADDING_MOBILE};
+  margin: 0 -${HOME_PADDING_EXTRA_SMALL} 0 -${HOME_PADDING_EXTRA_SMALL};
 
   &::before {
     content: "";
-    width: ${HOME_PADDING_MOBILE};
+    width: ${HOME_PADDING_EXTRA_SMALL};
     background-image: linear-gradient(
       to right,
       ${colors.white},
@@ -25,7 +25,7 @@ export const TilesWrapper = styled.div`
 
   &::after {
     content: "";
-    width: ${HOME_PADDING_MOBILE};
+    width: ${HOME_PADDING_EXTRA_SMALL};
     background-image: linear-gradient(
       to left,
       ${colors.white},
@@ -40,12 +40,12 @@ export const TilesWrapper = styled.div`
 
 export const TilesScrollableContainer = styled.div`
   display: flex;
-  padding: 40px ${HOME_PADDING_MOBILE} 0 ${HOME_PADDING_MOBILE};
+  padding: 40px ${HOME_PADDING_EXTRA_SMALL} 0 ${HOME_PADDING_EXTRA_SMALL};
   overflow-x: auto;
 
   &::after {
     content: "";
-    width: ${HOME_PADDING_MOBILE};
+    width: ${HOME_PADDING_EXTRA_SMALL};
     height: 100%;
     background-color: red;
   }
@@ -58,6 +58,6 @@ export const TileWithWidth = styled(Tile)`
   padding-right: 15px;
 
   &:last-child {
-    padding-right: ${HOME_PADDING_MOBILE};
+    padding-right: ${HOME_PADDING_EXTRA_SMALL};
   }
 `;
