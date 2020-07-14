@@ -62,6 +62,7 @@ export const TilesScrollableContainer = styled.div`
 
   ${media.large`
     padding: 40px 0 0 0;
+    flex-direction: column;
   `}
 `;
 
@@ -84,8 +85,12 @@ export const TileWithWidth = styled(Tile)`
   `}
 
   ${media.large`
+    width: auto;
+    padding-right: 0;
+    padding-bottom: 30px;
     &:last-child {
       padding-right: 0;
+      padding-bottom: 0;
     }
   `}
 `;

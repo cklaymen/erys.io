@@ -53,9 +53,11 @@ export const TileIllustration = styled(Illustration)`
 
 export const TileIllustrationWrapper = styled.div`
   width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: 1px solid ${colors.lightGray};
   position: relative;
+  margin: 5px;
 `;
 
 export const TileOrdinalNumber = styled.div`
