@@ -4,13 +4,13 @@ import media from "src/modules/shared/UI/media";
 import InteractiveChat from "src/modules/InteractiveChat";
 
 export const HOME_PADDING_EXTRA_SMALL = "15px";
-export const HOME_PADDING_MEDIUM = "3vw 9vw";
+export const HOME_PADDING_MEDIUM = ["3vw", "9vw"] as const;
 export const HOME_PADDING_LARGE = "3vw";
 
 export const HomeWrapper = styled.div`
   padding: ${HOME_PADDING_EXTRA_SMALL};
   ${media.medium`
-    padding: ${HOME_PADDING_MEDIUM};
+    padding: ${HOME_PADDING_MEDIUM.join(" ")};
   `}
   ${media.large`
     padding: ${HOME_PADDING_LARGE};
