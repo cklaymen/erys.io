@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import media from "src/modules/shared/UI/media";
 
-export const InteractiveChatWrapper = styled.div`
+export const InteractiveChatWrapper = styled.div``;
+
+export const InteractiveChatSectionWrapper = styled.div`
   display: flex;
   align-items: flex-end;
 
@@ -14,4 +17,7 @@ export const MessagesWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  ${media.medium`
+    margin-left: 30px;
+  `}
 `;

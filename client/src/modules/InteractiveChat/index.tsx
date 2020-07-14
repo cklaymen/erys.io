@@ -1,7 +1,11 @@
 import React, { FC, useState, useMemo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import { InteractiveChatWrapper, MessagesWrapper } from "./components";
+import {
+  InteractiveChatSectionWrapper,
+  MessagesWrapper,
+  InteractiveChatWrapper,
+} from "./components";
 import Avatar from "./Avatar";
 import Message from "./Message";
 import InitMessage from "./InitMessage";
@@ -12,7 +16,11 @@ import messagesConfigs, {
 } from "src/modules/InteractiveChat/messagesConfigs";
 import { WRITING_MESSAGE_TIME_IN_MS } from "src/modules/InteractiveChat/Message/config";
 
-const InteractiveChat: FC = () => {
+interface Props {
+  className?: string;
+}
+
+const InteractiveChat: FC<Props> = ({ className }) => {
   const [chatMessagesConfigs, setChatMessagesConfigs] = useState<
     MessageConfig[]
   >([]);
@@ -55,16 +63,16 @@ const InteractiveChat: FC = () => {
   }, [lastQuestionKey, chatMessagesConfigs]);
 
   return (
-    <>
-      <InteractiveChatWrapper>
+    <InteractiveChatWrapper className={className}>
+      <InteractiveChatSectionWrapper>
         <Avatar />
         <MessagesWrapper>
           <InitMessage askAbout={(key) => setLastQuestionKey(key)} />
           {messages}
         </MessagesWrapper>
-      </InteractiveChatWrapper>
+      </InteractiveChatSectionWrapper>
       {lastQuestionKey && (
-        <InteractiveChatWrapper>
+        <InteractiveChatSectionWrapper>
           {/* Workaround to get the same width as above */}
           <Avatar style={{ height: 0 }} />
           <MessagesWrapper>
@@ -72,9 +80,9 @@ const InteractiveChat: FC = () => {
               {t(messagesConfigs[lastQuestionKey].translationKey)}
             </Message>
           </MessagesWrapper>
-        </InteractiveChatWrapper>
+        </InteractiveChatSectionWrapper>
       )}
-    </>
+    </InteractiveChatWrapper>
   );
 };
 
