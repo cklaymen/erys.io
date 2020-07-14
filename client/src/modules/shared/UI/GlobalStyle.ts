@@ -2,12 +2,19 @@ import { createGlobalStyle } from "styled-components";
 
 import fontFace from "src/modules/shared/UI/font-face";
 import colors from "src/modules/shared/UI/colors";
+import media from "src/modules/shared/UI/media";
 
 const GlobalStyle = createGlobalStyle`
   ${fontFace()};
 
   html {
     font-size: 10px;
+    ${media.medium`
+      font-size: 12px;
+    `}
+    ${media.extraLarge`
+      font-size: 14px;
+    `}
     /* -webkit-text-size-adjust: 100%; */
   }
   
