@@ -71,7 +71,7 @@ const InteractiveChat: FC<Props> = ({ className }) => {
       }, WRITING_MESSAGE_TIME_IN_MS);
       return () => clearTimeout(t);
     }
-  }, [lastQuestionKey, chatMessagesConfigs]);
+  }, [lastQuestionKey, chatMessagesConfigs, isSize]);
 
   return (
     <InteractiveChatWrapper className={className} ref={ref}>

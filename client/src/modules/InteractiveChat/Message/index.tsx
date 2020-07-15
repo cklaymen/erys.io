@@ -29,7 +29,7 @@ const Message: FC<MessageProps> = ({
       }, WRITING_MESSAGE_TIME_IN_MS);
       return () => clearTimeout(t);
     }
-  }, [loading, setLoading]);
+  }, [loading, setLoading, scrollIntoView, isSize]);
   return (
     <MessageWrapper author={author} ref={ref}>
       {loading ? "..." : children}
