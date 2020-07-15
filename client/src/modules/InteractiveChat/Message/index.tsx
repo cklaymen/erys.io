@@ -2,21 +2,27 @@ import React, { FC, useState, useEffect, useRef } from "react";
 
 import { MessageWrapper } from "./components";
 import { WRITING_MESSAGE_TIME_IN_MS } from "./config";
+import useDevice from "src/modules/shared/useDevice";
 
 export interface MessageProps {
   author: "erys" | "user";
   writingBeforeShowMessage?: boolean;
+  scrollIntoView?: boolean;
 }
 
 const Message: FC<MessageProps> = ({
   author,
   writingBeforeShowMessage = true,
+  scrollIntoView = true,
   children,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(writingBeforeShowMessage);
+  const { isSize } = useDevice();
   useEffect(() => {
-    ref.current?.scrollIntoView();
+    if (scrollIntoView && isSize("extraSmall", "small", "medium")) {
+      ref.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
     if (loading) {
       const t = setTimeout(() => {
         setLoading(false);

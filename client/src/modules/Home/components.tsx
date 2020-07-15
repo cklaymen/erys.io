@@ -28,7 +28,7 @@ export const HomeInteractiveChat = styled(InteractiveChat)`
     position: sticky;
     top: ${HOME_PADDING_LARGE};
     overflow-y: auto;
-    height: 100%;
+    height: calc(100vh - 2*${HOME_PADDING_LARGE});
     width: 50%;
     padding-right: 30px;
   `}
