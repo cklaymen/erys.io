@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     ${media.extraLarge`
       font-size: 14px;
     `}
-    /* -webkit-text-size-adjust: 100%; */
+    text-size-adjust: 100%;
   }
   
   body {
