@@ -17,3 +17,7 @@ export const defaultPadding = () =>
       padding: 15px 25px;
     `}
   `;
+
+export const defaultDropShadow = () => css`
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+`;

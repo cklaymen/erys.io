@@ -4,12 +4,15 @@ import ReactDOM from "react-dom";
 import App from "./modules/App";
 import * as serviceWorker from "./serviceWorker";
 import initTranslations from "./modules/Translations";
+import DeviceProvider from "src/modules/shared/useDevice/Provider";
 
 initTranslations();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DeviceProvider>
+      <App />
+    </DeviceProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
