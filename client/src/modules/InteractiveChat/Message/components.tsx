@@ -24,7 +24,6 @@ export const MessageWrapper = styled.div<{ author: "erys" | "user" }>`
           align-self: flex-end;
           margin-left: 45px;
           background-color: ${colors.yellow};
-          float: right;
         `};
 `;
 
