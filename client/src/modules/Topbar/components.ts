@@ -13,7 +13,7 @@ interface Props {
   mini?: boolean;
 }
 
-export const TopbarWrapper = styled.div<Props>`
+export const TopbarContainer = styled.div<Props>`
   height: 75px;
   position: fixed;
   padding: 15px;
@@ -38,6 +38,13 @@ export const TopbarWrapper = styled.div<Props>`
         height: 70px;
       `}
   `};
+`;
+
+export const TopbarWrapper = styled.div`
+  height: ${TOPBAR_HEIGHT};
+  ${media.medium`
+    height: ${TOPBAR_HEIGTH_MEDIUM};
+  `}
 `;
 
 export const LogoWrapper = styled.div<Props>`

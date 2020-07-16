@@ -6,6 +6,12 @@ export const InteractiveChatWrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
   align-items: stretch;
+  max-height: 100%;
+  overflow-y: auto;
+  ${media.large`
+    margin-right: -30px;
+    padding-right: 30px;
+  `}
 `;
 
 export const InteractiveChatSectionsWrapper = styled.div`

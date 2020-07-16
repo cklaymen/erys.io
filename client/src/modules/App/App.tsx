@@ -1,29 +1,15 @@
-import React, { useMemo } from "react";
+import React from "react";
 
 import GlobalStyle from "../shared/UI/GlobalStyle";
 import Home from "../Home";
-import Topbar from "src/modules/Topbar";
-import ScrollProvider from "src/modules/Topbar/useScroll/Provider";
-import { ContentWrapper } from "src/modules/App/components";
-import useDevice from "src/modules/shared/useDevice";
+import Layout from "src/modules/App/Layout";
+import InteractiveChat from "src/modules/InteractiveChat";
 
 function App() {
-  const { isSize } = useDevice();
-  const showTopbar = useMemo(() => isSize("extraSmall", "small", "medium"), [
-    isSize,
-  ]);
-
   return (
     <div>
       <GlobalStyle />
-      {showTopbar && (
-        <ScrollProvider>
-          <Topbar />
-        </ScrollProvider>
-      )}
-      <ContentWrapper>
-        <Home />
-      </ContentWrapper>
+      <Layout MainComponent={Home} SideComponent={InteractiveChat} />
     </div>
   );
 }
