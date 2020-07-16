@@ -14,35 +14,30 @@ interface Props {
 }
 
 export const TopbarWrapper = styled.div<Props>`
+  height: 75px;
   position: fixed;
   padding: 15px;
   box-sizing: border-box;
   width: 100%;
-  background-image: linear-gradient(
-    ${colors.white},
-    ${colors.white} 60px,
-    ${colors.white}00 90px
-  );
   z-index: 10;
+  background-color: ${colors.white};
 
   ${(p) =>
     p.mini &&
     css`
-      background-image: linear-gradient(
-        ${colors.white},
-        ${colors.white} 50%,
-        ${colors.white}00 100%
-      );
+      box-shadow: 0 15px 15px ${colors.white};
+      height: 45px;
     `}
 
-  ${media.medium`
+  ${media.medium<Props>`
+    height: 110px;
     padding: 30px;
-    background-image: linear-gradient(
-      ${colors.white},
-      ${colors.white} 80px,
-      ${colors.white}00 90px
-    );
-  `}
+    ${(p) =>
+      p.mini &&
+      css`
+        height: 70px;
+      `}
+  `};
 `;
 
 export const LogoWrapper = styled.div<Props>`
