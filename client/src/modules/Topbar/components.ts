@@ -4,15 +4,16 @@ import Logo from "src/modules/shared/UI/Logo";
 import colors from "src/modules/shared/UI/colors";
 import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
 import { defaultDropShadow } from "src/modules/shared/UI/defaults";
+import media from "src/modules/shared/UI/media";
 
 export const TOPBAR_HEIGHT = "90px";
+export const TOPBAR_HEIGTH_MEDIUM = "140px";
 
 interface Props {
   mini?: boolean;
 }
 
 export const TopbarWrapper = styled.div<Props>`
-  height: ${TOPBAR_HEIGHT};
   position: fixed;
   padding: 15px;
   box-sizing: border-box;
@@ -33,6 +34,15 @@ export const TopbarWrapper = styled.div<Props>`
         ${colors.white}00 100%
       );
     `}
+
+  ${media.medium`
+    padding: 30px;
+    background-image: linear-gradient(
+      ${colors.white},
+      ${colors.white} 80px,
+      ${colors.white}00 90px
+    );
+  `}
 `;
 
 export const LogoWrapper = styled.div<Props>`
@@ -56,9 +66,21 @@ export const LogoWrapper = styled.div<Props>`
       border: 1px solid ${colors.lightGray};
       background-color: ${colors.white};
       ${defaultDropShadow()}
+
+      ${media.medium`
+        width: 80px;
+      `}
     `}
+
+  ${media.medium`
+    height: 80px;
+  `}
 `;
 
 export const StyledLogo = styled(Logo)`
   max-width: 100%;
+
+  ${media.medium`
+    height: 85%;
+  `}
 `;
