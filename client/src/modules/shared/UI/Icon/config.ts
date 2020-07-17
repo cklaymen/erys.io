@@ -1,8 +1,24 @@
-import Docker from "src/assets/images/icons/Docker.svg";
-import GraphQL from "src/assets/images/icons/GraphQL.svg";
-import Node from "src/assets/images/icons/Node.svg";
-import React from "src/assets/images/icons/React.svg";
+import { ReactComponent as Docker } from "src/assets/images/icons/Docker.svg";
+import { ReactComponent as GraphQL } from "src/assets/images/icons/GraphQL.svg";
+import { ReactComponent as Node } from "src/assets/images/icons/Node.svg";
+import { ReactComponent as React } from "src/assets/images/icons/React.svg";
 
-export const icons = { Docker, GraphQL, Node, React } as const;
+import { ReactComponent as Fb } from "src/assets/images/icons/Fb.svg";
+import { ReactComponent as Instagram } from "src/assets/images/icons/Instagram.svg";
+import { ReactComponent as LinkedIn } from "src/assets/images/icons/Linkedin.svg";
+import { ReactComponent as Mail } from "src/assets/images/icons/Mail.svg";
+import { ReactComponent as Phone } from "src/assets/images/icons/Phone.svg";
+
+export const icons = {
+  Docker,
+  GraphQL,
+  Node,
+  React,
+  Fb,
+  Instagram,
+  LinkedIn,
+  Mail,
+  Phone,
+} as const;
 
 export type IconType = keyof typeof icons;
