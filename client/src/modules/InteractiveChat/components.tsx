@@ -1,22 +1,7 @@
 import styled from "styled-components";
 import media from "src/modules/shared/UI/media";
 
-export const InteractiveChatWrapper = styled.div`
-  /* Reverse flex for auto scroll chat to bottom */
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: stretch;
-  max-height: 100%;
-  overflow-y: auto;
-  ${media.large`
-    margin-right: -30px;
-    padding-right: 30px;
-  `}
-`;
-
-export const InteractiveChatSectionsWrapper = styled.div`
-  flex: 1;
-`;
+export const InteractiveChatWrapper = styled.div``;
 
 export const InteractiveChatSectionWrapper = styled.div`
   display: flex;

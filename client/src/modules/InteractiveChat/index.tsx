@@ -1,11 +1,10 @@
-import React, { FC, useState, useMemo, useEffect, useRef } from "react";
+import React, { FC, useState, useMemo, useEffect, RefObject } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
   InteractiveChatSectionWrapper,
   MessagesWrapper,
   InteractiveChatWrapper,
-  InteractiveChatSectionsWrapper,
 } from "./components";
 import Avatar from "./Avatar";
 import Message from "./Message";
@@ -16,20 +15,18 @@ import messagesConfigs, {
   MessageConfig,
 } from "src/modules/InteractiveChat/messagesConfigs";
 import { WRITING_MESSAGE_TIME_IN_MS } from "src/modules/InteractiveChat/Message/config";
-import useDevice from "src/modules/shared/useDevice";
 
 interface Props {
   className?: string;
+  scrollableWrapperRef?: RefObject<any>;
 }
 
-const InteractiveChat: FC<Props> = ({ className }) => {
+const InteractiveChat: FC<Props> = ({ className, scrollableWrapperRef }) => {
   const [chatMessagesConfigs, setChatMessagesConfigs] = useState<
     MessageConfig[]
   >([]);
   const [lastQuestionKey, setLastQuestionKey] = useState<QuestionMessageKey>();
   const { t } = useTranslation();
-  const ref = useRef<HTMLDivElement>(null);
-  const { isSize } = useDevice();
 
   const messages = useMemo(
     () =>
@@ -47,10 +44,10 @@ const InteractiveChat: FC<Props> = ({ className }) => {
     [chatMessagesConfigs, t]
   );
   useEffect(() => {
-    if (isSize("large", "extraLarge")) {
-      ref.current?.scrollTo({
+    if (scrollableWrapperRef) {
+      scrollableWrapperRef.current?.scrollTo({
         behavior: "smooth",
-        top: ref.current?.scrollHeight,
+        top: scrollableWrapperRef.current?.scrollHeight,
       });
     }
     if (lastQuestionKey) {
@@ -71,30 +68,28 @@ const InteractiveChat: FC<Props> = ({ className }) => {
       }, WRITING_MESSAGE_TIME_IN_MS);
       return () => clearTimeout(t);
     }
-  }, [lastQuestionKey, chatMessagesConfigs, isSize]);
+  }, [lastQuestionKey, chatMessagesConfigs, scrollableWrapperRef]);
 
   return (
-    <InteractiveChatWrapper className={className} ref={ref}>
-      <InteractiveChatSectionsWrapper>
+    <InteractiveChatWrapper className={className}>
+      <InteractiveChatSectionWrapper>
+        <Avatar />
+        <MessagesWrapper>
+          <InitMessage askAbout={(key) => setLastQuestionKey(key)} />
+          {messages}
+        </MessagesWrapper>
+      </InteractiveChatSectionWrapper>
+      {lastQuestionKey && (
         <InteractiveChatSectionWrapper>
-          <Avatar />
+          {/* Workaround to get the same width as above */}
+          <Avatar style={{ height: 0 }} />
           <MessagesWrapper>
-            <InitMessage askAbout={(key) => setLastQuestionKey(key)} />
-            {messages}
+            <Message author="user">
+              {t(messagesConfigs[lastQuestionKey].translationKey)}
+            </Message>
           </MessagesWrapper>
         </InteractiveChatSectionWrapper>
-        {lastQuestionKey && (
-          <InteractiveChatSectionWrapper>
-            {/* Workaround to get the same width as above */}
-            <Avatar style={{ height: 0 }} />
-            <MessagesWrapper>
-              <Message author="user">
-                {t(messagesConfigs[lastQuestionKey].translationKey)}
-              </Message>
-            </MessagesWrapper>
-          </InteractiveChatSectionWrapper>
-        )}
-      </InteractiveChatSectionsWrapper>
+      )}
     </InteractiveChatWrapper>
   );
 };

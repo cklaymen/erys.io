@@ -1,6 +1,7 @@
 import { css } from "styled-components";
 
 import media from "src/modules/shared/UI/media";
+import colors from "src/modules/shared/UI/colors";
 
 export const defaultBorderRadius = () =>
   css`
@@ -20,4 +21,8 @@ export const defaultPadding = () =>
 
 export const defaultDropShadow = () => css`
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
+export const defaultDropFadeWhiteShadow = () => css`
+  box-shadow: 0 0 15px 15px ${colors.white};
 `;

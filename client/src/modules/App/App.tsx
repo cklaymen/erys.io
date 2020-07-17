@@ -9,7 +9,12 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <Layout MainComponent={Home} SideComponent={InteractiveChat} />
+      <Layout
+        renderMain={() => <Home />}
+        renderSide={(sideWrapperRef) => (
+          <InteractiveChat scrollableWrapperRef={sideWrapperRef} />
+        )}
+      />
     </div>
   );
 }

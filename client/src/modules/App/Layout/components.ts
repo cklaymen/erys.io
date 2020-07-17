@@ -6,6 +6,9 @@ import {
   CONTENT_PADDING_LARGE,
 } from "src/modules/App/Layout/const";
 import media from "src/modules/shared/UI/media";
+import Logo from "src/modules/shared/UI/Logo";
+import colors from "src/modules/shared/UI/colors";
+import { defaultDropFadeWhiteShadow } from "src/modules/shared/UI/defaults";
 
 export const LayoutWrapper = styled.div``;
 
@@ -21,24 +24,48 @@ export const ContentWrapper = styled.div`
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-    max-height: 100%;
   `}
 `;
 
-export const ContentSideWrapper = styled.div`
+export const SideWrapper = styled.div`
+  /* Reverse flex for auto scroll to bottom */
+  display: flex;
+  flex-direction: column-reverse;
   ${media.large`
     position: sticky;
-    top: ${CONTENT_PADDING_LARGE};
     overflow-y: auto;
-    height: calc(100vh - 2*${CONTENT_PADDING_LARGE});
+    top: ${CONTENT_PADDING_LARGE};
+    max-height: calc(100vh - 2*${CONTENT_PADDING_LARGE});
     width: 50%;
-    padding-right: 30px;
+    padding-right: 3vw;
   `}
+`;
+
+export const SideContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  flex-shrink: 0;
+`;
+
+export const LogoWrapper = styled.div`
+  position: sticky;
+  top: 0;
+  width: 100%;
+  margin: 15vh auto 6vh auto;
+  padding: 0 30px 30px 110px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: ${colors.white};
+  ${defaultDropFadeWhiteShadow()};
+`;
+
+export const StyledLogo = styled(Logo)`
+  width: 80%;
 `;
 
 export const ContentMainWrapper = styled.div`
   ${media.large`
     width: 50%;
-    padding-left: 30px;
+    margin-left: 3vw;
   `}
 `;

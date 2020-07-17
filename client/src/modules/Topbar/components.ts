@@ -3,7 +3,10 @@ import styled, { css } from "styled-components";
 import Logo from "src/modules/shared/UI/Logo";
 import colors from "src/modules/shared/UI/colors";
 import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
-import { defaultDropShadow } from "src/modules/shared/UI/defaults";
+import {
+  defaultDropShadow,
+  defaultDropFadeWhiteShadow,
+} from "src/modules/shared/UI/defaults";
 import media from "src/modules/shared/UI/media";
 
 export const TOPBAR_HEIGHT = "90px";
@@ -25,7 +28,7 @@ export const TopbarContainer = styled.div<Props>`
   ${(p) =>
     p.mini &&
     css`
-      box-shadow: 0 15px 15px ${colors.white};
+      ${defaultDropFadeWhiteShadow()};
       height: 45px;
     `}
 
