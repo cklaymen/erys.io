@@ -2,6 +2,7 @@ import { css } from "styled-components";
 
 import media from "src/modules/shared/UI/media";
 import colors from "src/modules/shared/UI/colors";
+import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
 
 export const defaultBorderRadius = () =>
   css`
@@ -25,4 +26,27 @@ export const defaultDropShadow = () => css`
 
 export const defaultDropFadeWhiteShadow = () => css`
   box-shadow: 0 0 15px 15px ${colors.white};
+`;
+
+export const defaultClickable = () => css`
+  transition: all ${DEFAULT_TRANSITION_TIME};
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+`;
+
+export const defaultBoxFocus = () => css`
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px ${colors.lightYellow};
+  }
 `;
