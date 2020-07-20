@@ -28,6 +28,15 @@ export const defaultDropFadeWhiteShadow = () => css`
   box-shadow: 0 0 15px 15px ${colors.white};
 `;
 
+export const defaultHover = () => css`
+  transform: scale(1.05);
+`;
+
+export const defaultActive = () => css`
+  transform: scale(0.95);
+  opacity: 0.9;
+`;
+
 export const defaultClickable = () => css`
   transition: all ${DEFAULT_TRANSITION_TIME};
   user-select: none;
@@ -35,12 +44,11 @@ export const defaultClickable = () => css`
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.05);
+    ${defaultHover()};
   }
 
   &:active {
-    transform: scale(0.95);
-    opacity: 0.9;
+    ${defaultActive()};
   }
 `;
 

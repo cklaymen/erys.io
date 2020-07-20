@@ -1,16 +1,31 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import colors from "src/modules/shared/UI/colors";
 import {
-  defaultClickable,
   defaultBoxFocus,
+  defaultHover,
+  defaultActive,
+  defaultClickable,
 } from "src/modules/shared/UI/defaults";
+
+export const buttonHoverStyle = () => css`
+  ${defaultHover()};
+  background-color: ${colors.lightYellow};
+  color: ${colors.lightBlack};
+`;
+
+export const buttonFocusStyle = () => css`
+  ${defaultBoxFocus()};
+  background-color: ${colors.lightYellow};
+  color: ${colors.lightBlack};
+`;
+
+export const buttonActiveStyle = defaultActive;
 
 const Button = styled.button.attrs((props) => ({
   onTouchStart: props.onTouchStart || (() => {}), // workaround for iOS to trigger :active pseudo-class
 }))`
   ${defaultClickable()};
-  ${defaultBoxFocus()};
   border: none;
   border-radius: 15px;
   background-color: ${colors.yellow};
@@ -19,10 +34,16 @@ const Button = styled.button.attrs((props) => ({
   font-weight: 600;
   font-size: 1.1rem;
 
-  &:hover,
+  &:hover {
+    ${buttonHoverStyle()};
+  }
+
   &:focus {
-    background-color: ${colors.lightYellow};
-    color: ${colors.lightBlack};
+    ${buttonFocusStyle()};
+  }
+
+  &:active {
+    ${buttonActiveStyle()};
   }
 `;
 
