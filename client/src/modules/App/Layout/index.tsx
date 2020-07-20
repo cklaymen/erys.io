@@ -12,6 +12,7 @@ import {
 import ScrollProvider from "src/modules/Topbar/useScroll/Provider";
 import Topbar from "src/modules/Topbar";
 import useDevice from "src/modules/shared/useDevice";
+import Footer from "src/modules/Footer";
 
 interface Props {
   renderMain(): JSX.Element;
@@ -45,6 +46,7 @@ const Layout: FC<Props> = ({ renderMain, renderSide }) => {
         </SideWrapper>
         <ContentMainWrapper>{renderMain()}</ContentMainWrapper>
       </ContentWrapper>
+      <Footer />
     </LayoutWrapper>
   );
 };

@@ -51,6 +51,10 @@ const pl: Translation = {
   [TranslationKey.TECHNOLOGIES]: "Technologie",
   [TranslationKey.TECHNOLOGIES_SHORT_DESCRIPTION]:
     "W swoich realizacjach wykorzystuję nowoczesne technologie. Jestem na bieżąco z coraz to nowszymi rozwiązanami z dziedziny webdev. Dzięki temu tworzone przeze mnie oprogramowanie jest wydajne, bezpieczne oraz przyjemne w obsłudze.",
+  [TranslationKey.ABOUT_ME]: "O mnie",
+  [TranslationKey.ABOUT_ME_SHORT_DESCRIPTION]:
+    "Jestem programistą, web deweloperem. Tworzę dedykowane oprogramowanie oparte o technologie internetowe. Napisz do mnie czego potrzebujesz, a przedstawię najlepsze możliwe rozwiązania.",
+  [TranslationKey.CONTACT]: "Kontakt",
 };
 
 export default pl;
