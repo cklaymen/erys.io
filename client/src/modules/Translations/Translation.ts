@@ -34,6 +34,7 @@ export enum TranslationKey {
   ABOUT_ME = "ABOUT_ME",
   ABOUT_ME_SHORT_DESCRIPTION = "ABOUT_ME_SHORT_DESCRIPTION",
   CONTACT = "CONTACT",
+  WORKS = "WORKS",
 }
 
 type Translation = {

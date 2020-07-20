@@ -13,6 +13,7 @@ import ScrollProvider from "src/modules/Topbar/useScroll/Provider";
 import Topbar from "src/modules/Topbar";
 import useDevice from "src/modules/shared/useDevice";
 import Footer from "src/modules/Footer";
+import Nav from "src/modules/Nav";
 
 interface Props {
   renderMain(): JSX.Element;
@@ -28,6 +29,7 @@ const Layout: FC<Props> = ({ renderMain, renderSide }) => {
 
   return (
     <LayoutWrapper>
+      <Nav />
       {!isLargerDeviceSize && (
         <ScrollProvider>
           <Topbar />
