@@ -64,6 +64,12 @@ export const StyledLogo = styled(Logo)`
 `;
 
 export const ContentMainWrapper = styled.div`
+  &::after {
+    display: block;
+    content: "";
+    height: 30px;
+  }
+
   ${media.large`
     width: 50%;
     margin-left: 3vw;
