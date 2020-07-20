@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 
 import {
   FooterWrapper,
@@ -11,12 +11,14 @@ import {
   ContactLink,
   ContactSocials,
   ContactInfo,
+  FooterCopyright,
 } from "src/modules/Footer/components";
 import { useTranslation } from "react-i18next";
 import { TranslationKey } from "src/modules/Translations/Translation";
 
 const Footer: FC = () => {
   const { t } = useTranslation();
+  const currentYear = useMemo(() => new Date().getFullYear(), []);
 
   return (
     <FooterWrapper>
@@ -57,6 +59,9 @@ const Footer: FC = () => {
           </ContactSocials>
         </ContactContent>
       </FooterElement>
+      <FooterCopyright>
+        © {currentYear} Aplikacje webowe ERYS' Ryszard Plewnia
+      </FooterCopyright>
     </FooterWrapper>
   );
 };

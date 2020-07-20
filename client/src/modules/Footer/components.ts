@@ -14,6 +14,8 @@ export const FooterWrapper = styled.footer`
   color: ${colors.white};
   display: flex;
   padding: ${CONTENT_PADDING_EXTRA_SMALL};
+  position: relative;
+
   ${media.medium`
     padding: ${CONTENT_PADDING_MEDIUM.join(" ")};
   `}
@@ -148,4 +150,11 @@ export const ContactSocials = styled.div`
       margin-left: 30px;
     }
   `}
+`;
+
+export const FooterCopyright = styled.div`
+  position: absolute;
+  font-size: 0.7rem;
+  bottom: 3px;
+  right: 3px;
 `;
