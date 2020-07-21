@@ -8,6 +8,7 @@ import {
   NavContact,
   NavLinkFloatButton,
   NavLinkText,
+  StyledMenuFloatButton,
 } from "./components";
 import { TranslationKey } from "src/modules/Translations/Translation";
 
@@ -16,6 +17,7 @@ const Nav: FC = () => {
 
   return (
     <NavWrapper>
+      <StyledMenuFloatButton />
       <NavPages>
         <NavLink>
           <NavLinkText>{t(TranslationKey.ABOUT_ME)}</NavLinkText>

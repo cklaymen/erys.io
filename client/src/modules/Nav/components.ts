@@ -10,6 +10,7 @@ import {
   floatButtonFocusStyle,
   floatButtonActiveStyle,
 } from "src/modules/Nav/FloatButton/components";
+import MenuFloatButton from "src/modules/Nav/FloatButton/Menu";
 
 export const NavWrapper = styled.nav`
   position: fixed;
@@ -90,4 +91,10 @@ export const ContactButtons = styled.div`
   display: flex;
   flex-direction: column;
   left: -30px;
+`;
+
+export const StyledMenuFloatButton = styled(MenuFloatButton)`
+  position: fixed;
+  top: 15px;
+  right: 15px;
 `;

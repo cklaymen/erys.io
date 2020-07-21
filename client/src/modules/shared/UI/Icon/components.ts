@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const IconWrapper = styled.span`
   display: inline-block;
-  & path {
+  & path,
+  & rect {
     fill: currentColor;
   }
   & svg {
