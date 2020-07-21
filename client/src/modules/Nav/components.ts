@@ -22,6 +22,12 @@ export const NavLinkFloatButton = styled(FloatButton)`
   position: absolute;
 `;
 
+export const StyledMenuFloatButton = styled(MenuFloatButton)`
+  position: fixed;
+  top: 15px;
+  right: 15px;
+`;
+
 export const NavWrapper = styled.nav<NavWrapperProps>`
   position: fixed;
   top: 0;
@@ -40,6 +46,10 @@ export const NavWrapper = styled.nav<NavWrapperProps>`
           right: 0;
           & ${NavLinkFloatButton} {
             left: -30px;
+            box-shadow: none;
+          }
+          & ${StyledMenuFloatButton} {
+            box-shadow: none;
           }
         `
       : css`
@@ -104,10 +114,4 @@ export const NavContact = styled.div`
   & ${NavLink} + ${NavLink} {
     margin-top: 10px;
   }
-`;
-
-export const StyledMenuFloatButton = styled(MenuFloatButton)`
-  position: fixed;
-  top: 15px;
-  right: 15px;
 `;

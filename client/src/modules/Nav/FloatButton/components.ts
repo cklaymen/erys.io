@@ -6,6 +6,7 @@ import Button, {
   buttonFocusStyle,
 } from "src/modules/shared/UI/Button";
 import Icon from "src/modules/shared/UI/Icon";
+import { defaultDropShadow } from "src/modules/shared/UI/defaults";
 
 export const FLOAT_BUTTON_SIZE_EXTRA_SMALL = "60px";
 
@@ -19,6 +20,7 @@ export const floatButtonActiveStyle = () => css`
 `;
 
 export const FloatButtonWrapper = styled(Button)`
+  ${defaultDropShadow()};
   width: ${FLOAT_BUTTON_SIZE_EXTRA_SMALL};
   height: ${FLOAT_BUTTON_SIZE_EXTRA_SMALL};
   border-radius: 50%;
