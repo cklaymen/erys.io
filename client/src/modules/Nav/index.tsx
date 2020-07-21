@@ -9,6 +9,7 @@ import {
   NavLinkFloatButton,
   NavLinkText,
   StyledMenuFloatButton,
+  NavContainer,
 } from "./components";
 import { TranslationKey } from "src/modules/Translations/Translation";
 
@@ -22,31 +23,33 @@ const Nav: FC = () => {
 
   return (
     <NavWrapper show={isOpen}>
-      <StyledMenuFloatButton
-        onClick={toggleIsOpen}
-        icon={isOpen ? "Close" : "Menu"}
-      />
-      <NavPages>
-        <NavLink>
-          <NavLinkText>{t(TranslationKey.ABOUT_ME)}</NavLinkText>
-        </NavLink>
-        <NavLink>
-          <NavLinkText>{t(TranslationKey.SERVICES)}</NavLinkText>
-        </NavLink>
-        <NavLink>
-          <NavLinkText>{t(TranslationKey.WORKS)}</NavLinkText>
-        </NavLink>
-      </NavPages>
-      <NavContact>
-        <NavLink>
-          <NavLinkFloatButton iconType="Mail" />
-          <NavLinkText>hello@erys.io</NavLinkText>
-        </NavLink>
-        <NavLink>
-          <NavLinkFloatButton iconType="Phone" />
-          <NavLinkText>699 712 600</NavLinkText>
-        </NavLink>
-      </NavContact>
+      <NavContainer>
+        <StyledMenuFloatButton
+          onClick={toggleIsOpen}
+          icon={isOpen ? "Close" : "Menu"}
+        />
+        <NavPages>
+          <NavLink>
+            <NavLinkText>{t(TranslationKey.ABOUT_ME)}</NavLinkText>
+          </NavLink>
+          <NavLink>
+            <NavLinkText>{t(TranslationKey.SERVICES)}</NavLinkText>
+          </NavLink>
+          <NavLink>
+            <NavLinkText>{t(TranslationKey.WORKS)}</NavLinkText>
+          </NavLink>
+        </NavPages>
+        <NavContact>
+          <NavLink>
+            <NavLinkFloatButton iconType="Mail" />
+            <NavLinkText>hello@erys.io</NavLinkText>
+          </NavLink>
+          <NavLink>
+            <NavLinkFloatButton iconType="Phone" />
+            <NavLinkText>699 712 600</NavLinkText>
+          </NavLink>
+        </NavContact>
+      </NavContainer>
     </NavWrapper>
   );
 };

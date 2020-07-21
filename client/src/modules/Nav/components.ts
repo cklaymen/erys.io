@@ -16,7 +16,7 @@ interface NavWrapperProps {
   show: boolean;
 }
 
-const NAV_WIDTH = "min(290px, 100vw)";
+const NAV_WIDTH = "min(320px, 100vw)";
 
 export const NavLinkFloatButton = styled(FloatButton)`
   position: absolute;
@@ -35,10 +35,11 @@ export const NavWrapper = styled.nav<NavWrapperProps>`
   right: 0;
   z-index: 11;
   box-sizing: border-box;
-  background-color: ${colors.black};
+  padding-left: 30px;
   color: ${colors.yellow};
   width: ${NAV_WIDTH};
   transition: right ${DEFAULT_TRANSITION_TIME};
+  pointer-events: none;
 
   ${(p) =>
     p.show
@@ -58,6 +59,14 @@ export const NavWrapper = styled.nav<NavWrapperProps>`
             left: -75px;
           }
         `}
+`;
+
+export const NavContainer = styled.div`
+  background-color: ${colors.black};
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: all;
 `;
 
 export const NavPages = styled.div`
