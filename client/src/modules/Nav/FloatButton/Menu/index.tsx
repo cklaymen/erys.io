@@ -8,11 +8,12 @@ import {
 interface Props {
   className?: string;
   onClick?(): void;
+  icon: "Menu" | "Close";
 }
 
-const MenuFloatButton: FC<Props> = ({ className, onClick }) => (
+const MenuFloatButton: FC<Props> = ({ className, onClick, icon }) => (
   <MenuFloatButtonWrapper className={className} onClick={onClick}>
-    <MenuIcon />
+    <MenuIcon icon={icon} />
   </MenuFloatButtonWrapper>
 );
 
