@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import colors from "src/modules/shared/UI/colors";
 import { defaultHover, defaultActive } from "src/modules/shared/UI/defaults";
@@ -12,7 +12,17 @@ import {
 } from "src/modules/Nav/FloatButton/components";
 import MenuFloatButton from "src/modules/Nav/FloatButton/Menu";
 
-export const NavWrapper = styled.nav`
+interface NavWrapperProps {
+  show: boolean;
+}
+
+const NAV_WIDTH = "min(290px, 100vw)";
+
+export const NavLinkFloatButton = styled(FloatButton)`
+  position: absolute;
+`;
+
+export const NavWrapper = styled.nav<NavWrapperProps>`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -21,7 +31,23 @@ export const NavWrapper = styled.nav`
   box-sizing: border-box;
   background-color: ${colors.black};
   color: ${colors.yellow};
-  width: min(290px, 100vw);
+  width: ${NAV_WIDTH};
+  transition: right ${DEFAULT_TRANSITION_TIME};
+
+  ${(p) =>
+    p.show
+      ? css`
+          right: 0;
+          & ${NavLinkFloatButton} {
+            left: -30px;
+          }
+        `
+      : css`
+          right: max(-290px, -100vw);
+          & ${NavLinkFloatButton} {
+            left: -75px;
+          }
+        `}
 `;
 
 export const NavPages = styled.div`
@@ -30,11 +56,6 @@ export const NavPages = styled.div`
 
 export const NavLinkText = styled.span`
   display: inline-block;
-`;
-
-export const NavLinkFloatButton = styled(FloatButton)`
-  position: absolute;
-  left: -30px;
 `;
 
 export const NavLink = styled.a`
@@ -83,14 +104,6 @@ export const NavContact = styled.div`
   & ${NavLink} + ${NavLink} {
     margin-top: 10px;
   }
-`;
-
-export const ContactButtons = styled.div`
-  position: absolute;
-  bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  left: -30px;
 `;
 
 export const StyledMenuFloatButton = styled(MenuFloatButton)`
