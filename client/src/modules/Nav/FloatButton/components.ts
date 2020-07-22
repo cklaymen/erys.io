@@ -7,8 +7,11 @@ import Button, {
 } from "src/modules/shared/UI/Button";
 import Icon from "src/modules/shared/UI/Icon";
 import { defaultDropShadow } from "src/modules/shared/UI/defaults";
+import media from "src/modules/shared/UI/media";
 
-export const FLOAT_BUTTON_SIZE_EXTRA_SMALL = "60px";
+export const FLOAT_BUTTON_SIZE_IN_PX_EXTRA_SMALL = 60;
+
+export const FLOAT_BUTTON_SIZE_IN_PX_MEDIUM = 80;
 
 export const floatButtonHoverStyle = buttonHoverStyle;
 
@@ -21,8 +24,8 @@ export const floatButtonActiveStyle = () => css`
 
 export const FloatButtonWrapper = styled(Button)`
   ${defaultDropShadow()};
-  width: ${FLOAT_BUTTON_SIZE_EXTRA_SMALL};
-  height: ${FLOAT_BUTTON_SIZE_EXTRA_SMALL};
+  width: ${FLOAT_BUTTON_SIZE_IN_PX_EXTRA_SMALL}px;
+  height: ${FLOAT_BUTTON_SIZE_IN_PX_EXTRA_SMALL}px;
   border-radius: 50%;
   padding: 15px;
 
@@ -35,6 +38,12 @@ export const FloatButtonWrapper = styled(Button)`
   &:active {
     ${floatButtonActiveStyle()};
   }
+
+  ${media.medium`
+    width: ${FLOAT_BUTTON_SIZE_IN_PX_MEDIUM}px;
+    height: ${FLOAT_BUTTON_SIZE_IN_PX_MEDIUM}px;
+    padding: 20px;
+  `}
 `;
 
 export const FloatButtonIcon = styled(Icon)`
