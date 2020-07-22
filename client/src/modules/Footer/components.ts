@@ -30,11 +30,14 @@ export const FooterElement = styled.div`
 
   & + & {
     margin-left: 20px;
-
-    ${media.medium`
-      margin-left: 6vw;
-    `}
   }
+
+  ${media.medium`
+    flex: auto;
+    & + & {
+      margin-left: 6vw;
+    }
+  `}
 `;
 
 export const ElementHeading = styled.div`

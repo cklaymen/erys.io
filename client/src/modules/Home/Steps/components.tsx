@@ -6,6 +6,7 @@ import media from "src/modules/shared/UI/media";
 import {
   CONTENT_PADDING_EXTRA_SMALL,
   CONTENT_PADDING_MEDIUM,
+  CONTENT_PADDING_MEDIUM_OPPOSITE,
 } from "src/modules/App/Layout/const";
 
 export const TilesWrapper = styled.div`
@@ -43,8 +44,11 @@ export const TilesWrapper = styled.div`
     }
 
     ${media.medium`
-      margin: 0 -${CONTENT_PADDING_MEDIUM[1]};
-      &::before, &::after {
+      margin: 0 ${CONTENT_PADDING_MEDIUM_OPPOSITE[1]} 0 ${CONTENT_PADDING_MEDIUM_OPPOSITE[3]};
+      &::before {
+        width: ${CONTENT_PADDING_MEDIUM[3]};
+      }
+      &::after {
         width: ${CONTENT_PADDING_MEDIUM[1]};
       }
     `}
@@ -57,7 +61,7 @@ export const TilesScrollableContainer = styled.div`
   overflow-x: auto;
 
   ${media.medium`
-    padding: 40px ${CONTENT_PADDING_MEDIUM[1]} 0 ${CONTENT_PADDING_MEDIUM[1]};
+    padding: 40px ${CONTENT_PADDING_MEDIUM[1]} 0 ${CONTENT_PADDING_MEDIUM[3]};
   `}
 
   ${media.large`
