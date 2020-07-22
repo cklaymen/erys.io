@@ -10,6 +10,7 @@ import {
   NavLinkText,
   StyledMenuFloatButton,
   NavContainer,
+  DimBackground,
 } from "./components";
 import { TranslationKey } from "src/modules/Translations/Translation";
 
@@ -23,6 +24,7 @@ const Nav: FC = () => {
 
   return (
     <NavWrapper show={isOpen}>
+      {isOpen && <DimBackground show={isOpen} onClick={toggleIsOpen} />}
       <NavContainer>
         <StyledMenuFloatButton
           onClick={toggleIsOpen}

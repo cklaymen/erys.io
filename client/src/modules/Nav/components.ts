@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 import colors from "src/modules/shared/UI/colors";
 import { defaultHover, defaultActive } from "src/modules/shared/UI/defaults";
@@ -17,6 +17,26 @@ interface NavWrapperProps {
 }
 
 const NAV_WIDTH = "min(320px, 100vw)";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const DimBackground = styled.div<NavWrapperProps>`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: all;
+  background-color: ${colors.black}80;
+  animation: ${fadeIn} ${DEFAULT_TRANSITION_TIME};
+`;
 
 export const NavLinkFloatButton = styled(FloatButton)`
   position: absolute;
@@ -51,6 +71,9 @@ export const NavWrapper = styled.nav<NavWrapperProps>`
           }
           & ${StyledMenuFloatButton} {
             box-shadow: none;
+          }
+          & ${NavContainer} {
+            box-shadow: 0 0 30px 0 ${colors.black};
           }
         `
       : css`
