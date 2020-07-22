@@ -13,6 +13,7 @@ import {
   DimBackground,
 } from "./components";
 import { TranslationKey } from "src/modules/Translations/Translation";
+import { EMAIL, PHONE, PHONE_VALUE } from "src/const";
 
 const Nav: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,13 +43,13 @@ const Nav: FC = () => {
           </NavLink>
         </NavPages>
         <NavContact>
-          <NavLink>
+          <NavLink href={`mailto:${EMAIL}`}>
             <NavLinkFloatButton iconType="Mail" />
-            <NavLinkText>hello@erys.io</NavLinkText>
+            <NavLinkText>{EMAIL}</NavLinkText>
           </NavLink>
-          <NavLink>
+          <NavLink href={`tel:${PHONE_VALUE}`}>
             <NavLinkFloatButton iconType="Phone" />
-            <NavLinkText>699 712 600</NavLinkText>
+            <NavLinkText>{PHONE}</NavLinkText>
           </NavLink>
         </NavContact>
       </NavContainer>

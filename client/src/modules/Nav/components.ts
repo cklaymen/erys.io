@@ -153,6 +153,8 @@ export const NavLink = styled.a`
   font-weight: 600;
   font-size: 2.4rem;
   user-select: none;
+  color: ${colors.yellow};
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
