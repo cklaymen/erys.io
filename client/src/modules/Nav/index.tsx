@@ -11,9 +11,19 @@ import {
   StyledMenuFloatButton,
   NavContainer,
   DimBackground,
+  NavSocials,
+  SocialIcon,
+  SocialLink,
 } from "./components";
 import { TranslationKey } from "src/modules/Translations/Translation";
-import { EMAIL, PHONE, PHONE_VALUE } from "src/const";
+import {
+  EMAIL,
+  PHONE,
+  PHONE_VALUE,
+  FB_URL,
+  LINKEDIN_URL,
+  INSTAGRAM_URL,
+} from "src/const";
 
 const Nav: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +53,17 @@ const Nav: FC = () => {
           </NavLink>
         </NavPages>
         <NavContact>
+          <NavSocials>
+            <SocialLink href={FB_URL} target="_blank">
+              <SocialIcon type="Fb" />
+            </SocialLink>
+            <SocialLink href={INSTAGRAM_URL} target="_blank">
+              <SocialIcon type="Instagram" />
+            </SocialLink>
+            <SocialLink href={LINKEDIN_URL} target="_blank">
+              <SocialIcon type="LinkedIn" />
+            </SocialLink>
+          </NavSocials>
           <NavLink href={`mailto:${EMAIL}`}>
             <NavLinkFloatButton iconType="Mail" />
             <NavLinkText>{EMAIL}</NavLinkText>
