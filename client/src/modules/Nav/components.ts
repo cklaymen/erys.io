@@ -233,6 +233,12 @@ export const SocialLink = styled.a`
   display: inline-block;
   color: ${colors.yellow};
 
+  &:hover,
+  &:focus,
+  &:active {
+    color: ${colors.lightYellow};
+  }
+
   & + & {
     margin-left: 15px;
   }
