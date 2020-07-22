@@ -4,6 +4,7 @@ import colors from "src/modules/shared/UI/colors";
 import {
   CONTENT_PADDING_EXTRA_SMALL,
   CONTENT_PADDING_MEDIUM,
+  CONTENT_PADDING_LARGE,
 } from "src/modules/App/Layout/const";
 import Icon from "src/modules/shared/UI/Icon";
 import { defaultClickable } from "src/modules/shared/UI/defaults";
@@ -22,6 +23,7 @@ export const FooterWrapper = styled.footer`
   ${media.large`
     padding: 3vh 5vw;
     align-items: center;
+    padding: ${CONTENT_PADDING_LARGE.join(" ")};
   `}
 `;
 

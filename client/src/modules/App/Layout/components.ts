@@ -18,7 +18,7 @@ export const ContentWrapper = styled.div`
     padding: ${CONTENT_PADDING_MEDIUM.join(" ")};
   `}
   ${media.large`
-    padding: ${CONTENT_PADDING_LARGE};
+    padding: ${CONTENT_PADDING_LARGE.join(" ")};
     display: flex;
     align-items: flex-start;
     max-width: 1200px;
@@ -34,8 +34,8 @@ export const SideWrapper = styled.div`
   ${media.large`
     position: sticky;
     overflow-y: auto;
-    top: ${CONTENT_PADDING_LARGE};
-    max-height: calc(100vh - 2*${CONTENT_PADDING_LARGE});
+    top: ${CONTENT_PADDING_LARGE[0]};
+    max-height: calc(100vh - ${CONTENT_PADDING_LARGE[0]} - ${CONTENT_PADDING_LARGE[2]});
     width: 50%;
     padding-right: 3vw;
   `}
