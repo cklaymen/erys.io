@@ -5,27 +5,38 @@ import {
   SizeBreakpoint,
 } from "src/modules/shared/sizeBreakpoints";
 
+interface MediaProperties {
+  "min-width": string;
+  "max-width"?: string;
+  orientation?: "portrait" | "landscape";
+}
+
 function getMedia(
   fromBreakpoint: SizeBreakpoint,
-  toBreakpoint?: SizeBreakpoint
+  toBreakpoint?: SizeBreakpoint,
+  orientation?: "portrait" | "landscape"
 ): typeof css {
-  const result = (...args: any[]) =>
-    toBreakpoint
-      ? css`
-          @media only screen and (min-width: ${minSizeBreakpointsInPx[
-              fromBreakpoint
-            ]}px) and (max-width: ${minSizeBreakpointsInPx[toBreakpoint] -
-            1}px) {
-            ${css(...(args as [any, ...any[]]))};
-          }
-        `
-      : css`
-          @media only screen and (min-width: ${minSizeBreakpointsInPx[
-              fromBreakpoint
-            ]}px) {
-            ${css(...(args as [any, ...any[]]))};
-          }
-        `;
+  const properties: MediaProperties = {
+    "min-width": `${minSizeBreakpointsInPx[fromBreakpoint]}px`,
+  };
+  if (toBreakpoint) {
+    properties["max-width"] = `${minSizeBreakpointsInPx[toBreakpoint] - 1}px`;
+  }
+  if (orientation) {
+    properties.orientation = orientation;
+  }
+  const propertiesKeys = Object.keys(properties) as Array<
+    keyof MediaProperties
+  >;
+  const mediaString = propertiesKeys
+    .map((it) => `(${it}: ${properties[it]})`)
+    .join(" and ");
+
+  const result = (...args: any[]) => css`
+    @media only screen and ${mediaString} {
+      ${css(...(args as [any, ...any[]]))};
+    }
+  `;
   return result;
 }
 

@@ -4,16 +4,20 @@ import colors from "src/modules/shared/UI/colors";
 import {
   CONTENT_PADDING_EXTRA_SMALL,
   CONTENT_PADDING_MEDIUM,
+  CONTENT_PADDING_LARGE,
 } from "src/modules/App/Layout/const";
 import Icon from "src/modules/shared/UI/Icon";
 import { defaultClickable } from "src/modules/shared/UI/defaults";
 import media from "src/modules/shared/UI/media";
+import { NAV_FLOAT_BUTTON_BAR_WIDTH_IN_PX_EXTRA_SMALL } from "src/modules/Nav/components";
 
 export const FooterWrapper = styled.footer`
   background-color: ${colors.black};
   color: ${colors.white};
   display: flex;
-  padding: ${CONTENT_PADDING_EXTRA_SMALL};
+  padding: ${CONTENT_PADDING_EXTRA_SMALL}
+    ${NAV_FLOAT_BUTTON_BAR_WIDTH_IN_PX_EXTRA_SMALL}px
+    ${CONTENT_PADDING_EXTRA_SMALL} ${CONTENT_PADDING_EXTRA_SMALL};
   position: relative;
 
   ${media.medium`
@@ -22,19 +26,22 @@ export const FooterWrapper = styled.footer`
   ${media.large`
     padding: 3vh 5vw;
     align-items: center;
+    padding: ${CONTENT_PADDING_LARGE.join(" ")};
   `}
 `;
 
 export const FooterElement = styled.div`
-  flex: 1;
+  flex: auto;
 
   & + & {
     margin-left: 20px;
-
-    ${media.medium`
-      margin-left: 6vw;
-    `}
   }
+
+  ${media.medium`
+    & + & {
+      margin-left: 6vw;
+    }
+  `}
 `;
 
 export const ElementHeading = styled.div`

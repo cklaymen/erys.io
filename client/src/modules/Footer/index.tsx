@@ -15,6 +15,15 @@ import {
 } from "src/modules/Footer/components";
 import { useTranslation } from "react-i18next";
 import { TranslationKey } from "src/modules/Translations/Translation";
+import {
+  EMAIL,
+  PHONE,
+  PHONE_VALUE,
+  FB_URL,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+  COMPANY_NAME,
+} from "src/const";
 
 const Footer: FC = () => {
   const { t } = useTranslation();
@@ -34,33 +43,30 @@ const Footer: FC = () => {
         <ElementHeading>{t(TranslationKey.CONTACT)}</ElementHeading>
         <ContactContent>
           <ContactInfo>
-            <ContactLink href="mailto:hello@erys.io">
+            <ContactLink href={`mailto:${EMAIL}`}>
               <ContactIcon type="Mail" />
-              hello@erys.io
+              {EMAIL}
             </ContactLink>
-            <ContactLink href="tel:+48699712600">
+            <ContactLink href={`tel:${PHONE_VALUE}`}>
               <ContactIcon type="Phone" />
-              699 712 600
+              {PHONE}
             </ContactLink>
           </ContactInfo>
           <ContactSocials>
-            <ContactLink href="https://fb.com/erys.ioo" target="_blank">
+            <ContactLink href={FB_URL} target="_blank">
               <ContactIcon type="Fb" />
             </ContactLink>
-            <ContactLink href="https://instagram.com/erys.io" target="_blank">
+            <ContactLink href={INSTAGRAM_URL} target="_blank">
               <ContactIcon type="Instagram" />
             </ContactLink>
-            <ContactLink
-              href="https://linkedin.com/in/ryszard-plewnia"
-              target="_blank"
-            >
+            <ContactLink href={LINKEDIN_URL} target="_blank">
               <ContactIcon type="LinkedIn" />
             </ContactLink>
           </ContactSocials>
         </ContactContent>
       </FooterElement>
       <FooterCopyright>
-        © {currentYear} Aplikacje webowe ERYS' Ryszard Plewnia
+        © {currentYear} {COMPANY_NAME}
       </FooterCopyright>
     </FooterWrapper>
   );

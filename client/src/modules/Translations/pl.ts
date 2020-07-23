@@ -55,6 +55,7 @@ const pl: Translation = {
   [TranslationKey.ABOUT_ME_SHORT_DESCRIPTION]:
     "Jestem programistą, web deweloperem. Tworzę dedykowane oprogramowanie oparte o technologie internetowe. Napisz do mnie czego potrzebujesz, a przedstawię najlepsze możliwe rozwiązania.",
   [TranslationKey.CONTACT]: "Kontakt",
+  [TranslationKey.WORKS]: "Realizacje",
 };
 
 export default pl;
