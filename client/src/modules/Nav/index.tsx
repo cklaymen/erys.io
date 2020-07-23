@@ -14,6 +14,8 @@ import {
   NavSocials,
   SocialIcon,
   SocialLink,
+  FloatButtonsWrapper,
+  FloatButtonLink,
 } from "./components";
 import { TranslationKey } from "src/modules/Translations/Translation";
 import {
@@ -24,6 +26,8 @@ import {
   LINKEDIN_URL,
   INSTAGRAM_URL,
 } from "src/const";
+import useDevice from "src/modules/shared/useDevice";
+import FloatButtonWithLabel from "src/modules/Nav/FloatButtonWithLabel";
 
 const Nav: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +36,34 @@ const Nav: FC = () => {
     setIsOpen,
   ]);
   const { t } = useTranslation();
+  const { isSize } = useDevice();
+  const isLargerDevice = isSize("large", "extraLarge");
+
+  if (isLargerDevice) {
+    return (
+      <FloatButtonsWrapper>
+        <NavPages>
+          <FloatButtonLink href={`#`}>
+            <FloatButtonWithLabel iconType="About" label="O mnie" />
+          </FloatButtonLink>
+          <FloatButtonLink href={`#`}>
+            <FloatButtonWithLabel iconType="Services" label="Usługi" />
+          </FloatButtonLink>
+          <FloatButtonLink href={`#`}>
+            <FloatButtonWithLabel iconType="Works" label="Realizacje" />
+          </FloatButtonLink>
+        </NavPages>
+        <NavContact>
+          <FloatButtonLink href={`mailto:${EMAIL}`}>
+            <FloatButtonWithLabel iconType="Mail" label={EMAIL} />
+          </FloatButtonLink>
+          <FloatButtonLink href={`tel:${PHONE_VALUE}`}>
+            <FloatButtonWithLabel iconType="Phone" label={PHONE} />
+          </FloatButtonLink>
+        </NavContact>
+      </FloatButtonsWrapper>
+    );
+  }
 
   return (
     <NavWrapper show={isOpen}>

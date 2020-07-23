@@ -153,9 +153,14 @@ export const NavContainer = styled.div`
 export const NavPages = styled.div`
   margin-top: 100px;
   margin-bottom: 10px;
-  overflow-y: auto;
+  ${media.get("extraSmall", "large")`
+    overflow-y: auto;
+  `}
   ${media.get("extraSmall", "medium", "landscape")`
     margin-top: ${FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL}px;
+  `}
+  ${media.large`
+    margin-top: 0;
   `}
 `;
 
@@ -227,6 +232,9 @@ export const NavContact = styled.div`
       margin-top: 20px;
     }
   `}
+  ${media.large`
+    margin-bottom: 0;
+  `}
 `;
 
 export const NavSocials = styled.div`
@@ -270,4 +278,32 @@ export const SocialIcon = styled(Icon)`
   ${media.medium`
     width: 35px;
   `}
+`;
+
+export const FloatButtonLink = styled.a`
+  display: block;
+  text-decoration: none;
+`;
+
+export const FloatButtonsWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: ${140}px;
+  z-index: 12;
+  padding: ${FLOAT_BUTTON_MARGIN_IN_PX_MEDIUM}px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & ${FloatButtonLink} + ${FloatButtonLink} {
+    margin-top: 30px;
+  }
+  & ${NavPages}, & ${NavContact} {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 `;
