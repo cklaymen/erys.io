@@ -36,11 +36,11 @@ const Nav: FC = () => {
   return (
     <NavWrapper show={isOpen}>
       {isOpen && <DimBackground show={isOpen} onClick={toggleIsOpen} />}
+      <StyledMenuFloatButton
+        onClick={toggleIsOpen}
+        icon={isOpen ? "Close" : "Menu"}
+      />
       <NavContainer>
-        <StyledMenuFloatButton
-          onClick={toggleIsOpen}
-          icon={isOpen ? "Close" : "Menu"}
-        />
         <NavPages>
           <NavLink>
             <NavLinkText>{t(TranslationKey.ABOUT_ME)}</NavLinkText>

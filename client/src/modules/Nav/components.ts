@@ -75,10 +75,12 @@ export const StyledMenuFloatButton = styled(MenuFloatButton)`
   position: fixed;
   top: ${FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL}px;
   right: ${FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL}px;
+  pointer-events: all;
+  z-index: 11;
   ${media.medium`
     top: ${FLOAT_BUTTON_MARGIN_IN_PX_MEDIUM}px;
     right: ${FLOAT_BUTTON_MARGIN_IN_PX_MEDIUM}px;
-  `}
+  `};
 `;
 
 export const NavWrapper = styled.nav<NavWrapperProps>`
@@ -143,10 +145,18 @@ export const NavContainer = styled.div`
   width: 100%;
   height: 100%;
   pointer-events: all;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const NavPages = styled.div`
   margin-top: 100px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  ${media.get("extraSmall", "medium", "landscape")`
+    margin-top: ${FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL}px;
+  `}
 `;
 
 export const NavLinkText = styled.span`
@@ -197,8 +207,7 @@ export const NavLink = styled.a`
 `;
 
 export const NavContact = styled.div`
-  position: absolute;
-  bottom: ${FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL}px;
+  margin-bottom: ${FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL}px;
 
   & ${NavLink} {
     box-sizing: border-box;
@@ -209,7 +218,7 @@ export const NavContact = styled.div`
   }
 
   ${media.medium`
-    bottom: ${FLOAT_BUTTON_MARGIN_IN_PX_MEDIUM}px;
+    margin-bottom: ${FLOAT_BUTTON_MARGIN_IN_PX_MEDIUM}px;
 
     & ${NavLink} {
       height: ${FLOAT_BUTTON_SIZE_IN_PX_MEDIUM}px;
@@ -224,6 +233,9 @@ export const NavSocials = styled.div`
   padding-left: ${NAV_CONTAINER_PADDING_LEFT_IN_PX_EXTRA_SMALL}px;
   margin-bottom: 15px;
 
+  ${media.get("extraSmall", "medium", "landscape")`
+    display: none;
+  `}
   ${media.medium`
     padding-left: ${NAV_CONTAINER_PADDING_LEFT_IN_PX_MEDIUM}px;
     margin-bottom: 25px;
