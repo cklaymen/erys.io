@@ -44,13 +44,22 @@ const Nav: FC = () => {
       <FloatButtonsWrapper>
         <NavPages>
           <FloatButtonLink href={`#`}>
-            <FloatButtonWithLabel iconType="About" label="O mnie" />
+            <FloatButtonWithLabel
+              iconType="About"
+              label={t(TranslationKey.ABOUT_ME)}
+            />
           </FloatButtonLink>
           <FloatButtonLink href={`#`}>
-            <FloatButtonWithLabel iconType="Services" label="Usługi" />
+            <FloatButtonWithLabel
+              iconType="Services"
+              label={t(TranslationKey.SERVICES)}
+            />
           </FloatButtonLink>
           <FloatButtonLink href={`#`}>
-            <FloatButtonWithLabel iconType="Works" label="Realizacje" />
+            <FloatButtonWithLabel
+              iconType="Works"
+              label={t(TranslationKey.WORKS)}
+            />
           </FloatButtonLink>
         </NavPages>
         <NavContact>
