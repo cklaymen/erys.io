@@ -163,6 +163,8 @@ export const NavLink = styled.a`
   user-select: none;
   color: ${colors.yellow};
   text-decoration: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     cursor: pointer;
