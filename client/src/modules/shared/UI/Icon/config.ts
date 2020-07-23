@@ -8,6 +8,9 @@ import { ReactComponent as LinkedIn } from "src/assets/images/icons/Linkedin.svg
 import { ReactComponent as Mail } from "src/assets/images/icons/Mail.svg";
 import { ReactComponent as Phone } from "src/assets/images/icons/Phone.svg";
 import { ReactComponent as Menu } from "src/assets/images/icons/Menu.svg";
+import { ReactComponent as About } from "src/assets/images/icons/About.svg";
+import { ReactComponent as Services } from "src/assets/images/icons/Services.svg";
+import { ReactComponent as Works } from "src/assets/images/icons/Works.svg";
 
 export const icons = {
   Docker,
@@ -20,6 +23,9 @@ export const icons = {
   Mail,
   Phone,
   Menu,
+  About,
+  Services,
+  Works,
 } as const;
 
 export type IconType = keyof typeof icons;
