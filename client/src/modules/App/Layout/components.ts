@@ -10,7 +10,12 @@ import Logo from "src/modules/shared/UI/Logo";
 import colors from "src/modules/shared/UI/colors";
 import { defaultDropFadeWhiteShadow } from "src/modules/shared/UI/defaults";
 
-export const LayoutWrapper = styled.div``;
+export const LayoutWrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
 export const ContentWrapper = styled.div`
   padding: ${CONTENT_PADDING_EXTRA_SMALL};

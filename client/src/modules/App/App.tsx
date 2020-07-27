@@ -5,10 +5,10 @@ import Routes from "src/modules/Routes";
 
 function App() {
   return (
-    <div>
+    <>
       <GlobalStyle />
       <Routes />
-    </div>
+    </>
   );
 }
 
