@@ -59,7 +59,7 @@ export const LogoWrapper = styled.div`
   position: sticky;
   top: 0;
   width: 100%;
-  margin: 15vh auto 6vh auto;
+  margin: 15vh auto 30px auto;
   padding: 0 30px 30px 110px;
   box-sizing: border-box;
   text-align: center;
