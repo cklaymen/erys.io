@@ -59,7 +59,7 @@ export const TopbarWrapper = styled.div`
 export const LogoWrapper = styled.div<Props>`
   width: 100%;
   height: 60px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;

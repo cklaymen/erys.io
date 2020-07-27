@@ -7,6 +7,7 @@ import {
   TopbarWrapper,
 } from "src/modules/Topbar/components";
 import useScroll from "src/modules/Topbar/useScroll";
+import InternalLink from "src/modules/Routes/InternalLink";
 
 const Topbar: FC = () => {
   const { pageYOffset } = useScroll();
@@ -15,9 +16,11 @@ const Topbar: FC = () => {
   return (
     <TopbarWrapper>
       <TopbarContainer mini={isMini}>
-        <LogoWrapper mini={isMini}>
-          <StyledLogo />
-        </LogoWrapper>
+        <InternalLink location="home">
+          <LogoWrapper mini={isMini}>
+            <StyledLogo />
+          </LogoWrapper>
+        </InternalLink>
       </TopbarContainer>
     </TopbarWrapper>
   );
