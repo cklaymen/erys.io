@@ -31,7 +31,7 @@ const routesConfig: RouteConfig[] = [
       return (
         <Layout
           renderMain={() => <AboutMain />}
-          renderSide={(sideWrapperRef) => <AboutSide />}
+          renderSide={() => <AboutSide />}
         />
       );
     },

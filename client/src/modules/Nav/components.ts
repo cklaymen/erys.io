@@ -1,3 +1,4 @@
+// *** TODO: REFACTOR NEEDED ***
 import styled, { css, keyframes } from "styled-components";
 
 import colors from "src/modules/shared/UI/colors";
@@ -18,6 +19,8 @@ import {
 import MenuFloatButton from "src/modules/Nav/FloatButton/Menu";
 import media from "src/modules/shared/UI/media";
 import Icon from "src/modules/shared/UI/Icon";
+import ExternalLink from "src/modules/shared/ExternalLink";
+import InternalLink from "src/modules/Routes/InternalLink";
 
 interface NavWrapperProps {
   show: boolean;
@@ -168,7 +171,7 @@ export const NavLinkText = styled.span`
   display: inline-block;
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -213,12 +216,15 @@ export const NavLink = styled.a`
 
 export const NavContact = styled.div`
   margin-bottom: ${FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL}px;
+  & ${ExternalLink} {
+    display: inline-block;
+  }
 
   & ${NavLink} {
     box-sizing: border-box;
     height: ${FLOAT_BUTTON_SIZE_IN_PX_EXTRA_SMALL}px;
   }
-  & ${NavLink} + ${NavLink} {
+  & ${ExternalLink} + ${ExternalLink} {
     margin-top: 10px;
   }
 
@@ -228,7 +234,7 @@ export const NavContact = styled.div`
     & ${NavLink} {
       height: ${FLOAT_BUTTON_SIZE_IN_PX_MEDIUM}px;
     }
-    & ${NavLink} + ${NavLink} {
+    & ${ExternalLink} + ${ExternalLink} {
       margin-top: 20px;
     }
   `}
@@ -250,7 +256,7 @@ export const NavSocials = styled.div`
   `}
 `;
 
-export const SocialLink = styled.a`
+export const SocialLink = styled(ExternalLink)`
   ${defaultClickable()};
   display: inline-block;
   color: ${colors.yellow};
@@ -280,7 +286,12 @@ export const SocialIcon = styled(Icon)`
   `}
 `;
 
-export const FloatButtonLink = styled.a`
+export const FloatButtonInternalLink = styled(InternalLink)`
+  display: block;
+  text-decoration: none;
+`;
+
+export const FloatButtonExternalLink = styled(ExternalLink)`
   display: block;
   text-decoration: none;
 `;
@@ -298,7 +309,11 @@ export const FloatButtonsWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  & ${FloatButtonLink} + ${FloatButtonLink} {
+  &
+    ${FloatButtonInternalLink}
+    + ${FloatButtonInternalLink},
+    ${FloatButtonExternalLink}
+    + ${FloatButtonExternalLink} {
     margin-top: 30px;
   }
   & ${NavPages}, & ${NavContact} {

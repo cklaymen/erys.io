@@ -15,7 +15,8 @@ import {
   SocialIcon,
   SocialLink,
   FloatButtonsWrapper,
-  FloatButtonLink,
+  FloatButtonInternalLink,
+  FloatButtonExternalLink,
 } from "./components";
 import { TranslationKey } from "src/modules/Translations/Translation";
 import {
@@ -28,6 +29,8 @@ import {
 } from "src/const";
 import useDevice from "src/modules/shared/useDevice";
 import FloatButtonWithLabel from "src/modules/Nav/FloatButtonWithLabel";
+import InternalLink from "src/modules/Routes/InternalLink";
+import ExternalLink from "src/modules/shared/ExternalLink";
 
 const Nav: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,38 +40,39 @@ const Nav: FC = () => {
   ]);
   const { t } = useTranslation();
   const { isSize } = useDevice();
+
   const isLargerDevice = isSize("large", "extraLarge");
 
   if (isLargerDevice) {
     return (
       <FloatButtonsWrapper>
         <NavPages>
-          <FloatButtonLink href={`#`}>
+          <FloatButtonInternalLink location={"about"}>
             <FloatButtonWithLabel
               iconType="About"
               label={t(TranslationKey.ABOUT_ME)}
             />
-          </FloatButtonLink>
-          <FloatButtonLink href={`#`}>
+          </FloatButtonInternalLink>
+          <FloatButtonInternalLink location={`home`}>
             <FloatButtonWithLabel
               iconType="Services"
               label={t(TranslationKey.SERVICES)}
             />
-          </FloatButtonLink>
-          <FloatButtonLink href={`#`}>
+          </FloatButtonInternalLink>
+          <FloatButtonInternalLink location={`home`}>
             <FloatButtonWithLabel
               iconType="Works"
               label={t(TranslationKey.WORKS)}
             />
-          </FloatButtonLink>
+          </FloatButtonInternalLink>
         </NavPages>
         <NavContact>
-          <FloatButtonLink href={`mailto:${EMAIL}`}>
+          <FloatButtonExternalLink href={`mailto:${EMAIL}`}>
             <FloatButtonWithLabel iconType="Mail" label={EMAIL} />
-          </FloatButtonLink>
-          <FloatButtonLink href={`tel:${PHONE_VALUE}`}>
+          </FloatButtonExternalLink>
+          <FloatButtonExternalLink href={`tel:${PHONE_VALUE}`}>
             <FloatButtonWithLabel iconType="Phone" label={PHONE} />
-          </FloatButtonLink>
+          </FloatButtonExternalLink>
         </NavContact>
       </FloatButtonsWrapper>
     );
@@ -83,15 +87,21 @@ const Nav: FC = () => {
       />
       <NavContainer>
         <NavPages>
-          <NavLink>
-            <NavLinkText>{t(TranslationKey.ABOUT_ME)}</NavLinkText>
-          </NavLink>
-          <NavLink>
-            <NavLinkText>{t(TranslationKey.SERVICES)}</NavLinkText>
-          </NavLink>
-          <NavLink>
-            <NavLinkText>{t(TranslationKey.WORKS)}</NavLinkText>
-          </NavLink>
+          <InternalLink location="about">
+            <NavLink>
+              <NavLinkText>{t(TranslationKey.ABOUT_ME)}</NavLinkText>
+            </NavLink>
+          </InternalLink>
+          <InternalLink location="home">
+            <NavLink>
+              <NavLinkText>{t(TranslationKey.SERVICES)}</NavLinkText>
+            </NavLink>
+          </InternalLink>
+          <InternalLink location="home">
+            <NavLink>
+              <NavLinkText>{t(TranslationKey.WORKS)}</NavLinkText>
+            </NavLink>
+          </InternalLink>
         </NavPages>
         <NavContact>
           <NavSocials>
@@ -105,14 +115,18 @@ const Nav: FC = () => {
               <SocialIcon type="LinkedIn" />
             </SocialLink>
           </NavSocials>
-          <NavLink href={`mailto:${EMAIL}`}>
-            <NavLinkFloatButton iconType="Mail" />
-            <NavLinkText>{EMAIL}</NavLinkText>
-          </NavLink>
-          <NavLink href={`tel:${PHONE_VALUE}`}>
-            <NavLinkFloatButton iconType="Phone" />
-            <NavLinkText>{PHONE}</NavLinkText>
-          </NavLink>
+          <ExternalLink href={`mailto:${EMAIL}`}>
+            <NavLink>
+              <NavLinkFloatButton iconType="Mail" />
+              <NavLinkText>{EMAIL}</NavLinkText>
+            </NavLink>
+          </ExternalLink>
+          <ExternalLink href={`tel:${PHONE_VALUE}`}>
+            <NavLink>
+              <NavLinkFloatButton iconType="Phone" />
+              <NavLinkText>{PHONE}</NavLinkText>
+            </NavLink>
+          </ExternalLink>
         </NavContact>
       </NavContainer>
     </NavWrapper>
