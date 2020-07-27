@@ -4,6 +4,7 @@ import { Location } from "src/modules/Routes/pathKeys";
 import Layout from "src/modules/App/Layout";
 import InteractiveChat from "src/modules/InteractiveChat";
 import Home from "src/modules/Home";
+import { AboutMain, AboutSide } from "src/modules/About";
 
 interface RouteConfig {
   location: Location;
@@ -29,10 +30,8 @@ const routesConfig: RouteConfig[] = [
     render: () => {
       return (
         <Layout
-          renderMain={() => <div>_ABOUT_</div>}
-          renderSide={(sideWrapperRef) => (
-            <InteractiveChat scrollableWrapperRef={sideWrapperRef} />
-          )}
+          renderMain={() => <AboutMain />}
+          renderSide={(sideWrapperRef) => <AboutSide />}
         />
       );
     },
