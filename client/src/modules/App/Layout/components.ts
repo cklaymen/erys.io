@@ -18,6 +18,9 @@ export const LayoutWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
+  flex: auto;
+  box-sizing: border-box;
+  width: 100%;
   padding: ${CONTENT_PADDING_EXTRA_SMALL};
   ${media.medium`
     padding: ${CONTENT_PADDING_MEDIUM.join(" ")};
@@ -66,6 +69,7 @@ export const LogoWrapper = styled.div`
 
 export const StyledLogo = styled(Logo)`
   width: 80%;
+  height: auto;
 `;
 
 export const ContentMainWrapper = styled.div`

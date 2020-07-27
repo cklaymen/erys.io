@@ -1,13 +1,11 @@
 import React, { FC } from "react";
 
-import LogoSrc from "src/assets/images/Logo.svg";
+import { ReactComponent as LogoSvg } from "src/assets/images/Logo.svg";
 
 interface Props {
   className?: string;
 }
 
-const Logo: FC<Props> = ({ className }) => (
-  <img className={className} src={LogoSrc} alt="Logo" />
-);
+const Logo: FC<Props> = ({ className }) => <LogoSvg className={className} />;
 
 export default Logo;
