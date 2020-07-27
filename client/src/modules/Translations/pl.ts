@@ -56,6 +56,13 @@ const pl: Translation = {
     "Jestem programistą, web deweloperem. Tworzę dedykowane oprogramowanie oparte o technologie internetowe. Napisz do mnie czego potrzebujesz, a przedstawię najlepsze możliwe rozwiązania.",
   [TranslationKey.CONTACT]: "Kontakt",
   [TranslationKey.WORKS]: "Realizacje",
+  [TranslationKey.ABOUT_ME_DESCRIPTION]:
+    "Jestem informatykiem programistą. Ukończyłem studia magisterskie oraz inżynierskie na Politechnice Śląskiej w Gliwicach. Komputerami oraz programowaniem interesuję się od wczesnych lat, co potwierdzają moje projekty z tamtego okresu. Będąc w liceum stworzyłem aplikację z bazą pytań na prawo jazdy, z której wówczas korzystała większość osób przygotowujących się do tego egzaminu. W trakcie studiów współtworzyłem projekt serwisu społecznościowego private.center oraz pracowałem w firmie tworzącej oprogramowanie. Brałem również udział w prezentacjach oraz warsztatach, na temat dobrych praktyk oraz nowych technologii, które były organizowane na terenie uczelni lub poza nią przez różne firmy programistyczne z Gliwic.",
+  [TranslationKey.ABOUT_COMPANY]: "O firmie",
+  [TranslationKey.ABOUT_COMPANY_DESCRIPTION]:
+    "Po ukończeniu studiów postanowiłem założyć własną działalność gospodarczą, ponieważ cenię sobie niezależność oraz pracę na własny rachunek. Wierzę, że moja pasja do programowania przyczyni się do zadowolenia z dostarczanych przeze mnie usług.",
+
+  // *** Route paths translations ***
   [TranslationKey.ABOUT_PATH]: "o-mnie",
 };
 
