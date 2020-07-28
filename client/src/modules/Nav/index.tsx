@@ -31,13 +31,11 @@ import useDevice from "src/modules/shared/useDevice";
 import FloatButtonWithLabel from "src/modules/Nav/FloatButtonWithLabel";
 import InternalLink from "src/modules/Routes/InternalLink";
 import ExternalLink from "src/modules/shared/ExternalLink";
-import { Location } from "src/modules/Routes/pathKeys";
+import { useRouteMatch } from "react-router-dom";
+import usePath from "src/modules/Routes/usePath";
+import langs from "src/modules/Translations/langs";
 
-interface Props {
-  currentLocation: Location;
-}
-
-const Nav: FC<Props> = ({ currentLocation }) => {
+const Nav: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleIsOpen = useCallback(() => setIsOpen(!isOpen), [
     isOpen,
@@ -45,6 +43,12 @@ const Nav: FC<Props> = ({ currentLocation }) => {
   ]);
   const { t } = useTranslation();
   const { isSize } = useDevice();
+  const { getPath } = usePath();
+  const isAbout =
+    useRouteMatch({
+      path: getPath("about", langs),
+      exact: true,
+    }) !== null;
 
   const isLargerDevice = isSize("large", "extraLarge");
 
@@ -56,7 +60,7 @@ const Nav: FC<Props> = ({ currentLocation }) => {
             <FloatButtonWithLabel
               iconType="About"
               label={t(TranslationKey.ABOUT_ME)}
-              active={currentLocation === "about"}
+              active={isAbout}
             />
           </FloatButtonInternalLink>
           <FloatButtonInternalLink location={`home`}>
