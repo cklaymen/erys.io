@@ -17,6 +17,7 @@ const routesConfig: RouteConfig[] = [
     render: () => {
       return (
         <Layout
+          currentLocation="home"
           renderMain={() => <Home />}
           renderSide={(sideWrapperRef) => (
             <InteractiveChat scrollableWrapperRef={sideWrapperRef} />
@@ -30,6 +31,7 @@ const routesConfig: RouteConfig[] = [
     render: () => {
       return (
         <Layout
+          currentLocation="about"
           renderMain={() => <AboutMain />}
           renderSide={() => <AboutSide />}
         />

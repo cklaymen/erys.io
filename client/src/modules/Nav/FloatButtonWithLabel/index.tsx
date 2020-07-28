@@ -11,11 +11,17 @@ import { IconType } from "src/modules/shared/UI/Icon/config";
 interface Props {
   iconType: IconType;
   label: string;
+  active?: boolean;
   className?: string;
 }
 
-const FloatButtonWithLabel: FC<Props> = ({ iconType, label, className }) => (
-  <FloatButtonWithLabelWrapper className={className}>
+const FloatButtonWithLabel: FC<Props> = ({
+  iconType,
+  label,
+  active,
+  className,
+}) => (
+  <FloatButtonWithLabelWrapper className={className} active={active}>
     <FloatButtonWithLabelContainer>
       <FloatButtonLabel>{label}</FloatButtonLabel>
     </FloatButtonWithLabelContainer>

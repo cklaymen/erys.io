@@ -31,8 +31,13 @@ import useDevice from "src/modules/shared/useDevice";
 import FloatButtonWithLabel from "src/modules/Nav/FloatButtonWithLabel";
 import InternalLink from "src/modules/Routes/InternalLink";
 import ExternalLink from "src/modules/shared/ExternalLink";
+import { Location } from "src/modules/Routes/pathKeys";
 
-const Nav: FC = () => {
+interface Props {
+  currentLocation: Location;
+}
+
+const Nav: FC<Props> = ({ currentLocation }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleIsOpen = useCallback(() => setIsOpen(!isOpen), [
     isOpen,
@@ -51,6 +56,7 @@ const Nav: FC = () => {
             <FloatButtonWithLabel
               iconType="About"
               label={t(TranslationKey.ABOUT_ME)}
+              active={currentLocation === "about"}
             />
           </FloatButtonInternalLink>
           <FloatButtonInternalLink location={`home`}>

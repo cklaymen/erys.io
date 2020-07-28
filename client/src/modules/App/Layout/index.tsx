@@ -15,13 +15,15 @@ import useDevice from "src/modules/shared/useDevice";
 import Footer from "src/modules/Footer";
 import Nav from "src/modules/Nav";
 import InternalLink from "src/modules/Routes/InternalLink";
+import { Location } from "src/modules/Routes/pathKeys";
 
 interface Props {
   renderMain(): JSX.Element;
   renderSide(wrapperRef?: RefObject<HTMLDivElement>): JSX.Element;
+  currentLocation: Location;
 }
 
-const Layout: FC<Props> = ({ renderMain, renderSide }) => {
+const Layout: FC<Props> = ({ renderMain, renderSide, currentLocation }) => {
   const { isSize } = useDevice();
   const isLargerDeviceSize = useMemo(() => isSize("large", "extraLarge"), [
     isSize,
@@ -30,7 +32,7 @@ const Layout: FC<Props> = ({ renderMain, renderSide }) => {
 
   return (
     <LayoutWrapper>
-      <Nav />
+      <Nav currentLocation={currentLocation} />
       {!isLargerDeviceSize && (
         <ScrollProvider>
           <Topbar />

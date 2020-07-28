@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import colors from "src/modules/shared/UI/colors";
 import {
@@ -66,7 +66,7 @@ export const FloatButtonWithLabelContainer = styled.div`
   `}
 `;
 
-export const FloatButtonWithLabelWrapper = styled.div`
+export const FloatButtonWithLabelWrapper = styled.div<{ active?: boolean }>`
   position: relative;
 
   &:hover {
@@ -75,9 +75,6 @@ export const FloatButtonWithLabelWrapper = styled.div`
       background-color: ${colors.lightBlack};
     }
 
-    & ${StyledFloatButton} {
-      ${floatButtonHoverStyle()};
-    }
     & ${FloatButtonLabel} {
       transform: scale(1.05);
     }
@@ -99,4 +96,27 @@ export const FloatButtonWithLabelWrapper = styled.div`
       transform: scale(1.05);
     }
   }
+
+  ${(p) =>
+    p.active
+      ? css`
+          & ${StyledFloatButton} {
+            color: ${colors.yellow};
+            background-color: ${colors.black};
+          }
+          &:hover {
+            & ${StyledFloatButton} {
+              ${floatButtonHoverStyle()};
+              color: ${colors.lightYellow};
+              background-color: ${colors.lightBlack};
+            }
+          }
+        `
+      : css`
+          &:hover {
+            & ${StyledFloatButton} {
+              ${floatButtonHoverStyle()};
+            }
+          }
+        `}
 `;
