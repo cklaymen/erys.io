@@ -15,8 +15,9 @@ function App() {
       <Layout
         renderMain={() => (
           <Switch>
-            {routesConfig.map((it) => (
+            {routesConfig.map((it, index) => (
               <Route
+                key={index}
                 path={getPath(it.location)}
                 render={it.renderMain}
                 exact={true}
@@ -26,8 +27,9 @@ function App() {
         )}
         renderSide={(wrapperRef) => (
           <Switch>
-            {routesConfig.map((it) => (
+            {routesConfig.map((it, index) => (
               <Route
+                key={index}
                 path={getPath(it.location)}
                 render={() => it.renderSide(wrapperRef)}
                 exact={true}
