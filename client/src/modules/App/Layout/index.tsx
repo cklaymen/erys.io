@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useRef, RefObject } from "react";
+import React, { FC, useMemo, useRef, RefObject, ReactElement } from "react";
 
 import {
   LayoutWrapper,
@@ -14,10 +14,11 @@ import Topbar from "src/modules/Topbar";
 import useDevice from "src/modules/shared/useDevice";
 import Footer from "src/modules/Footer";
 import Nav from "src/modules/Nav";
+import InternalLink from "src/modules/Routes/InternalLink";
 
 interface Props {
-  renderMain(): JSX.Element;
-  renderSide(wrapperRef?: RefObject<HTMLDivElement>): JSX.Element;
+  renderMain(): ReactElement;
+  renderSide(wrapperRef?: RefObject<HTMLDivElement>): ReactElement;
 }
 
 const Layout: FC<Props> = ({ renderMain, renderSide }) => {
@@ -41,7 +42,9 @@ const Layout: FC<Props> = ({ renderMain, renderSide }) => {
             {renderSide(isLargerDeviceSize ? sideWrapperRef : undefined)}
             {isLargerDeviceSize && (
               <LogoWrapper>
-                <StyledLogo />
+                <InternalLink location="home">
+                  <StyledLogo />
+                </InternalLink>
               </LogoWrapper>
             )}
           </SideContentWrapper>

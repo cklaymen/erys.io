@@ -1,21 +1,44 @@
 import React from "react";
 
 import GlobalStyle from "../shared/UI/GlobalStyle";
-import Home from "../Home";
 import Layout from "src/modules/App/Layout";
-import InteractiveChat from "src/modules/InteractiveChat";
+import routesConfig from "src/modules/Routes/config";
+import { Route, Switch } from "react-router-dom";
+import usePath from "src/modules/Routes/usePath";
 
 function App() {
+  const { getPath } = usePath();
+
   return (
-    <div>
+    <>
       <GlobalStyle />
       <Layout
-        renderMain={() => <Home />}
-        renderSide={(sideWrapperRef) => (
-          <InteractiveChat scrollableWrapperRef={sideWrapperRef} />
+        renderMain={() => (
+          <Switch>
+            {routesConfig.map((it, index) => (
+              <Route
+                key={index}
+                path={getPath(it.location)}
+                render={it.renderMain}
+                exact={true}
+              />
+            ))}
+          </Switch>
+        )}
+        renderSide={(wrapperRef) => (
+          <Switch>
+            {routesConfig.map((it, index) => (
+              <Route
+                key={index}
+                path={getPath(it.location)}
+                render={() => it.renderSide(wrapperRef)}
+                exact={true}
+              />
+            ))}
+          </Switch>
         )}
       />
-    </div>
+    </>
   );
 }
 

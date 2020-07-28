@@ -1,7 +1,6 @@
 import React, { FC, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { SectionWrapper } from "src/modules/Home/shared/components";
 import Heading from "src/modules/shared/UI/Heading";
 import P from "src/modules/shared/UI/Paragraph";
 import { TranslationKey } from "src/modules/Translations/Translation";
@@ -11,6 +10,7 @@ import {
   TilesScrollableContainer,
 } from "src/modules/Home/Steps/components";
 import useDevice from "src/modules/shared/useDevice";
+import Section from "src/modules/shared/UI/Section";
 
 const Steps: FC = () => {
   const { t } = useTranslation();
@@ -20,7 +20,7 @@ const Steps: FC = () => {
     [isSize]
   );
   return (
-    <SectionWrapper>
+    <Section>
       <Heading>{t(TranslationKey.STEPS)}</Heading>
       <P>{t(TranslationKey.STEPS_SHORT_DESCRIPTION)}</P>
       <TilesWrapper>
@@ -55,7 +55,7 @@ const Steps: FC = () => {
           />
         </TilesScrollableContainer>
       </TilesWrapper>
-    </SectionWrapper>
+    </Section>
   );
 };
 

@@ -10,9 +10,17 @@ import Logo from "src/modules/shared/UI/Logo";
 import colors from "src/modules/shared/UI/colors";
 import { defaultDropFadeWhiteShadow } from "src/modules/shared/UI/defaults";
 
-export const LayoutWrapper = styled.div``;
+export const LayoutWrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
 export const ContentWrapper = styled.div`
+  flex: auto;
+  box-sizing: border-box;
+  width: 100%;
   padding: ${CONTENT_PADDING_EXTRA_SMALL};
   ${media.medium`
     padding: ${CONTENT_PADDING_MEDIUM.join(" ")};
@@ -51,7 +59,7 @@ export const LogoWrapper = styled.div`
   position: sticky;
   top: 0;
   width: 100%;
-  margin: 15vh auto 6vh auto;
+  margin: 15vh auto 30px auto;
   padding: 0 30px 30px 110px;
   box-sizing: border-box;
   text-align: center;
@@ -61,6 +69,7 @@ export const LogoWrapper = styled.div`
 
 export const StyledLogo = styled(Logo)`
   width: 80%;
+  height: auto;
 `;
 
 export const ContentMainWrapper = styled.div`

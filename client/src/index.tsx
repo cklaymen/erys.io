@@ -5,14 +5,17 @@ import App from "./modules/App";
 import * as serviceWorker from "./serviceWorker";
 import initTranslations from "./modules/Translations";
 import DeviceProvider from "src/modules/shared/useDevice/Provider";
+import { BrowserRouter } from "react-router-dom";
 
 initTranslations();
 
 ReactDOM.render(
   <React.StrictMode>
-    <DeviceProvider>
-      <App />
-    </DeviceProvider>
+    <BrowserRouter>
+      <DeviceProvider>
+        <App />
+      </DeviceProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

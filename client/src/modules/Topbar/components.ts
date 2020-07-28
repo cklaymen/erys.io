@@ -8,6 +8,7 @@ import {
   defaultDropFadeWhiteShadow,
 } from "src/modules/shared/UI/defaults";
 import media from "src/modules/shared/UI/media";
+import { CONTENT_PADDING_MEDIUM } from "src/modules/App/Layout/const";
 
 export const TOPBAR_HEIGHT = "90px";
 export const TOPBAR_HEIGTH_MEDIUM = "140px";
@@ -24,6 +25,7 @@ export const TopbarContainer = styled.div<Props>`
   width: 100%;
   z-index: 10;
   background-color: ${colors.white};
+  transition: padding ${DEFAULT_TRANSITION_TIME};
 
   ${(p) =>
     p.mini &&
@@ -34,12 +36,16 @@ export const TopbarContainer = styled.div<Props>`
 
   ${media.medium<Props>`
     height: 110px;
-    padding: 30px;
     ${(p) =>
-      p.mini &&
-      css`
-        height: 70px;
-      `}
+      p.mini
+        ? css`
+            height: 70px;
+            padding: 30px;
+          `
+        : css`
+            padding: 30px ${CONTENT_PADDING_MEDIUM[1]} 30px
+              ${CONTENT_PADDING_MEDIUM[3]};
+          `}
   `};
 `;
 
@@ -53,7 +59,7 @@ export const TopbarWrapper = styled.div`
 export const LogoWrapper = styled.div<Props>`
   width: 100%;
   height: 60px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;

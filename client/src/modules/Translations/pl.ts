@@ -2,7 +2,7 @@ import Translation, { TranslationKey } from "./Translation";
 
 const pl: Translation = {
   [TranslationKey.INIT_BUBBLE_MESSAGE]:
-    "Zajmuję się tworzeniem oprogramowania (złożonych <1>aplikacji webowych</1> jak i prostych <3>stron internetowych</3>). Chętnie podejmuję się realizacji dedykowanych rozwiązań, które mogą zautomatyzować bądź usprawnić zadania w Państwa działalności. Wykorzystuję <5>nowoczesne technologie</5>, które zapewniają sprawne i bezpieczne działanie programu. Posiadam odpowiednie <7>wykształcenie</7> oraz <9>doświadczenie</9> w tym kierunku. Więcej o mnie dowiesz się <11>tutaj</11>",
+    "Zajmuję się tworzeniem oprogramowania (złożonych <1>aplikacji webowych</1> jak i prostych <3>stron internetowych</3>). Chętnie podejmuję się realizacji dedykowanych rozwiązań, które mogą zautomatyzować bądź usprawnić zadania w Państwa działalności. Wykorzystuję <5>nowoczesne technologie</5>, które zapewniają sprawne i bezpieczne działanie programu. Posiadam odpowiednie <7>wykształcenie</7> oraz <9>doświadczenie</9> w tym kierunku. Więcej o mnie dowiesz się <11><0>tutaj</0></11>",
   [TranslationKey.QUESTION_ABOUT_WEB_APPS]: "Co to jest aplikacja webowa?",
   [TranslationKey.ANSWER_ABOUT_WEB_APPS]:
     "Aplikacja webowa to, w pewnym uproszczeniu, program komputerowy działający w oknie przeglądarki internetowej. Przykładem aplikacji webowej są: YouTube, Facebook, Allegro, Netflix oraz wiele innych. Bardziej szczegółowo mówiąc, aplikacja webowa działa za pośrednictwem serwera www, który dostarcza treści oraz funkcjonalności - w odróżnieniu do tradycyjnego programu komputerowego, który jest instalowany bezpośrednio na dysku użytkownika. Jedną z zalet takich aplikacji jest łatwy dostęp z dowolnego urządzenia, które ma połączenie z siecią.",
@@ -56,6 +56,14 @@ const pl: Translation = {
     "Jestem programistą, web deweloperem. Tworzę dedykowane oprogramowanie oparte o technologie internetowe. Napisz do mnie czego potrzebujesz, a przedstawię najlepsze możliwe rozwiązania.",
   [TranslationKey.CONTACT]: "Kontakt",
   [TranslationKey.WORKS]: "Realizacje",
+  [TranslationKey.ABOUT_ME_DESCRIPTION]:
+    "Jestem informatykiem programistą. Ukończyłem studia magisterskie oraz inżynierskie na Politechnice Śląskiej w Gliwicach. Komputerami oraz programowaniem interesuję się od wczesnych lat, co potwierdzają moje projekty z tamtego okresu. Będąc w liceum stworzyłem aplikację z bazą pytań na prawo jazdy, z której wówczas korzystała większość osób przygotowujących się do tego egzaminu. W trakcie studiów współtworzyłem projekt serwisu społecznościowego private.center oraz pracowałem w firmie tworzącej oprogramowanie. Brałem również udział w prezentacjach oraz warsztatach, na temat dobrych praktyk oraz nowych technologii, które były organizowane na terenie uczelni lub poza nią przez różne firmy programistyczne z Gliwic.",
+  [TranslationKey.ABOUT_COMPANY]: "O firmie",
+  [TranslationKey.ABOUT_COMPANY_DESCRIPTION]:
+    "Po ukończeniu studiów postanowiłem założyć własną działalność gospodarczą, ponieważ cenię sobie niezależność oraz pracę na własny rachunek. Wierzę, że moja pasja do programowania przyczyni się do zadowolenia z dostarczanych przeze mnie usług.",
+
+  // *** Route paths translations ***
+  [TranslationKey.ABOUT_PATH]: "o-mnie",
 };
 
 export default pl;
