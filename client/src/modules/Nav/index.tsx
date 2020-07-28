@@ -41,6 +41,9 @@ const Nav: FC = () => {
     isOpen,
     setIsOpen,
   ]);
+  const handlePageLinkClick = useCallback(() => {
+    setIsOpen(false);
+  }, []);
   const { t } = useTranslation();
   const { isSize } = useDevice();
   const { getPath } = usePath();
@@ -56,20 +59,29 @@ const Nav: FC = () => {
     return (
       <FloatButtonsWrapper>
         <NavPages>
-          <FloatButtonInternalLink location={"about"}>
+          <FloatButtonInternalLink
+            location={"about"}
+            onClick={handlePageLinkClick}
+          >
             <FloatButtonWithLabel
               iconType="About"
               label={t(TranslationKey.ABOUT_ME)}
               active={isAbout}
             />
           </FloatButtonInternalLink>
-          <FloatButtonInternalLink location={`home`}>
+          <FloatButtonInternalLink
+            location={`home`}
+            onClick={handlePageLinkClick}
+          >
             <FloatButtonWithLabel
               iconType="Services"
               label={t(TranslationKey.SERVICES)}
             />
           </FloatButtonInternalLink>
-          <FloatButtonInternalLink location={`home`}>
+          <FloatButtonInternalLink
+            location={`home`}
+            onClick={handlePageLinkClick}
+          >
             <FloatButtonWithLabel
               iconType="Works"
               label={t(TranslationKey.WORKS)}
@@ -97,17 +109,17 @@ const Nav: FC = () => {
       />
       <NavContainer>
         <NavPages>
-          <InternalLink location="about">
+          <InternalLink location="about" onClick={handlePageLinkClick}>
             <NavLink>
               <NavLinkText>{t(TranslationKey.ABOUT_ME)}</NavLinkText>
             </NavLink>
           </InternalLink>
-          <InternalLink location="home">
+          <InternalLink location="home" onClick={handlePageLinkClick}>
             <NavLink>
               <NavLinkText>{t(TranslationKey.SERVICES)}</NavLinkText>
             </NavLink>
           </InternalLink>
-          <InternalLink location="home">
+          <InternalLink location="home" onClick={handlePageLinkClick}>
             <NavLink>
               <NavLinkText>{t(TranslationKey.WORKS)}</NavLinkText>
             </NavLink>

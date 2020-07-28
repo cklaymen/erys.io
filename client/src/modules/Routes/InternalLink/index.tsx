@@ -7,19 +7,31 @@ import { Location } from "src/modules/Routes/pathKeys";
 interface Props {
   location: Location;
   className?: string;
+  onClick?(event: React.MouseEvent): void;
 }
 
-const InternalLink: FC<Props> = ({ location, children, className }) => {
+const InternalLink: FC<Props> = ({
+  location,
+  children,
+  className,
+  onClick,
+}) => {
   const { getPath } = usePath();
 
   const path = useMemo(() => getPath(location), [location, getPath]);
 
-  const scrollTop = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  const handleClick = useCallback(
+    (event: React.MouseEvent) => {
+      if (onClick) {
+        onClick(event);
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    [onClick]
+  );
 
   return (
-    <StyledLink to={path} onClick={scrollTop} className={className}>
+    <StyledLink to={path} onClick={handleClick} className={className}>
       {children}
     </StyledLink>
   );
