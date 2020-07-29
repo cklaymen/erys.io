@@ -79,6 +79,10 @@ export const ContentMainWrapper = styled.div`
     height: 30px;
   }
 
+  ${SideWrapper} + & {
+    margin-top: 40px;
+  }
+
   ${media.large`
     width: 50%;
     margin-left: 3vw;
