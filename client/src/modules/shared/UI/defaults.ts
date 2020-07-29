@@ -52,9 +52,9 @@ export const defaultClickable = () => css`
   }
 `;
 
-export const defaultBoxFocus = () => css`
+export const defaultBoxFocus = (color: string = colors.yellow) => css`
   &:focus {
     outline: none;
-    box-shadow: 0 0 5px ${colors.lightYellow};
+    box-shadow: 0 0 5px ${color};
   }
 `;
