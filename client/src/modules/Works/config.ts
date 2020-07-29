@@ -1,9 +1,11 @@
 import { TranslationKey } from "src/modules/Translations/Translation";
 import { IconType } from "src/modules/shared/UI/Icon/config";
-import invoiceVideo from "src/assets/videos/invoices_converter.mov";
+import invoiceConverterVideo from "src/assets/videos/invoices_converter.mov";
+import invoiceConverterPoster from "src/assets/images/invoices_converter.jpg";
 
 export interface WorkConfig {
-  videoURL: string;
+  videoSrc: string;
+  videoPosterSrc: string;
   titleKey: TranslationKey;
   descriptionKey: TranslationKey;
   technologies: IconType[];
@@ -11,7 +13,8 @@ export interface WorkConfig {
 
 const worksConfig: WorkConfig[] = [
   {
-    videoURL: invoiceVideo,
+    videoSrc: invoiceConverterVideo,
+    videoPosterSrc: invoiceConverterPoster,
     titleKey: TranslationKey.INVOICE_CONVERTER_TITLE,
     descriptionKey: TranslationKey.INVOICE_CONVERTER_DESCRIPTION,
     technologies: ["React"],

@@ -22,7 +22,8 @@ const Work: FC<Props> = ({ config }) => {
   return (
     <Section style={{ position: "relative" }}>
       <WorkVideo
-        src={config.videoURL}
+        src={config.videoSrc}
+        poster={config.videoPosterSrc}
         isPlaying={isPlaying}
         controls
         onPlay={() => setIsPlaying(true)}
