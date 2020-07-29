@@ -64,6 +64,7 @@ const pl: Translation = {
 
   // *** Route paths translations ***
   [TranslationKey.ABOUT_PATH]: "o-mnie",
+  [TranslationKey.WORKS_PATH]: "realizacje",
 };
 
 export default pl;
