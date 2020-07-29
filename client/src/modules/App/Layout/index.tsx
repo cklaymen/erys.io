@@ -19,9 +19,10 @@ import InternalLink from "src/modules/Routes/InternalLink";
 interface Props {
   renderMain(): ReactElement;
   renderSide(wrapperRef?: RefObject<HTMLDivElement>): ReactElement;
+  hideSide?: boolean;
 }
 
-const Layout: FC<Props> = ({ renderMain, renderSide }) => {
+const Layout: FC<Props> = ({ renderMain, renderSide, hideSide }) => {
   const { isSize } = useDevice();
   const isLargerDeviceSize = useMemo(() => isSize("large", "extraLarge"), [
     isSize,
@@ -37,18 +38,20 @@ const Layout: FC<Props> = ({ renderMain, renderSide }) => {
         </ScrollProvider>
       )}
       <ContentWrapper>
-        <SideWrapper ref={sideWrapperRef}>
-          <SideContentWrapper>
-            {renderSide(isLargerDeviceSize ? sideWrapperRef : undefined)}
-            {isLargerDeviceSize && (
-              <LogoWrapper>
-                <InternalLink location="home">
-                  <StyledLogo />
-                </InternalLink>
-              </LogoWrapper>
-            )}
-          </SideContentWrapper>
-        </SideWrapper>
+        {!hideSide && (
+          <SideWrapper ref={sideWrapperRef}>
+            <SideContentWrapper>
+              {renderSide(isLargerDeviceSize ? sideWrapperRef : undefined)}
+              {isLargerDeviceSize && (
+                <LogoWrapper>
+                  <InternalLink location="home">
+                    <StyledLogo />
+                  </InternalLink>
+                </LogoWrapper>
+              )}
+            </SideContentWrapper>
+          </SideWrapper>
+        )}
         <ContentMainWrapper>{renderMain()}</ContentMainWrapper>
       </ContentWrapper>
       <Footer />

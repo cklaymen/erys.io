@@ -1,4 +1,5 @@
 import Translation, { TranslationKey } from "./Translation";
+import { COMPANY_NAME } from "src/const";
 
 const pl: Translation = {
   [TranslationKey.INIT_BUBBLE_MESSAGE]:
@@ -61,9 +62,17 @@ const pl: Translation = {
   [TranslationKey.ABOUT_COMPANY]: "O firmie",
   [TranslationKey.ABOUT_COMPANY_DESCRIPTION]:
     "Po ukończeniu studiów postanowiłem założyć własną działalność gospodarczą, ponieważ cenię sobie niezależność oraz pracę na własny rachunek. Wierzę, że moja pasja do programowania przyczyni się do zadowolenia z dostarczanych przeze mnie usług.",
+  [TranslationKey.WORKS_DESCRIPTION]: `Spis projektów, które wykonałem jako "${COMPANY_NAME}".`,
+  [TranslationKey.USED_TECHNOLOGIES]: "Wykorzystane technologie",
+
+  // *** Works data ***
+  [TranslationKey.INVOICE_CONVERTER_TITLE]: "Konwerter faktur",
+  [TranslationKey.INVOICE_CONVERTER_DESCRIPTION]:
+    "Aplikacja webowa służąca do konwertowania pliku z fakturami. Dzięki niej zautomatyzowano proces księgowania dużej ilości faktur, przez co oszczędzono pracę księgowych, a tym samym pieniądze klienta.",
 
   // *** Route paths translations ***
   [TranslationKey.ABOUT_PATH]: "o-mnie",
+  [TranslationKey.WORKS_PATH]: "realizacje",
 };
 
 export default pl;

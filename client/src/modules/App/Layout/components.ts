@@ -29,7 +29,7 @@ export const ContentWrapper = styled.div`
     padding: ${CONTENT_PADDING_LARGE.join(" ")};
     display: flex;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     position: relative;
   `}
@@ -77,6 +77,10 @@ export const ContentMainWrapper = styled.div`
     display: block;
     content: "";
     height: 30px;
+  }
+
+  ${SideWrapper} + & {
+    margin-top: 40px;
   }
 
   ${media.large`

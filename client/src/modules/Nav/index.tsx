@@ -52,6 +52,11 @@ const Nav: FC = () => {
       path: getPath("about", langs),
       exact: true,
     }) !== null;
+  const isWorks =
+    useRouteMatch({
+      path: getPath("works", langs),
+      exact: true,
+    }) !== null;
 
   const isLargerDevice = isSize("large", "extraLarge");
 
@@ -79,12 +84,13 @@ const Nav: FC = () => {
             />
           </FloatButtonInternalLink>
           <FloatButtonInternalLink
-            location={`home`}
+            location={`works`}
             onClick={handlePageLinkClick}
           >
             <FloatButtonWithLabel
               iconType="Works"
               label={t(TranslationKey.WORKS)}
+              active={isWorks}
             />
           </FloatButtonInternalLink>
         </NavPages>
@@ -119,7 +125,7 @@ const Nav: FC = () => {
               <NavLinkText>{t(TranslationKey.SERVICES)}</NavLinkText>
             </NavLink>
           </InternalLink>
-          <InternalLink location="home" onClick={handlePageLinkClick}>
+          <InternalLink location="works" onClick={handlePageLinkClick}>
             <NavLink>
               <NavLinkText>{t(TranslationKey.WORKS)}</NavLinkText>
             </NavLink>
