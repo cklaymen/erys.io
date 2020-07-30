@@ -64,6 +64,8 @@ const pl: Translation = {
     "Po ukończeniu studiów postanowiłem założyć własną działalność gospodarczą, ponieważ cenię sobie niezależność oraz pracę na własny rachunek. Wierzę, że moja pasja do programowania przyczyni się do zadowolenia z dostarczanych przeze mnie usług.",
   [TranslationKey.WORKS_DESCRIPTION]: `Spis projektów, które wykonałem jako "${COMPANY_NAME}".`,
   [TranslationKey.USED_TECHNOLOGIES]: "Wykorzystane technologie",
+  [TranslationKey.SERVICES_DESCRIPTION]:
+    'Zajmuję się tworzeniem oprogramowania na zamówienie oraz wszystkim innym związanym z jego poprawnym uruchomieniem i dalszym działaniem. Są to rozwiązania "szyte na miarę" według wcześniejszych rozmów i ustaleń z zamawiającym. Do swoich realizacji wykorzystuję technologie webowe, dzięki czemu tworzony program dostosowany jest do różnych urządzeń oraz systemów operacyjnych, ponieważ działa z wykorzystaniem przeglądarki internetowej.',
 
   // *** Works data ***
   [TranslationKey.INVOICE_CONVERTER_TITLE]: "Konwerter faktur",
@@ -72,6 +74,7 @@ const pl: Translation = {
 
   // *** Route paths translations ***
   [TranslationKey.ABOUT_PATH]: "o-mnie",
+  [TranslationKey.SERVICES_PATH]: "uslugi",
   [TranslationKey.WORKS_PATH]: "realizacje",
 };
 

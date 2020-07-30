@@ -5,6 +5,7 @@ import InteractiveChat from "src/modules/InteractiveChat";
 import Home from "src/modules/Home";
 import { AboutMain, AboutSide } from "src/modules/About";
 import WorksMain from "src/modules/Works/Main";
+import ServicesMain from "src/modules/Services/Main";
 
 type RenderSide = (wrapperRef?: RefObject<HTMLDivElement>) => ReactElement;
 type RenderMain = () => ReactElement;
@@ -63,6 +64,20 @@ const routesConfig: RouteConfig[] = [
     main: {
       key: "WorksMain",
       render: () => <WorksMain />,
+    },
+  },
+  {
+    location: "services",
+    side: {
+      key: "InteractiveChat",
+      render: (sideWrapperRef) => (
+        <InteractiveChat scrollableWrapperRef={sideWrapperRef} />
+      ),
+      onlyOnLargerDevice: true,
+    },
+    main: {
+      key: "ServicesMain",
+      render: () => <ServicesMain />,
     },
   },
 ];

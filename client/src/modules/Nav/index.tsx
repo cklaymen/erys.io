@@ -52,6 +52,11 @@ const Nav: FC = () => {
       path: getPath("about", langs),
       exact: true,
     }) !== null;
+  const isServices =
+    useRouteMatch({
+      path: getPath("services", langs),
+      exact: true,
+    }) !== null;
   const isWorks =
     useRouteMatch({
       path: getPath("works", langs),
@@ -65,7 +70,7 @@ const Nav: FC = () => {
       <FloatButtonsWrapper>
         <NavPages>
           <FloatButtonInternalLink
-            location={"about"}
+            location="about"
             onClick={handlePageLinkClick}
           >
             <FloatButtonWithLabel
@@ -75,16 +80,17 @@ const Nav: FC = () => {
             />
           </FloatButtonInternalLink>
           <FloatButtonInternalLink
-            location={`home`}
+            location="services"
             onClick={handlePageLinkClick}
           >
             <FloatButtonWithLabel
               iconType="Services"
               label={t(TranslationKey.SERVICES)}
+              active={isServices}
             />
           </FloatButtonInternalLink>
           <FloatButtonInternalLink
-            location={`works`}
+            location="works"
             onClick={handlePageLinkClick}
           >
             <FloatButtonWithLabel
@@ -120,7 +126,7 @@ const Nav: FC = () => {
               <NavLinkText>{t(TranslationKey.ABOUT_ME)}</NavLinkText>
             </NavLink>
           </InternalLink>
-          <InternalLink location="home" onClick={handlePageLinkClick}>
+          <InternalLink location="services" onClick={handlePageLinkClick}>
             <NavLink>
               <NavLinkText>{t(TranslationKey.SERVICES)}</NavLinkText>
             </NavLink>
