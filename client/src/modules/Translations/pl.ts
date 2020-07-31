@@ -28,7 +28,7 @@ const pl = {
 
   Świadczę również usługi programistyczne związane z rozwojem oprogramowania w technologiach webowych - jako tzw. fullstack developer. Przywiązuję dużą uwagę do jakości tworzonego kodu oraz optymalizacji działania programu.`,
   [TranslationKey.SERVICES_DESCRIPTION_SUMMARY]:
-    "Skontaktuj się ze mną i napisz, czego potrzebujesz. Umówimy się na rozmowę, na której wyjaśnimy wszystkie szczegóły i niejasności. Znając potrzeby przedstawię możliwe oraz najlepiej dopasowane rozwiązania.",
+    "Skontaktuj się ze mną i napisz, czego potrzebujesz. Umówimy się na rozmowę, na której omówimy szczegóły i wyjaśnimy niejasności. Znając potrzeby przedstawię możliwe oraz najlepiej dopasowane rozwiązania.",
   [TranslationKey.WEB_APPS_SITES]: "Aplikacje webowe | Strony internetowe",
   [TranslationKey.WEB_APPS_SITES_SERVICE_SHORT_DESCRIPTION]:
     "Projektowanie oraz tworzenie w pełni funkcjonalnych aplikacji webowych i stron internetowych. Rozwiązania dopasowane do indywidualnych potrzeb klienta.",
