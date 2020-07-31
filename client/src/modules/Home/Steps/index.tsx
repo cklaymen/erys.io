@@ -27,28 +27,28 @@ const Steps: FC = () => {
         <TilesScrollableContainer>
           <TileWithWidth
             title={t(TranslationKey.NEED_ANALYSIS_STEP_TITLE)}
-            text={t(TranslationKey.NEED_ANALYSIS_STEP_DESCRIPTION)}
+            description={t(TranslationKey.NEED_ANALYSIS_STEP_DESCRIPTION)}
             illustrationType="Checklist"
             ordinalNumber={1}
             view={view}
           />
           <TileWithWidth
             title={t(TranslationKey.GRAPHIC_DESIGN_STEP_TITLE)}
-            text={t(TranslationKey.GRAPHIC_DESIGN_STEP_DESCRIPTION)}
+            description={t(TranslationKey.GRAPHIC_DESIGN_STEP_DESCRIPTION)}
             illustrationType="Project"
             ordinalNumber={2}
             view={view}
           />
           <TileWithWidth
             title={t(TranslationKey.CREATING_APP_STEP_TITLE)}
-            text={t(TranslationKey.CREATING_APP_STEP_DESCRIPTION)}
+            description={t(TranslationKey.CREATING_APP_STEP_DESCRIPTION)}
             illustrationType="Developer"
             ordinalNumber={3}
             view={view}
           />
           <TileWithWidth
             title={t(TranslationKey.SUPPORT_STEP_TITLE)}
-            text={t(TranslationKey.SUPPORT_STEP_DESCRIPTION)}
+            description={t(TranslationKey.SUPPORT_STEP_DESCRIPTION)}
             illustrationType="DoneApp"
             ordinalNumber={4}
             view={view}

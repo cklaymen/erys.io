@@ -11,6 +11,7 @@ import { TranslationKey } from "src/modules/Translations/Translation";
 import P from "src/modules/shared/UI/Paragraph";
 import Button from "src/modules/shared/UI/Button";
 import Section from "src/modules/shared/UI/Section";
+import InternalLink from "src/modules/Routes/InternalLink";
 
 const Services: FC = () => {
   const { t } = useTranslation();
@@ -21,22 +22,28 @@ const Services: FC = () => {
       <TilesWrapper>
         <TileWithMargin
           title={t(TranslationKey.WEB_APPS_SITES)}
-          text={t(TranslationKey.WEB_APPS_SITES_SERVICE_SHORT_DESCRIPTION)}
+          description={t(
+            TranslationKey.WEB_APPS_SITES_SERVICE_SHORT_DESCRIPTION
+          )}
           illustrationType="Application"
         />
         <TileWithMargin
           title={t(TranslationKey.CODING)}
-          text={t(TranslationKey.CODING_SERVICE_SHORT_DESCRIPTION)}
+          description={t(TranslationKey.CODING_SERVICE_SHORT_DESCRIPTION)}
           illustrationType="Programming"
         />
         <TileWithMargin
           title={t(TranslationKey.SERVER_DOMAIN)}
-          text={t(TranslationKey.SERVER_DOMAIN_SERVICE_SHORT_DESCRIPTION)}
+          description={t(
+            TranslationKey.SERVER_DOMAIN_SERVICE_SHORT_DESCRIPTION
+          )}
           illustrationType="Server"
         />
       </TilesWrapper>
       <ButtonWrapper>
-        <Button>{t(TranslationKey.MORE_ABOUT_SERVICES)}</Button>
+        <InternalLink location="services">
+          <Button>{t(TranslationKey.MORE_ABOUT_SERVICES)}</Button>
+        </InternalLink>
       </ButtonWrapper>
     </Section>
   );

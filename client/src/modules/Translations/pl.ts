@@ -1,7 +1,7 @@
-import Translation, { TranslationKey } from "./Translation";
+import { TranslationKey } from "./Translation";
 import { COMPANY_NAME } from "src/const";
 
-const pl: Translation = {
+const pl = {
   [TranslationKey.INIT_BUBBLE_MESSAGE]:
     "Zajmuję się tworzeniem oprogramowania (złożonych <1>aplikacji webowych</1> jak i prostych <3>stron internetowych</3>). Chętnie podejmuję się realizacji dedykowanych rozwiązań, które mogą zautomatyzować bądź usprawnić zadania w Państwa działalności. Wykorzystuję <5>nowoczesne technologie</5>, które zapewniają sprawne i bezpieczne działanie programu. Posiadam odpowiednie <7>wykształcenie</7> oraz <9>doświadczenie</9> w tym kierunku. Więcej o mnie dowiesz się <11><0>tutaj</0></11>",
   [TranslationKey.QUESTION_ABOUT_WEB_APPS]: "Co to jest aplikacja webowa?",
@@ -23,16 +23,27 @@ const pl: Translation = {
     "Przez ponad dwa lata pracowałem w firmie (Gorrion Software House w Gliwicach) wytwarzającej oprogramowanie. Pracowałem nad projektem serwisu społecznościowego private.center, który brał udział w kampanii Kickstarter. W 2013 roku stworzyłem serwis do testów na prawo jazdy (prawkobazapytan). Ponadto mam na swoim koncie kilka własnych projektów, w tym gry na przeglądarkę internetową, które tworzyłem będąc jeszcze w liceum.",
   [TranslationKey.SERVICES]: "Usługi",
   [TranslationKey.SERVICES_SHORT_DESCRIPTION]:
-    "Świadczę usługi z zakresu szeroko pojętego programowania, skupiając się na mojej specjalizacji - czyli technologiach internetowych. Wyróżniłem 3 główne grupy zadań, którymi się trudnię.",
+    "Świadczę usługi z zakresu szeroko pojętego programowania, skupiając się na mojej specjalizacji - czyli technologiach internetowych. Wyróżniłem 3 główne grupy zadań, którymi się zajmuję.",
+  [TranslationKey.SERVICES_DESCRIPTION]: `Zajmuję się tworzeniem oprogramowania na zamówienie oraz wszystkim innym związanym z jego poprawnym uruchomieniem i dalszym działaniem. Są to rozwiązania "szyte na miarę" według wcześniejszych rozmów i ustaleń z zamawiającym. Do swoich realizacji wykorzystuję technologie webowe, dzięki czemu tworzony program dostosowany jest do różnych urządzeń oraz systemów operacyjnych, ponieważ działa z wykorzystaniem przeglądarki internetowej.
+
+  Świadczę również usługi programistyczne związane z rozwojem oprogramowania w technologiach webowych - jako tzw. fullstack developer. Przywiązuję dużą uwagę do jakości tworzonego kodu oraz optymalizacji działania programu.`,
+  [TranslationKey.SERVICES_DESCRIPTION_SUMMARY]:
+    "Skontaktuj się ze mną i napisz, czego potrzebujesz. Umówimy się na rozmowę, na której omówimy szczegóły i wyjaśnimy niejasności. Znając potrzeby przedstawię możliwe oraz najlepiej dopasowane rozwiązania.",
   [TranslationKey.WEB_APPS_SITES]: "Aplikacje webowe | Strony internetowe",
   [TranslationKey.WEB_APPS_SITES_SERVICE_SHORT_DESCRIPTION]:
     "Projektowanie oraz tworzenie w pełni funkcjonalnych aplikacji webowych i stron internetowych. Rozwiązania dopasowane do indywidualnych potrzeb klienta.",
+  [TranslationKey.WEB_APPS_SITES_SERVICE_DESCRIPTION]:
+    "Projektuję oraz tworzę od postaw dedykowane oprogramowanie według konkretnych wytycznych zamawiającego. W zaleności od potrzeby jest to:<1><0>Rozbudowana aplikacja webowa, na którą składa się część działająca na serwerze oraz część działająca na urządzeniu użytkownika,</0><1>Strona internetowa z możliwością edycji treści, która również wymaga części działającej na serwerze oraz na urządzeniu użytkownika,</1><2>Statyczna strona internetowa, której treść nie jest możliwa do bezpośredniej modyfikacji.</2></1>Poszczególne rozwiązanie proponowane jest na podstawie wcześniejszych rozmów i ustaleń z zamawiającym.",
   [TranslationKey.CODING]: "Programowanie",
   [TranslationKey.CODING_SERVICE_SHORT_DESCRIPTION]:
     "Realizacja zadań związanych z rozwijaniem oprogramowania w technologiach webowych, takich jak m.in.: JavaScript (TypeScript), ReactJS, NodeJS z zachowaniem dobrych praktyk i czystego kodu.",
+  [TranslationKey.CODING_SERVICE_DESCRIPTION]:
+    "Podejmuję się zadań związanych z rozwijaniem oprogramowania w technologiach webowych. Mogą to być modyfikacje istniejących programów lub współpraca z zespołem przy tworzeniu nowego produktu. Technologie, z którymi mam największe doświadczenie to React oraz Node. Obsługuję bazy danych relacyjne (MySQL) oraz zorientowane na dokumenty (MongoDB). Na codzień korzystam z Docker-a i systemu kontroli wersji GIT.",
   [TranslationKey.SERVER_DOMAIN]: "Serwer oraz domena",
   [TranslationKey.SERVER_DOMAIN_SERVICE_SHORT_DESCRIPTION]:
-    "Administracja serwerem, konfiguracja domeny oraz wszystko inne związane z poprawnym działaniem aplikacji.",
+    "Administracja serwerem, konfiguracja domeny oraz wszystko inne związane z poprawnym działaniem oprogramowania.",
+  [TranslationKey.SERVER_DOMAIN_SERVICE_DESCRIPTION]:
+    "Administracja serwerem, konfiguracja domeny oraz wszystko inne związane z poprawnym działaniem oprogramowania.",
   [TranslationKey.MORE_ABOUT_SERVICES]: "Dowiedz się więcej o usługach",
   [TranslationKey.STEPS]: "Etapy współpracy",
   [TranslationKey.STEPS_SHORT_DESCRIPTION]:
@@ -72,6 +83,7 @@ const pl: Translation = {
 
   // *** Route paths translations ***
   [TranslationKey.ABOUT_PATH]: "o-mnie",
+  [TranslationKey.SERVICES_PATH]: "uslugi",
   [TranslationKey.WORKS_PATH]: "realizacje",
 };
 

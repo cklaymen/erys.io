@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 
 import {
   TileWrapper,
   TileTitle,
-  TileText,
+  TileDescription,
   TileIllustration,
   TileContent,
   TileIllustrationWrapper,
@@ -11,18 +11,18 @@ import {
 } from "./components";
 import { IllustrationType } from "src/modules/shared/UI/Illustration/config";
 
-interface Props {
+export interface TileProps {
   title: string;
-  text: string;
+  description: string | ReactElement;
   illustrationType: IllustrationType;
   ordinalNumber?: number;
   view?: "horizontal" | "vertical";
   className?: string;
 }
 
-const Tile: FC<Props> = ({
+const Tile: FC<TileProps> = ({
   title,
-  text,
+  description,
   illustrationType,
   ordinalNumber,
   view = "horizontal",
@@ -35,7 +35,7 @@ const Tile: FC<Props> = ({
     </TileIllustrationWrapper>
     <TileContent>
       <TileTitle view={view}>{title}</TileTitle>
-      <TileText view={view}>{text}</TileText>
+      <TileDescription view={view}>{description}</TileDescription>
     </TileContent>
   </TileWrapper>
 );

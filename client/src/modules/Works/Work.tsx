@@ -34,7 +34,7 @@ const Work: FC<Props> = ({ config }) => {
       <TechnologiesWrapper>
         <span>{t(TranslationKey.USED_TECHNOLOGIES)}:</span>
         {config.technologies.map((iconType) => (
-          <TechnologyIcon type={iconType} title={iconType} />
+          <TechnologyIcon key={iconType} type={iconType} title={iconType} />
         ))}
       </TechnologiesWrapper>
     </Section>
