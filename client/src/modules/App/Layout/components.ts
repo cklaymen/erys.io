@@ -8,7 +8,10 @@ import {
 import media from "src/modules/shared/UI/media";
 import Logo from "src/modules/shared/UI/Logo";
 import colors from "src/modules/shared/UI/colors";
-import { defaultDropFadeWhiteShadow } from "src/modules/shared/UI/defaults";
+import {
+  defaultDropFadeWhiteShadow,
+  defaultAppearanceAnimation,
+} from "src/modules/shared/UI/defaults";
 
 export const LayoutWrapper = styled.div`
   min-height: 100vh;
@@ -56,6 +59,8 @@ export const SideContentWrapper = styled.div`
 `;
 
 export const LogoWrapper = styled.div`
+  ${defaultDropFadeWhiteShadow()};
+  ${defaultAppearanceAnimation()}
   position: sticky;
   top: 0;
   width: 100%;
@@ -64,7 +69,6 @@ export const LogoWrapper = styled.div`
   box-sizing: border-box;
   text-align: center;
   background-color: ${colors.white};
-  ${defaultDropFadeWhiteShadow()};
 `;
 
 export const StyledLogo = styled(Logo)`

@@ -6,6 +6,7 @@ import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
 import {
   defaultDropShadow,
   defaultDropFadeWhiteShadow,
+  defaultAppearanceAnimation,
 } from "src/modules/shared/UI/defaults";
 import media from "src/modules/shared/UI/media";
 import { CONTENT_PADDING_MEDIUM } from "src/modules/App/Layout/const";
@@ -57,6 +58,7 @@ export const TopbarWrapper = styled.div`
 `;
 
 export const LogoWrapper = styled.div<Props>`
+  ${defaultAppearanceAnimation()}
   width: 100%;
   height: 60px;
   display: inline-flex;
