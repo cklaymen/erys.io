@@ -27,7 +27,7 @@ const Button = styled.button.attrs((props) => ({
 }))`
   ${defaultClickable()};
   border: none;
-  border-radius: 15px;
+  border-radius: 18px;
   background-color: ${colors.yellow};
   color: ${colors.black};
   padding: 7px 25px 8px 25px;
