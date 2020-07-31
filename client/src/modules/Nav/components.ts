@@ -6,6 +6,7 @@ import {
   defaultHover,
   defaultActive,
   defaultClickable,
+  defaultAppearanceAnimationSequence,
 } from "src/modules/shared/UI/defaults";
 import FloatButton from "src/modules/Nav/FloatButton";
 import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
@@ -75,6 +76,7 @@ export const NavLinkFloatButton = styled(FloatButton)`
 `;
 
 export const StyledMenuFloatButton = styled(MenuFloatButton)`
+  ${defaultAppearanceAnimationSequence(1)}
   position: fixed;
   top: ${FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL}px;
   right: ${FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL}px;
@@ -219,6 +221,12 @@ export const NavContact = styled.div`
   & ${ExternalLink} {
     display: inline-block;
   }
+  & ${ExternalLink}:nth-child(2) ${NavLinkFloatButton} {
+    ${defaultAppearanceAnimationSequence(2)}
+  }
+  & ${ExternalLink}:nth-child(3) ${NavLinkFloatButton} {
+    ${defaultAppearanceAnimationSequence(3)}
+  }
 
   & ${NavLink} {
     box-sizing: border-box;
@@ -289,11 +297,26 @@ export const SocialIcon = styled(Icon)`
 export const FloatButtonInternalLink = styled(InternalLink)`
   display: block;
   text-decoration: none;
+  &:nth-child(1) {
+    ${defaultAppearanceAnimationSequence()};
+  }
+  &:nth-child(2) {
+    ${defaultAppearanceAnimationSequence(1)};
+  }
+  &:nth-child(3) {
+    ${defaultAppearanceAnimationSequence(2)};
+  }
 `;
 
 export const FloatButtonExternalLink = styled(ExternalLink)`
   display: block;
   text-decoration: none;
+  &:nth-child(1) {
+    ${defaultAppearanceAnimationSequence(3)};
+  }
+  &:nth-child(2) {
+    ${defaultAppearanceAnimationSequence(4)};
+  }
 `;
 
 export const FloatButtonsWrapper = styled.div`
