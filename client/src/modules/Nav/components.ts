@@ -88,6 +88,8 @@ export const StyledMenuFloatButton = styled(MenuFloatButton)`
   `};
 `;
 
+const START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER = 1;
+
 export const NavWrapper = styled.nav<NavWrapperProps>`
   position: fixed;
   top: 0;
@@ -114,6 +116,49 @@ export const NavWrapper = styled.nav<NavWrapperProps>`
           }
           & ${NavContainer} {
             box-shadow: 0 0 30px 0 ${colors.black};
+          }
+
+          & ${FloatButtonInternalLink}:nth-child(1) ${NavLink} {
+            ${defaultAppearanceAnimationSequence(
+              START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER + 1
+            )}
+          }
+          & ${FloatButtonInternalLink}:nth-child(2) ${NavLink} {
+            ${defaultAppearanceAnimationSequence(
+              START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER + 2
+            )}
+          }
+          & ${FloatButtonInternalLink}:nth-child(3) ${NavLink} {
+            ${defaultAppearanceAnimationSequence(
+              START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER + 3
+            )}
+          }
+
+          & ${SocialLink}:nth-child(1) {
+            ${defaultAppearanceAnimationSequence(
+              START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER + 5
+            )}
+          }
+          & ${SocialLink}:nth-child(2) {
+            ${defaultAppearanceAnimationSequence(
+              START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER + 4
+            )}
+          }
+          & ${SocialLink}:nth-child(3) {
+            ${defaultAppearanceAnimationSequence(
+              START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER + 3
+            )}
+          }
+
+          & ${ExternalLink}:nth-child(2) ${NavLinkText} {
+            ${defaultAppearanceAnimationSequence(
+              START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER + 2
+            )}
+          }
+          & ${ExternalLink}:nth-child(3) ${NavLinkText} {
+            ${defaultAppearanceAnimationSequence(
+              START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER + 1
+            )}
           }
 
           ${media.medium`
