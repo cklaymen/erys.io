@@ -21,17 +21,21 @@ const Services: FC = () => {
       <TilesWrapper>
         <TileWithMargin
           title={t(TranslationKey.WEB_APPS_SITES)}
-          text={t(TranslationKey.WEB_APPS_SITES_SERVICE_SHORT_DESCRIPTION)}
+          description={t(
+            TranslationKey.WEB_APPS_SITES_SERVICE_SHORT_DESCRIPTION
+          )}
           illustrationType="Application"
         />
         <TileWithMargin
           title={t(TranslationKey.CODING)}
-          text={t(TranslationKey.CODING_SERVICE_SHORT_DESCRIPTION)}
+          description={t(TranslationKey.CODING_SERVICE_SHORT_DESCRIPTION)}
           illustrationType="Programming"
         />
         <TileWithMargin
           title={t(TranslationKey.SERVER_DOMAIN)}
-          text={t(TranslationKey.SERVER_DOMAIN_SERVICE_SHORT_DESCRIPTION)}
+          description={t(
+            TranslationKey.SERVER_DOMAIN_SERVICE_SHORT_DESCRIPTION
+          )}
           illustrationType="Server"
         />
       </TilesWrapper>

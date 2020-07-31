@@ -33,7 +33,7 @@ export const TileTitle = styled.h2<Props>`
         `};
 `;
 
-export const TileText = styled.p<Props>`
+export const TileDescription = styled.div<Props>`
   ${(p) =>
     p.view === "horizontal"
       ? css`
@@ -43,6 +43,7 @@ export const TileText = styled.p<Props>`
           text-align: justify;
         `}
   margin-top: 5px;
+  margin-bottom: 10px;
   font-size: 1.1rem;
 `;
 
