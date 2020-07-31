@@ -33,28 +33,28 @@ const ServicesMain: FC = () => {
           .map((it, index) => (
             <P key={index}>{it}</P>
           ))}
+        <TilesWrapper>
+          <TileWithMargin
+            illustrationType="Application"
+            title={t(TranslationKey.WEB_APPS_SITES)}
+            description={<WebAppsSitesDescription />}
+            view={tileView}
+          />
+          <TileWithMargin
+            illustrationType="Programming"
+            title={t(TranslationKey.CODING)}
+            description={t(TranslationKey.CODING_SERVICE_DESCRIPTION)}
+            view={tileView}
+          />
+          <TileWithMargin
+            illustrationType="Server"
+            title={t(TranslationKey.SERVER_DOMAIN)}
+            description={t(TranslationKey.SERVER_DOMAIN_SERVICE_DESCRIPTION)}
+            view={tileView}
+          />
+        </TilesWrapper>
+        <P>{t(TranslationKey.SERVICES_DESCRIPTION_SUMMARY)}</P>
       </Section>
-      <TilesWrapper>
-        <TileWithMargin
-          illustrationType="Application"
-          title={t(TranslationKey.WEB_APPS_SITES)}
-          description={<WebAppsSitesDescription />}
-          view={tileView}
-        />
-        <TileWithMargin
-          illustrationType="Programming"
-          title={t(TranslationKey.CODING)}
-          description={t(TranslationKey.CODING_SERVICE_DESCRIPTION)}
-          view={tileView}
-        />
-        <TileWithMargin
-          illustrationType="Server"
-          title={t(TranslationKey.SERVER_DOMAIN)}
-          description={t(TranslationKey.SERVER_DOMAIN_SERVICE_DESCRIPTION)}
-          view={tileView}
-        />
-      </TilesWrapper>
-      <P>{t(TranslationKey.SERVICES_DESCRIPTION_SUMMARY)}</P>
     </ServicesMainWrapper>
   );
 };
