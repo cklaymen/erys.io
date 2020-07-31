@@ -11,6 +11,7 @@ import colors from "src/modules/shared/UI/colors";
 import {
   defaultDropFadeWhiteShadow,
   defaultAppearanceAnimation,
+  defaultClickable,
 } from "src/modules/shared/UI/defaults";
 
 export const LayoutWrapper = styled.div`
@@ -72,6 +73,7 @@ export const LogoWrapper = styled.div`
 `;
 
 export const StyledLogo = styled(Logo)`
+  ${defaultClickable()};
   width: 80%;
   height: auto;
 `;
