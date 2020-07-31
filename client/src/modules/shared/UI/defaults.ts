@@ -1,8 +1,11 @@
-import { css } from "styled-components";
+import { css, keyframes } from "styled-components";
 
 import media from "src/modules/shared/UI/media";
 import colors from "src/modules/shared/UI/colors";
-import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
+import {
+  DEFAULT_TRANSITION_TIME,
+  DEFAULT_TRANSITION_TIME_IN_MS,
+} from "src/modules/shared/UI/config";
 
 export const defaultBorderRadius = () =>
   css`
@@ -58,3 +61,26 @@ export const defaultBoxFocus = (color: string = colors.yellow) => css`
     box-shadow: 0 0 5px ${color};
   }
 `;
+
+const appearanceKeyframes = keyframes`
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
+export const defaultAppearanceAnimation = (delayInMs: number = 0) => css`
+  animation: ${appearanceKeyframes} ${DEFAULT_TRANSITION_TIME};
+  animation-delay: ${delayInMs}ms;
+  animation-fill-mode: backwards;
+`;
+
+const APPEARANCE_ANIMATION_SEQUENCE_INTERVAL_IN_MS =
+  DEFAULT_TRANSITION_TIME_IN_MS / 2;
+
+export const defaultAppearanceAnimationSequence = (ordinalNumber: number = 1) =>
+  defaultAppearanceAnimation(
+    (ordinalNumber - 1) * APPEARANCE_ANIMATION_SEQUENCE_INTERVAL_IN_MS
+  );
