@@ -31,7 +31,7 @@ const Message: FC<MessageProps> = ({
     }
   }, [loading, setLoading, scrollIntoView, isSize]);
   return (
-    <MessageWrapper author={author} ref={ref}>
+    <MessageWrapper author={author} ref={ref} isLoading={loading}>
       {loading ? "..." : children}
     </MessageWrapper>
   );
