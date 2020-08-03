@@ -5,4 +5,5 @@ export const StyledLink = styled(Link)`
   display: inline;
   text-decoration: none;
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 `;
