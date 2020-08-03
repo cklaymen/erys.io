@@ -29,7 +29,6 @@ import {
 } from "src/const";
 import useDevice from "src/modules/shared/useDevice";
 import FloatButtonWithLabel from "src/modules/Nav/FloatButtonWithLabel";
-import InternalLink from "src/modules/Routes/InternalLink";
 import ExternalLink from "src/modules/shared/ExternalLink";
 import { useRouteMatch } from "react-router-dom";
 import usePath from "src/modules/Routes/usePath";
@@ -121,21 +120,30 @@ const Nav: FC = () => {
       />
       <NavContainer>
         <NavPages>
-          <InternalLink location="about" onClick={handlePageLinkClick}>
+          <FloatButtonInternalLink
+            location="about"
+            onClick={handlePageLinkClick}
+          >
             <NavLink>
               <NavLinkText>{t(TranslationKey.ABOUT_ME)}</NavLinkText>
             </NavLink>
-          </InternalLink>
-          <InternalLink location="services" onClick={handlePageLinkClick}>
+          </FloatButtonInternalLink>
+          <FloatButtonInternalLink
+            location="services"
+            onClick={handlePageLinkClick}
+          >
             <NavLink>
               <NavLinkText>{t(TranslationKey.SERVICES)}</NavLinkText>
             </NavLink>
-          </InternalLink>
-          <InternalLink location="works" onClick={handlePageLinkClick}>
+          </FloatButtonInternalLink>
+          <FloatButtonInternalLink
+            location="works"
+            onClick={handlePageLinkClick}
+          >
             <NavLink>
               <NavLinkText>{t(TranslationKey.WORKS)}</NavLinkText>
             </NavLink>
-          </InternalLink>
+          </FloatButtonInternalLink>
         </NavPages>
         <NavContact>
           <NavSocials>

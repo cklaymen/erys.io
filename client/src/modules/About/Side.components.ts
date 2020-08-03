@@ -4,6 +4,7 @@ import rp_400 from "src/assets/images/rp_400.jpg";
 import Icon from "src/modules/shared/UI/Icon";
 import colors from "src/modules/shared/UI/colors";
 import media from "src/modules/shared/UI/media";
+import { defaultAppearanceAnimationSequence } from "src/modules/shared/UI/defaults";
 
 export const AboutSideWrapper = styled.div`
   text-align: center;
@@ -16,17 +17,20 @@ export const AboutPortrait = styled.img.attrs({
   src: rp_400,
   alt: "Ryszard Plewnia",
 })`
+  ${defaultAppearanceAnimationSequence(1)};
   width: 50%;
   border-radius: 50%;
 `;
 
 export const AboutName = styled.div`
+  ${defaultAppearanceAnimationSequence(2)};
   margin-top: 20px;
   font-weight: 600;
   font-size: 2.4rem;
 `;
 
 export const AboutContact = styled.div`
+  ${defaultAppearanceAnimationSequence(3)};
   margin-top: 20px;
   font-size: 1.7rem;
   /* font-weight: 600; */

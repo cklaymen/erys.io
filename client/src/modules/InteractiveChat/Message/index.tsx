@@ -21,7 +21,7 @@ const Message: FC<MessageProps> = ({
   const { isSize } = useDevice();
   useEffect(() => {
     if (scrollIntoView && isSize("extraSmall", "small", "medium")) {
-      ref.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+      ref.current?.scrollIntoView({ behavior: "smooth", block: "center" });
     }
     if (loading) {
       const t = setTimeout(() => {
@@ -31,7 +31,7 @@ const Message: FC<MessageProps> = ({
     }
   }, [loading, setLoading, scrollIntoView, isSize]);
   return (
-    <MessageWrapper author={author} ref={ref}>
+    <MessageWrapper author={author} ref={ref} isLoading={loading}>
       {loading ? "..." : children}
     </MessageWrapper>
   );

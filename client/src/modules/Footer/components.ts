@@ -7,7 +7,10 @@ import {
   CONTENT_PADDING_LARGE,
 } from "src/modules/App/Layout/const";
 import Icon from "src/modules/shared/UI/Icon";
-import { defaultClickable } from "src/modules/shared/UI/defaults";
+import {
+  defaultClickable,
+  defaultAppearanceAnimationSequence,
+} from "src/modules/shared/UI/defaults";
 import media from "src/modules/shared/UI/media";
 import { NAV_FLOAT_BUTTON_BAR_WIDTH_IN_PX_EXTRA_SMALL } from "src/modules/Nav/components";
 
@@ -30,8 +33,23 @@ export const FooterWrapper = styled.footer`
   `}
 `;
 
+export const ElementHeading = styled.div`
+  font-size: 1.4rem;
+  font-weight: 600;
+  ${media.large`
+    display: none;
+  `}
+`;
+
 export const FooterElement = styled.div`
   flex: auto;
+
+  &:nth-child(1) ${ElementHeading} {
+    ${defaultAppearanceAnimationSequence(1)}
+  }
+  &:nth-child(2) ${ElementHeading} {
+    ${defaultAppearanceAnimationSequence(2)}
+  }
 
   & + & {
     margin-left: 20px;
@@ -41,14 +59,6 @@ export const FooterElement = styled.div`
     & + & {
       margin-left: 6vw;
     }
-  `}
-`;
-
-export const ElementHeading = styled.div`
-  font-size: 1.4rem;
-  font-weight: 600;
-  ${media.large`
-    display: none;
   `}
 `;
 
@@ -67,6 +77,7 @@ export const ContactContent = styled(ElementContent)`
 `;
 
 export const ContentParagraph = styled.p`
+  ${defaultAppearanceAnimationSequence(1)}
   margin: 0;
   font-size: 0.9rem;
   text-align: justify;
@@ -118,6 +129,12 @@ export const ContactInfo = styled.div`
   & ${ContactLink} + ${ContactLink} {
     margin-top: 7px;
   }
+  & ${ContactLink}:nth-child(1) {
+    ${defaultAppearanceAnimationSequence(2)}
+  }
+  & ${ContactLink}:nth-child(2) {
+    ${defaultAppearanceAnimationSequence(3)}
+  }
 
   ${media.large`
     flex-direction: row;
@@ -140,6 +157,16 @@ export const ContactSocials = styled.div`
 
   & ${ContactLink} + ${ContactLink} {
     margin-left: 10px;
+  }
+
+  & ${ContactLink}:nth-child(1) {
+    ${defaultAppearanceAnimationSequence(4)}
+  }
+  & ${ContactLink}:nth-child(2) {
+    ${defaultAppearanceAnimationSequence(5)}
+  }
+  & ${ContactLink}:nth-child(3) {
+    ${defaultAppearanceAnimationSequence(6)}
   }
 
   ${media.medium`

@@ -6,6 +6,8 @@ import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
 import {
   defaultDropShadow,
   defaultDropFadeWhiteShadow,
+  defaultAppearanceAnimation,
+  defaultClickable,
 } from "src/modules/shared/UI/defaults";
 import media from "src/modules/shared/UI/media";
 import { CONTENT_PADDING_MEDIUM } from "src/modules/App/Layout/const";
@@ -57,6 +59,8 @@ export const TopbarWrapper = styled.div`
 `;
 
 export const LogoWrapper = styled.div<Props>`
+  ${defaultAppearanceAnimation()};
+  ${defaultClickable()};
   width: 100%;
   height: 60px;
   display: inline-flex;
@@ -65,10 +69,6 @@ export const LogoWrapper = styled.div<Props>`
   box-sizing: border-box;
   padding: 4px;
   border-radius: 50%;
-  transition: border-radius ${DEFAULT_TRANSITION_TIME},
-    width ${DEFAULT_TRANSITION_TIME}, border ${DEFAULT_TRANSITION_TIME},
-    background-color ${DEFAULT_TRANSITION_TIME},
-    box-shadow ${DEFAULT_TRANSITION_TIME};
 
   ${(p) =>
     p.mini &&
