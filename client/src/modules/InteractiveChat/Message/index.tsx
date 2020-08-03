@@ -21,7 +21,7 @@ const Message: FC<MessageProps> = ({
   const { isSize } = useDevice();
   useEffect(() => {
     if (scrollIntoView && isSize("extraSmall", "small", "medium")) {
-      ref.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+      ref.current?.scrollIntoView({ behavior: "smooth", block: "center" });
     }
     if (loading) {
       const t = setTimeout(() => {
