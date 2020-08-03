@@ -9,7 +9,7 @@ const pl = {
     "Aplikacja webowa to, w pewnym uproszczeniu, program komputerowy działający w oknie przeglądarki internetowej. Przykładem aplikacji webowej są: YouTube, Facebook, Allegro, Netflix oraz wiele innych. Bardziej szczegółowo mówiąc, aplikacja webowa działa za pośrednictwem serwera www, który dostarcza treści oraz funkcjonalności - w odróżnieniu do tradycyjnego programu komputerowego, który jest instalowany bezpośrednio na dysku użytkownika. Jedną z zalet takich aplikacji jest łatwy dostęp z dowolnego urządzenia, które ma połączenie z siecią.",
   [TranslationKey.QUESTION_ABOUT_WEBSITES]: "Co to jest strona internetowa?",
   [TranslationKey.ANSWER_ABOUT_WEBSITES]:
-    "Strona internetowa to zbiór treści, połączonych ze sobą za pomocą odnośników, dostępnych pod danym adresem elektronicznym. Celem strony internetowej jest dostarczenie informacji do odbiorcy. W odróżnieniu od aplikacji webowej, która dostarcza funkcjonalności i wymaga interakcji ze strony użytkownika.",
+    "Strona internetowa to zbiór treści, połączonych ze sobą za pomocą odnośników, dostępnych pod danym adresem elektronicznym. Celem strony internetowej jest dostarczenie informacji do odbiorcy. W odróżnieniu do aplikacji webowej, która dostarcza funkcjonalności i wymaga interakcji ze strony użytkownika.",
   [TranslationKey.QUESTION_ABOUT_MODERN_TECHNOLOGIES]:
     "Jakie technologie są wykorzystywane do tworzenia oprogramowania?",
   [TranslationKey.ANSWER_ABOUT_MODERN_TECHNOLOGIES]:
@@ -43,23 +43,23 @@ const pl = {
   [TranslationKey.SERVER_DOMAIN_SERVICE_SHORT_DESCRIPTION]:
     "Administracja serwerem, konfiguracja domeny oraz wszystko inne związane z poprawnym działaniem oprogramowania.",
   [TranslationKey.SERVER_DOMAIN_SERVICE_DESCRIPTION]:
-    "Administracja serwerem, konfiguracja domeny oraz wszystko inne związane z poprawnym działaniem oprogramowania.",
+    "Administruję serwerem, konfiguruję domeny oraz zajmuję się pozostałymi elementami, które związane są z poprawnym działaniem oprogramowania.",
   [TranslationKey.MORE_ABOUT_SERVICES]: "Dowiedz się więcej o usługach",
   [TranslationKey.STEPS]: "Etapy współpracy",
   [TranslationKey.STEPS_SHORT_DESCRIPTION]:
     "Proces związany z tworzeniem oprogramowania będzie się różnił w zależności od projektu, jednak w każdym z nich wyróżnić można następujące etapy:",
   [TranslationKey.NEED_ANALYSIS_STEP_TITLE]: "Analiza potrzeb",
   [TranslationKey.NEED_ANALYSIS_STEP_DESCRIPTION]:
-    "Napisz czym się zajmujesz oraz czego potrzebujesz. Przedstawię możliwości oraz najlepiej dopasowane rozwiązanie.",
+    "Po wstępnej wiadomości, w której opiszesz czego potrzebujesz umówimy się na rozmowę, na której ustalimy szczegóły oraz wyjaśnimy niejasności. Znając dokładnie potrzeby przedstawię najlepsze możliwe rozwiązanie.",
   [TranslationKey.GRAPHIC_DESIGN_STEP_TITLE]: "Projekt wizualny",
   [TranslationKey.GRAPHIC_DESIGN_STEP_DESCRIPTION]:
-    "Przygotowany zostanie projekt graficzny aplikacji lub, gdy posiadasz własny projekt, upewnię się czy jest zgodny z ustaleniami.",
+    "Po dostarczeniu potrzebnych materiałów przygotuję projekt graficzny aplikacji lub, gdy posiadasz własny projekt, upewnię się czy jest on zgodny z ustaleniami.",
   [TranslationKey.CREATING_APP_STEP_TITLE]: "Tworzenie aplikacji",
   [TranslationKey.CREATING_APP_STEP_DESCRIPTION]:
     "Na podstawie projektu wizualnego zostanie stworzona w pełni funkcjonalna aplikacja.",
   [TranslationKey.SUPPORT_STEP_TITLE]: "Wsparcie",
   [TranslationKey.SUPPORT_STEP_DESCRIPTION]:
-    "Po zaakceptowaniu gotowej aplikacji zostaje ona zainstalowana na serwerze. Udzielone zostaje wsparcie na jej prawidłowe działanie.",
+    "Po zaakceptowaniu gotowej aplikacji zostaje ona zainstalowana na serwerze. Udzielone zostaje wsparcie na jej prawidłowe działanie. W razie potrzeby zawsze istnieje możliwośc późniejszej modyfikacji programu.",
   [TranslationKey.TECHNOLOGIES]: "Technologie",
   [TranslationKey.TECHNOLOGIES_SHORT_DESCRIPTION]:
     "W swoich realizacjach wykorzystuję nowoczesne technologie. Jestem na bieżąco z coraz to nowszymi rozwiązanami z dziedziny webdev. Dzięki temu tworzone przeze mnie oprogramowanie jest wydajne, bezpieczne oraz przyjemne w obsłudze.",
