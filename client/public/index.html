@@ -39,11 +39,44 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <style>
+      @keyframes spin {
+        from {
+          transform: rotate(-180deg);
+        }
+        to {
+          transform: rotate(180deg);
+        }
+      }
+      .init-loading {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .init-spinner {
+        display: block;
+        width: 28vw;
+        height: 28vw;
+        border: 1vw solid #3f3f3f;
+        border-top: 1vw solid gold;
+        border-radius: 50%;
+        animation: spin 1s infinite linear;
+      }
+    </style>
     <title>Aplikacje webowe ERYS'</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div class="init-loading"><div class="init-spinner"></div></div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
