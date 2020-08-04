@@ -31,7 +31,7 @@ const pl = {
     "Skontaktuj się ze mną i napisz, czego potrzebujesz. Umówimy się na rozmowę, na której omówimy szczegóły i wyjaśnimy niejasności. Znając potrzeby przedstawię możliwe oraz najlepiej dopasowane rozwiązania.",
   [TranslationKey.WEB_APPS_SITES]: "Aplikacje webowe | Strony internetowe",
   [TranslationKey.WEB_APPS_SITES_SERVICE_SHORT_DESCRIPTION]:
-    "Projektowanie oraz tworzenie w pełni funkcjonalnych aplikacji webowych i stron internetowych. Rozwiązania dopasowane do indywidualnych potrzeb klienta.",
+    "Projektowanie oraz tworzenie oprogramowania na zamówienie z wykorzystaniem technologii webowych. Rozwiązania dopasowane do indywidualnych potrzeb klienta.",
   [TranslationKey.WEB_APPS_SITES_SERVICE_DESCRIPTION]:
     "Projektuję oraz tworzę od postaw dedykowane oprogramowanie według konkretnych wytycznych zamawiającego. W zaleności od potrzeby jest to:<1><0>Rozbudowana aplikacja webowa, na którą składa się część działająca na serwerze oraz część działająca na urządzeniu użytkownika,</0><1>Strona internetowa z możliwością edycji treści, która również wymaga części działającej na serwerze oraz na urządzeniu użytkownika,</1><2>Statyczna strona internetowa, której treść nie jest możliwa do bezpośredniej modyfikacji.</2></1>Poszczególne rozwiązanie proponowane jest na podstawie wcześniejszych rozmów i ustaleń z zamawiającym.",
   [TranslationKey.CODING]: "Programowanie",
