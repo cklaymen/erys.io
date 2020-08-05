@@ -29,6 +29,28 @@ const GlobalStyle = createGlobalStyle`
 
     font-size: 1.2rem;
     color: ${colors.black};
+
+    & *::-webkit-scrollbar {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 0.5rem;
+      background-color: none;
+    }
+
+    & *::-webkit-scrollbar-track {
+      background-color: none;
+      border-radius: 0.5rem;
+    }
+
+    & *::-webkit-scrollbar-thumb {
+      transition: all 2s;
+      border-radius: 5px;
+      background-color: none;
+    }
+
+    & *:hover::-webkit-scrollbar-thumb {
+      background-color: ${colors.black}80;
+    }
   }
 
   code {
