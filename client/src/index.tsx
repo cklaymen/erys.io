@@ -6,6 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import initTranslations from "./modules/Translations";
 import DeviceProvider from "src/modules/shared/useDevice/Provider";
 import { BrowserRouter } from "react-router-dom";
+import LocalStorageProvider from "src/modules/shared/useLocalStorage/Provider";
 
 initTranslations();
 
@@ -13,7 +14,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <DeviceProvider>
+        <LocalStorageProvider>
         <App />
+        </LocalStorageProvider>
       </DeviceProvider>
     </BrowserRouter>
   </React.StrictMode>,

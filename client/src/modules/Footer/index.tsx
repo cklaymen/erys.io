@@ -24,6 +24,7 @@ import {
   LINKEDIN_URL,
   COMPANY_NAME,
 } from "src/const";
+import InternalLink from "src/modules/Routes/InternalLink";
 
 const Footer: FC = () => {
   const { t } = useTranslation();
@@ -66,7 +67,10 @@ const Footer: FC = () => {
         </ContactContent>
       </FooterElement>
       <FooterCopyright>
-        © {currentYear} {COMPANY_NAME}
+        © {currentYear} {COMPANY_NAME} •{" "}
+        <InternalLink location="cookies">
+          {t(TranslationKey.COOKIES_POLICY)}
+        </InternalLink>
       </FooterCopyright>
     </FooterWrapper>
   );

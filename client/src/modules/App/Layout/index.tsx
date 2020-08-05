@@ -8,6 +8,7 @@ import {
   SideWrapper,
   StyledLogo,
   LogoWrapper,
+  MainWrapper,
 } from "src/modules/App/Layout/components";
 import ScrollProvider from "src/modules/Topbar/useScroll/Provider";
 import Topbar from "src/modules/Topbar";
@@ -15,6 +16,7 @@ import useDevice from "src/modules/shared/useDevice";
 import Footer from "src/modules/Footer";
 import Nav from "src/modules/Nav";
 import InternalLink from "src/modules/Routes/InternalLink";
+import CookiesFloatMessage from "src/modules/Cookies/FloatMessage";
 
 interface Props {
   renderMain(): ReactElement;
@@ -52,7 +54,11 @@ const Layout: FC<Props> = ({ renderMain, renderSide, hideSide }) => {
             </SideContentWrapper>
           </SideWrapper>
         )}
-        <ContentMainWrapper>{renderMain()}</ContentMainWrapper>
+        <MainWrapper>
+          <ContentMainWrapper>{renderMain()}</ContentMainWrapper>
+          {isLargerDeviceSize && <CookiesFloatMessage />}
+        </MainWrapper>
+        {!isLargerDeviceSize && <CookiesFloatMessage />}
       </ContentWrapper>
       <Footer />
     </LayoutWrapper>

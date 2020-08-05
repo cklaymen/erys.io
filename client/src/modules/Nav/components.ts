@@ -39,8 +39,8 @@ const NAV_RIGHT_HIDDEN_MEDIUM = `max(-${
   NAV_WIDTH_IN_PX_MEDIUM - FLOAT_BUTTON_SIZE_IN_PX_MEDIUM / 2
 }px, -100vw)`;
 
-const FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL = 15;
-const FLOAT_BUTTON_MARGIN_IN_PX_MEDIUM = 30;
+export const FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL = 15;
+export const FLOAT_BUTTON_MARGIN_IN_PX_MEDIUM = 30;
 
 const NAV_CONTAINER_PADDING_LEFT_IN_PX_EXTRA_SMALL = 70;
 const NAV_CONTAINER_PADDING_LEFT_IN_PX_MEDIUM = 90;
@@ -376,6 +376,11 @@ export const FloatButtonsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  pointer-events: none;
+
+  & ${FloatButtonInternalLink}, & ${FloatButtonExternalLink} {
+    pointer-events: all;
+  }
 
   &
     ${FloatButtonInternalLink}

@@ -1,7 +1,7 @@
-import { TranslationKey } from "./Translation";
+import Translation, { TranslationKey } from "./Translation";
 import { COMPANY_NAME } from "src/const";
 
-const pl = {
+const pl: Translation = {
   [TranslationKey.INIT_BUBBLE_MESSAGE]:
     "Zajmuję się tworzeniem oprogramowania (złożonych <1>aplikacji webowych</1> jak i prostych <3>stron internetowych</3>). Chętnie podejmuję się realizacji dedykowanych rozwiązań, które mogą zautomatyzować bądź usprawnić zadania w Państwa działalności. Wykorzystuję <5>nowoczesne technologie</5>, które zapewniają sprawne i bezpieczne działanie programu. Posiadam odpowiednie <7>wykształcenie</7> oraz <9>doświadczenie</9> w tym kierunku. Więcej o mnie dowiesz się <11><0>tutaj</0></11>",
   [TranslationKey.QUESTION_ABOUT_WEB_APPS]: "Co to jest aplikacja webowa?",
@@ -75,6 +75,11 @@ const pl = {
     "Po ukończeniu studiów postanowiłem założyć własną działalność gospodarczą, ponieważ cenię sobie niezależność oraz pracę na własny rachunek. Wierzę, że moja pasja do programowania przyczyni się do zadowolenia z dostarczanych przeze mnie usług.",
   [TranslationKey.WORKS_DESCRIPTION]: `Spis projektów, które wykonałem jako "${COMPANY_NAME}".`,
   [TranslationKey.USED_TECHNOLOGIES]: "Wykorzystane technologie",
+  [TranslationKey.COOKIES_SHORT_DESCRIPTION]:
+    "<0>🍪</0> Wykorzystuję pliki cookies - więcej szczegółów <2>tutaj</2>.",
+  [TranslationKey.COOKIES_POLICY]: "Polityka cookies",
+  [TranslationKey.COOKIES_POLICY_DESCRIPTION]:
+    "<0>W celach dostosowania strony do potrzeb użytkowników oraz gromadzeniastatystyk witryna ta wykorzystuje pliki cookies. Pliki te niezawierają żadnych danych osobowych, a informacje w nich zawartewykorzystywane są do:</0><1><0>Zbierania statystyk odnośnie użytkowników odwiedzających witrynę zwykorzystaniem narzędzi Google Analytics - szczegóły dotyczącedziałania znajdują się pod adresem <1>https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage</1>,</0><1>Obserwowania aktywności odwiedzających z wykorzystaniem narzędziHotjar do tworzenia tzw. map cieplnych, które odwzorowują np.najczęściej klikane elementy - szczegóły dotyczące działaniaznajdują się pod adresem <1>https://help.hotjar.com/hc/en-us/articles/115011789248-Hotjar-Cookies</1>,</1><2>Dopasowania zawartości strony do preferencji użytkownika poprzezzapamiętanie wybranych ustawień.</2></1><2>Użytkownik w każdej chwili może zmienić ustawienia przeglądarkiinternetowej w celu włączenia lub wyłączenia obsługi wspomnianychplików. Instrukcje dla poszczególnych przeglądarek znajdują się podwymienionymi adresami:</2><3><0>Google Chrome - <1>https://support.google.com/chrome/answer/95647?hl=pl</1></0><1>Mozilla Firefox - <1>https://support.mozilla.org/pl/kb/ciasteczka</1></1><2>Internet Explorer - <1>https://support.microsoft.com/pl-pl/help/17442/windows-internet-explorer-delete-manage-cookies</1></2><3>Safari - <1>https://support.apple.com/pl-pl/guide/safari/sfri11471/mac</1></3></3>",
 
   // *** Works data ***
   [TranslationKey.INVOICE_CONVERTER_TITLE]: "Konwerter faktur",
@@ -85,6 +90,7 @@ const pl = {
   [TranslationKey.ABOUT_PATH]: "o-mnie",
   [TranslationKey.SERVICES_PATH]: "uslugi",
   [TranslationKey.WORKS_PATH]: "realizacje",
+  [TranslationKey.COOKIES_POLICY_PATH]: "polityka-cookies",
 };
 
 export default pl;

@@ -7,13 +7,14 @@ interface Props {
   type: IconType;
   title?: string;
   className?: string;
+  onClick?(): void;
 }
 
-const Icon: FC<Props> = ({ type, className, title }) => {
+const Icon: FC<Props> = ({ type, className, title, onClick }) => {
   const Icon = icons[type];
 
   return (
-    <IconWrapper className={className} title={title}>
+    <IconWrapper className={className} title={title} onClick={onClick}>
       <Icon />
     </IconWrapper>
   );
