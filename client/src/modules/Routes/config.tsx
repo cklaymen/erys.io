@@ -6,6 +6,7 @@ import Home from "src/modules/Home";
 import { AboutMain, AboutSide } from "src/modules/About";
 import WorksMain from "src/modules/Works/Main";
 import ServicesMain from "src/modules/Services/Main";
+import CookiesMain from "src/modules/Cookies/Main";
 
 type RenderSide = (wrapperRef?: RefObject<HTMLDivElement>) => ReactElement;
 type RenderMain = () => ReactElement;
@@ -78,6 +79,20 @@ const routesConfig: RouteConfig[] = [
     main: {
       key: "ServicesMain",
       render: () => <ServicesMain />,
+    },
+  },
+  {
+    location: "cookies",
+    side: {
+      key: "InteractiveChat",
+      render: (sideWrapperRef) => (
+        <InteractiveChat scrollableWrapperRef={sideWrapperRef} />
+      ),
+      onlyOnLargerDevice: true,
+    },
+    main: {
+      key: "CookiesMain",
+      render: () => <CookiesMain />,
     },
   },
 ];

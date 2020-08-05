@@ -84,3 +84,12 @@ export const defaultAppearanceAnimationSequence = (ordinalNumber: number = 1) =>
   defaultAppearanceAnimation(
     (ordinalNumber - 1) * APPEARANCE_ANIMATION_SEQUENCE_INTERVAL_IN_MS
   );
+
+export const defaultTextLink = () => css`
+  font-weight: bold;
+
+  &:hover {
+    color: ${colors.yellow};
+    cursor: pointer;
+  }
+`;

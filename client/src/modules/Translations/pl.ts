@@ -1,7 +1,7 @@
-import { TranslationKey } from "./Translation";
+import Translation, { TranslationKey } from "./Translation";
 import { COMPANY_NAME } from "src/const";
 
-const pl = {
+const pl: Translation = {
   [TranslationKey.INIT_BUBBLE_MESSAGE]:
     "Zajmuję się tworzeniem oprogramowania (złożonych <1>aplikacji webowych</1> jak i prostych <3>stron internetowych</3>). Chętnie podejmuję się realizacji dedykowanych rozwiązań, które mogą zautomatyzować bądź usprawnić zadania w Państwa działalności. Wykorzystuję <5>nowoczesne technologie</5>, które zapewniają sprawne i bezpieczne działanie programu. Posiadam odpowiednie <7>wykształcenie</7> oraz <9>doświadczenie</9> w tym kierunku. Więcej o mnie dowiesz się <11><0>tutaj</0></11>",
   [TranslationKey.QUESTION_ABOUT_WEB_APPS]: "Co to jest aplikacja webowa?",
@@ -75,6 +75,10 @@ const pl = {
     "Po ukończeniu studiów postanowiłem założyć własną działalność gospodarczą, ponieważ cenię sobie niezależność oraz pracę na własny rachunek. Wierzę, że moja pasja do programowania przyczyni się do zadowolenia z dostarczanych przeze mnie usług.",
   [TranslationKey.WORKS_DESCRIPTION]: `Spis projektów, które wykonałem jako "${COMPANY_NAME}".`,
   [TranslationKey.USED_TECHNOLOGIES]: "Wykorzystane technologie",
+  [TranslationKey.COOKIES_SHORT_DESCRIPTION]:
+    "<0>🍪</0> Wykorzystuję pliki cookies - więcej szczegółów <2>tutaj</2>.",
+  [TranslationKey.COOKIES_POLICY]: "Polityka cookies",
+  [TranslationKey.COOKIES_POLICY_DESCRIPTION]: "[Opis polityki cookies...]",
 
   // *** Works data ***
   [TranslationKey.INVOICE_CONVERTER_TITLE]: "Konwerter faktur",
@@ -85,6 +89,7 @@ const pl = {
   [TranslationKey.ABOUT_PATH]: "o-mnie",
   [TranslationKey.SERVICES_PATH]: "uslugi",
   [TranslationKey.WORKS_PATH]: "realizacje",
+  [TranslationKey.COOKIES_POLICY_PATH]: "polityka-cookies",
 };
 
 export default pl;

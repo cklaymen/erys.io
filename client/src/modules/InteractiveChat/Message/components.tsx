@@ -4,6 +4,7 @@ import {
   defaultBorderRadius,
   defaultPadding,
   defaultAppearanceAnimation,
+  defaultTextLink,
 } from "src/modules/shared/UI/defaults";
 import colors from "src/modules/shared/UI/colors";
 import { WRITING_MESSAGE_TIME_IN_MS } from "src/modules/InteractiveChat/Message/config";
@@ -50,10 +51,5 @@ export const MessageWrapper = styled.div<{
 `;
 
 export const Link = styled.span`
-  font-weight: bold;
-
-  &:hover {
-    color: ${colors.yellow};
-    cursor: pointer;
-  }
+  ${defaultTextLink()};
 `;

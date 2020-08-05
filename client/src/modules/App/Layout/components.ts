@@ -26,14 +26,16 @@ export const ContentWrapper = styled.div`
   box-sizing: border-box;
   width: 100%;
   padding: ${CONTENT_PADDING_EXTRA_SMALL};
+  display: flex;
+  flex-direction: column;
   ${media.medium`
     padding: ${CONTENT_PADDING_MEDIUM.join(" ")};
   `}
   ${media.large`
     padding: ${CONTENT_PADDING_LARGE.join(" ")};
-    display: flex;
+    flex-direction: row;
     align-items: flex-start;
-    max-width: 1400px;
+    justify-content: middle;
     margin: 0 auto;
     position: relative;
   `}
@@ -49,7 +51,7 @@ export const SideWrapper = styled.div`
     top: ${CONTENT_PADDING_LARGE[0]};
     max-height: calc(100vh - ${CONTENT_PADDING_LARGE[0]} - ${CONTENT_PADDING_LARGE[2]});
     width: 50%;
-    padding-right: 3vw;
+    align-items: flex-end;
   `}
 `;
 
@@ -57,6 +59,13 @@ export const SideContentWrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
   flex-shrink: 0;
+  width: 100%;
+
+  ${media.large`
+    padding-right: 3vw;
+    box-sizing: border-box;
+    max-width: 600px;
+  `}
 `;
 
 export const LogoWrapper = styled.div`
@@ -78,12 +87,11 @@ export const StyledLogo = styled(Logo)`
   height: auto;
 `;
 
-export const ContentMainWrapper = styled.div`
-  &::after {
-    display: block;
-    content: "";
-    height: 30px;
-  }
+export const MainWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: space-between;
 
   ${SideWrapper} + & {
     margin-top: 40px;
@@ -91,6 +99,18 @@ export const ContentMainWrapper = styled.div`
 
   ${media.large`
     width: 50%;
+  `}
+`;
+
+export const ContentMainWrapper = styled.div`
+  &::after {
+    display: block;
+    content: "";
+    height: 30px;
+  }
+
+  ${media.large`
+    max-width: 600px;
     margin-left: 3vw;
   `}
 `;
