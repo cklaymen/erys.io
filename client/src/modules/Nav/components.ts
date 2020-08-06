@@ -29,15 +29,15 @@ interface NavWrapperProps {
 
 const NAV_WIDTH_IN_PX_EXTRA_SMALL = 320;
 const NAV_WIDTH_IN_PX_MEDIUM = 420;
-const NAV_WIDTH_EXTRA_SMALL = `min(${NAV_WIDTH_IN_PX_EXTRA_SMALL}px, 100vw)`;
-const NAV_WIDTH_MEDIUM = `min(${NAV_WIDTH_IN_PX_MEDIUM}px, 100vw)`;
 
-const NAV_RIGHT_HIDDEN_EXTRA_SMALL = `max(-${
-  NAV_WIDTH_IN_PX_EXTRA_SMALL - FLOAT_BUTTON_SIZE_IN_PX_EXTRA_SMALL / 2
-}px, -100vw)`;
-const NAV_RIGHT_HIDDEN_MEDIUM = `max(-${
-  NAV_WIDTH_IN_PX_MEDIUM - FLOAT_BUTTON_SIZE_IN_PX_MEDIUM / 2
-}px, -100vw)`;
+const NAV_RIGHT_HIDDEN_IN_PX_EXTRA_SMALL = -(
+  NAV_WIDTH_IN_PX_EXTRA_SMALL -
+  FLOAT_BUTTON_SIZE_IN_PX_EXTRA_SMALL / 2
+);
+const NAV_RIGHT_HIDDEN_IN_PX_MEDIUM = -(
+  NAV_WIDTH_IN_PX_MEDIUM -
+  FLOAT_BUTTON_SIZE_IN_PX_MEDIUM / 2
+);
 
 export const FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL = 15;
 export const FLOAT_BUTTON_MARGIN_IN_PX_MEDIUM = 30;
@@ -99,14 +99,16 @@ export const NavWrapper = styled.nav<NavWrapperProps>`
   box-sizing: border-box;
   padding-left: ${FLOAT_BUTTON_SIZE_IN_PX_EXTRA_SMALL / 2}px;
   color: ${colors.yellow};
-  width: ${NAV_WIDTH_EXTRA_SMALL};
-  transition: right ${DEFAULT_TRANSITION_TIME};
+  width: ${NAV_WIDTH_IN_PX_EXTRA_SMALL}px;
+  transition: right ${DEFAULT_TRANSITION_TIME},
+    max-width ${DEFAULT_TRANSITION_TIME};
   pointer-events: none;
 
   ${(p) =>
     p.show
       ? css`
           right: 0;
+          max-width: 100vw;
           & ${NavLinkFloatButton} {
             left: -${FLOAT_BUTTON_SIZE_IN_PX_EXTRA_SMALL / 2}px;
             box-shadow: none;
@@ -168,13 +170,16 @@ export const NavWrapper = styled.nav<NavWrapperProps>`
           `}
         `
       : css`
-          right: ${NAV_RIGHT_HIDDEN_EXTRA_SMALL};
+          right: ${NAV_RIGHT_HIDDEN_IN_PX_EXTRA_SMALL}px;
+          max-width: ${NAV_WIDTH_IN_PX_EXTRA_SMALL}px;
           & ${NavLinkFloatButton} {
             left: -${FLOAT_BUTTON_SIZE_IN_PX_EXTRA_SMALL + FLOAT_BUTTON_MARGIN_IN_PX_EXTRA_SMALL}px;
           }
 
           ${media.medium`
-            right: ${NAV_RIGHT_HIDDEN_MEDIUM};
+            right: ${NAV_RIGHT_HIDDEN_IN_PX_MEDIUM}px;
+            max-width: ${NAV_WIDTH_IN_PX_MEDIUM}px;
+
             & ${NavLinkFloatButton} {
               left: -${
                 FLOAT_BUTTON_SIZE_IN_PX_MEDIUM +
@@ -184,7 +189,7 @@ export const NavWrapper = styled.nav<NavWrapperProps>`
           `}
         `}
   ${media.medium`
-    width: ${NAV_WIDTH_MEDIUM};
+    width: ${NAV_WIDTH_IN_PX_MEDIUM}px;
     padding-left: ${FLOAT_BUTTON_SIZE_IN_PX_MEDIUM / 2}px;
   `}
 `;
