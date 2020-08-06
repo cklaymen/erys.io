@@ -15,6 +15,7 @@
     "@types/styled-components": "^5.1.0",
     "i18next": "^19.5.4",
     "react": "^16.13.1",
+    "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.0",
     "react-router-dom": "^5.2.0",
@@ -35,7 +36,8 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "ie >= 9"
     ],
     "development": [
       "last 1 chrome version",
