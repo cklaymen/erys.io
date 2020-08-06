@@ -54,6 +54,8 @@ export const SideWrapper = styled.div`
 
 export const SideContentWrapper = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
 
   ${media.large`
     padding-right: 3vw;
