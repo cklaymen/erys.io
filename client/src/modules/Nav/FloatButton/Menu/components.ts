@@ -26,9 +26,7 @@ export const MenuIcon = styled(FloatButtonIcon).attrs(() => ({
             transform-origin: 5.82843px 3px;
           }
           rect:nth-child(2) {
-            transform: translateX(12px);
-            width: 4px;
-            height: 4px;
+            transform: translateX(12px) scaleX(0);
           }
           rect:nth-child(3) {
             transform: rotate(-45deg) translate(3px, 1.799px);
