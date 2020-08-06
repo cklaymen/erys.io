@@ -8,12 +8,14 @@ export interface MessageProps {
   author: "erys" | "user";
   writingBeforeShowMessage?: boolean;
   scrollIntoView?: boolean;
+  onMessageLoaded?(): void;
 }
 
 const Message: FC<MessageProps> = ({
   author,
   writingBeforeShowMessage = true,
   scrollIntoView = true,
+  onMessageLoaded,
   children,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,6 +32,11 @@ const Message: FC<MessageProps> = ({
       return () => clearTimeout(t);
     }
   }, [loading, setLoading, scrollIntoView, isSize]);
+  useEffect(() => {
+    if (!loading && onMessageLoaded) {
+      onMessageLoaded();
+    }
+  }, [loading, onMessageLoaded]);
   return (
     <MessageWrapper author={author} ref={ref} isLoading={loading}>
       {loading ? "..." : children}

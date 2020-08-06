@@ -43,7 +43,6 @@ const Layout: FC<Props> = ({ renderMain, renderSide, hideSide }) => {
         {!hideSide && (
           <SideWrapper ref={sideWrapperRef}>
             <SideContentWrapper>
-              {renderSide(isLargerDeviceSize ? sideWrapperRef : undefined)}
               {isLargerDeviceSize && (
                 <LogoWrapper>
                   <InternalLink location="home">
@@ -51,6 +50,7 @@ const Layout: FC<Props> = ({ renderMain, renderSide, hideSide }) => {
                   </InternalLink>
                 </LogoWrapper>
               )}
+              {renderSide(isLargerDeviceSize ? sideWrapperRef : undefined)}
             </SideContentWrapper>
           </SideWrapper>
         )}

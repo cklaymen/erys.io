@@ -42,27 +42,23 @@ export const ContentWrapper = styled.div`
 `;
 
 export const SideWrapper = styled.div`
-  /* Reverse flex for auto scroll to bottom */
-  display: flex;
-  flex-direction: column-reverse;
   ${media.large`
     position: sticky;
     overflow-y: auto;
+    scroll-behavior: smooth;
     top: ${CONTENT_PADDING_LARGE[0]};
     max-height: calc(100vh - ${CONTENT_PADDING_LARGE[0]} - ${CONTENT_PADDING_LARGE[2]});
     width: 50%;
-    align-items: flex-end;
   `}
 `;
 
 export const SideContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-  flex-shrink: 0;
   width: 100%;
 
   ${media.large`
     padding-right: 3vw;
+    margin-left: auto;
+    margin-right: 0;
     box-sizing: border-box;
     max-width: 600px;
   `}
