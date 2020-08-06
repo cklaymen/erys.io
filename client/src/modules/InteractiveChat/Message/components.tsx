@@ -32,6 +32,7 @@ export const MessageWrapper = styled.div<{
         `}
   ${defaultBorderRadius()}
   ${defaultPadding()}
+  max-width: 100%;
   display: inline-block;
   & + & {
     margin-top: 15px;

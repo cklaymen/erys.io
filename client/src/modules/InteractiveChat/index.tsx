@@ -1,4 +1,11 @@
-import React, { FC, useState, useMemo, useEffect, RefObject } from "react";
+import React, {
+  FC,
+  useState,
+  useMemo,
+  useEffect,
+  RefObject,
+  useCallback,
+} from "react";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -18,7 +25,7 @@ import { WRITING_MESSAGE_TIME_IN_MS } from "src/modules/InteractiveChat/Message/
 
 interface Props {
   className?: string;
-  scrollableWrapperRef?: RefObject<any>;
+  scrollableWrapperRef?: RefObject<HTMLDivElement>;
 }
 
 const InteractiveChat: FC<Props> = ({ className, scrollableWrapperRef }) => {
@@ -28,6 +35,12 @@ const InteractiveChat: FC<Props> = ({ className, scrollableWrapperRef }) => {
   const [lastQuestionKey, setLastQuestionKey] = useState<QuestionMessageKey>();
   const { t } = useTranslation();
 
+  const scrollToBottom = useCallback(() => {
+    if (scrollableWrapperRef && scrollableWrapperRef.current) {
+      scrollableWrapperRef.current.scrollTop =
+        scrollableWrapperRef.current.scrollHeight;
+    }
+  }, [scrollableWrapperRef]);
   const messages = useMemo(
     () =>
       chatMessagesConfigs.map((messageConfig, index) => {
@@ -36,6 +49,8 @@ const InteractiveChat: FC<Props> = ({ className, scrollableWrapperRef }) => {
             author={messageConfig.author}
             key={index}
             writingBeforeShowMessage={messageConfig.writingBeforeShowMessage}
+            scrollIntoView={messageConfig.scrollIntoView}
+            onMessageLoaded={messageConfig.onMessageLoaded}
           >
             {t(messageConfig.translationKey)}
           </Message>
@@ -44,31 +59,37 @@ const InteractiveChat: FC<Props> = ({ className, scrollableWrapperRef }) => {
     [chatMessagesConfigs, t]
   );
   useEffect(() => {
-    if (scrollableWrapperRef) {
-      scrollableWrapperRef.current?.scrollTo({
-        behavior: "smooth",
-        top: scrollableWrapperRef.current?.scrollHeight,
-      });
-    }
     if (lastQuestionKey) {
+      scrollToBottom();
       const t = setTimeout(() => {
         const answerMessageKey = getAnswerMessageKeyForQuestionMessageKey(
           lastQuestionKey
         );
+
         setLastQuestionKey(undefined);
         setChatMessagesConfigs([
-          ...chatMessagesConfigs,
+          ...chatMessagesConfigs.map((it) => ({
+            ...it,
+            scrollIntoView: false,
+            onMessageLoaded: undefined,
+          })),
           {
             ...messagesConfigs[lastQuestionKey],
             writingBeforeShowMessage: false,
             scrollIntoView: false,
           },
-          messagesConfigs[answerMessageKey],
+          {
+            ...messagesConfigs[answerMessageKey],
+            onMessageLoaded: scrollToBottom,
+          },
         ]);
       }, WRITING_MESSAGE_TIME_IN_MS);
       return () => clearTimeout(t);
     }
-  }, [lastQuestionKey, chatMessagesConfigs, scrollableWrapperRef]);
+  }, [lastQuestionKey, chatMessagesConfigs, scrollToBottom]);
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatMessagesConfigs, scrollToBottom]);
 
   return (
     <InteractiveChatWrapper className={className}>
@@ -84,7 +105,7 @@ const InteractiveChat: FC<Props> = ({ className, scrollableWrapperRef }) => {
           {/* Workaround to get the same width as above */}
           <Avatar style={{ height: 0 }} />
           <MessagesWrapper>
-            <Message author="user">
+            <Message author="user" onMessageLoaded={scrollToBottom}>
               {t(messagesConfigs[lastQuestionKey].translationKey)}
             </Message>
           </MessagesWrapper>

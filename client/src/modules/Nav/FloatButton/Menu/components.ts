@@ -22,21 +22,14 @@ export const MenuIcon = styled(FloatButtonIcon).attrs(() => ({
     p.icon === "Close"
       ? css`
           rect:nth-child(1) {
-            x: 5.82843;
-            y: 3;
-            transform: rotate(45deg);
+            transform: rotate(45deg) translateX(5.82843px);
             transform-origin: 5.82843px 3px;
           }
           rect:nth-child(2) {
-            x: 11;
-            y: 11;
-            width: 4px;
-            height: 4px;
+            transform: translateX(12px) scaleX(0);
           }
           rect:nth-child(3) {
-            x: 3;
-            y: 22.799;
-            transform: rotate(-45deg);
+            transform: rotate(-45deg) translate(3px, 1.799px);
             transform-origin: 3px 22.799px;
           }
         `

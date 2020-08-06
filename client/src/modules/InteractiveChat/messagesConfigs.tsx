@@ -6,7 +6,8 @@ export class MessageConfig implements MessageProps {
     public translationKey: TranslationKey,
     public author: "erys" | "user",
     public writingBeforeShowMessage?: boolean,
-    public scrollIntoView?: boolean
+    public scrollIntoView?: boolean,
+    public onMessageLoaded?: () => void
   ) {}
 }
 
