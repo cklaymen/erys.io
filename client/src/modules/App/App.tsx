@@ -10,6 +10,8 @@ import { Route, Switch, useRouteMatch } from "react-router-dom";
 import usePath from "src/modules/Routes/usePath";
 import langs from "src/modules/Translations/langs";
 import useDevice from "src/modules/shared/useDevice";
+import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 function App() {
   const { getPath } = usePath();
@@ -22,6 +24,7 @@ function App() {
         .reduce((a, b) => [...a, ...b], []),
     [getPath]
   );
+  const { t } = useTranslation();
   const sideOnlyOnLargerDevice =
     useRouteMatch({
       path: sideOnlyOnLargerDevicePaths,
@@ -42,7 +45,40 @@ function App() {
                 <Route
                   key={index}
                   path={getPath(it.location, langs)}
-                  render={it.render}
+                  render={() => {
+                    let helmet;
+                    let title;
+                    let description;
+
+                    if (it.titleKey) {
+                      title = t(it.titleKey);
+                    }
+                    if (it.descriptionKey) {
+                      description = t(it.descriptionKey);
+                    }
+                    if (title || description) {
+                      helmet = (
+                        <Helmet>
+                          {title && <title>{title}</title>}
+                          {description && (
+                            <>
+                              <meta
+                                name="description"
+                                property="og:description"
+                                content={description}
+                              />
+                            </>
+                          )}
+                        </Helmet>
+                      );
+                    }
+                    return (
+                      <>
+                        {helmet}
+                        {it.render()}
+                      </>
+                    );
+                  }}
                   exact={true}
                 />
               );

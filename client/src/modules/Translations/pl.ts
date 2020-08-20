@@ -1,5 +1,7 @@
 import Translation, { TranslationKey } from "./Translation";
-import { COMPANY_NAME } from "src/const";
+import { COMPANY_NAME, COMPANY_NAME_WITHOUT_OWNER_NAME } from "src/const";
+
+const HOME_PATH_TITLE = `${COMPANY_NAME_WITHOUT_OWNER_NAME} - producent oprogramowania na zamówienie`;
 
 const pl: Translation = {
   [TranslationKey.INIT_BUBBLE_MESSAGE]:
@@ -85,6 +87,18 @@ const pl: Translation = {
   [TranslationKey.INVOICE_CONVERTER_TITLE]: "Konwerter faktur",
   [TranslationKey.INVOICE_CONVERTER_DESCRIPTION]:
     "Aplikacja webowa służąca do konwertowania pliku z fakturami. Dzięki niej zautomatyzowano proces księgowania dużej ilości faktur, przez co oszczędzono pracę księgowych, a tym samym pieniądze klienta.",
+
+  // *** Route meta data ***
+  [TranslationKey.ABOUT_PATH_TITLE]: `O mnie | ${HOME_PATH_TITLE}`,
+  [TranslationKey.ABOUT_PATH_DESCRIPTION]:
+    "Jestem informatykiem programistą. Działam zdalnie na terenie całego kraju, a w miejscowościach: Żory, Rybnik i okolice chętnie spotkam się osobiście. Posiadam doświadczenie w tworzeniu programów w technologiach webowych oraz stron internetowych.",
+  [TranslationKey.SERVICES_PATH_TITLE]: `Usługi | ${HOME_PATH_TITLE}`,
+  [TranslationKey.SERVICES_PATH_DESCRIPTION]:
+    "Tworzę dedykowane rozwiązania według wytycznych zamawiającego: programy i strony internetowe z wykorzystaniem technologii webowych: React, Node i pokrewne. Podejmuję się współprac z innymi zespołami wytwarzającymi oprogramowanie.",
+  [TranslationKey.WORKS_PATH_TITLE]: `Realizacje | ${HOME_PATH_TITLE}`,
+  [TranslationKey.WORKS_PATH_DESCRIPTION]: `Portfolio. Zawiera programy oraz strony internetowe, które wykonałem jako firma ${COMPANY_NAME}.`,
+  [TranslationKey.COOKIES_POLICY_PATH_TITLE]: `Polityka cookies | ${HOME_PATH_TITLE}`,
+  [TranslationKey.COOKIES_POLICY_PATH_DESCRIPTION]: `Zasady wykorzystywania ciasteczek przez stronę firmy ${COMPANY_NAME} - erys.io`,
 
   // *** Route paths translations ***
   [TranslationKey.ABOUT_PATH]: "o-mnie",

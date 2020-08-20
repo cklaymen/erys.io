@@ -10,18 +10,21 @@ import initTranslations from "./modules/Translations";
 import DeviceProvider from "src/modules/shared/useDevice/Provider";
 import { BrowserRouter } from "react-router-dom";
 import LocalStorageProvider from "src/modules/shared/useLocalStorage/Provider";
+import { HelmetProvider } from "react-helmet-async";
 
 initTranslations();
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <DeviceProvider>
-        <LocalStorageProvider>
-        <App />
-        </LocalStorageProvider>
-      </DeviceProvider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <DeviceProvider>
+          <LocalStorageProvider>
+            <App />
+          </LocalStorageProvider>
+        </DeviceProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

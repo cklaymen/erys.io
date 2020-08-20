@@ -7,18 +7,23 @@ import { AboutMain, AboutSide } from "src/modules/About";
 import WorksMain from "src/modules/Works/Main";
 import ServicesMain from "src/modules/Services/Main";
 import CookiesMain from "src/modules/Cookies/Main";
+import { TranslationKey } from "src/modules/Translations/Translation";
 
 type RenderSide = (wrapperRef?: RefObject<HTMLDivElement>) => ReactElement;
 type RenderMain = () => ReactElement;
 
 interface RouteConfig {
   location: Location;
+  titleKey?: TranslationKey;
+  descriptionKey?: TranslationKey;
   side: RouteSideConfig;
   main: RouteMainConfig;
 }
 
 interface RouteMainConfig {
   key: string;
+  titleKey?: TranslationKey;
+  descriptionKey?: TranslationKey;
   render: RenderMain;
 }
 
@@ -44,6 +49,8 @@ const routesConfig: RouteConfig[] = [
   },
   {
     location: "about",
+    titleKey: TranslationKey.ABOUT_PATH_TITLE,
+    descriptionKey: TranslationKey.ABOUT_PATH_DESCRIPTION,
     side: {
       key: "AboutSide",
       render: () => <AboutSide />,
@@ -55,6 +62,8 @@ const routesConfig: RouteConfig[] = [
   },
   {
     location: "works",
+    titleKey: TranslationKey.WORKS_PATH_TITLE,
+    descriptionKey: TranslationKey.WORKS_PATH_DESCRIPTION,
     side: {
       key: "InteractiveChat",
       render: (sideWrapperRef) => (
@@ -69,6 +78,8 @@ const routesConfig: RouteConfig[] = [
   },
   {
     location: "services",
+    titleKey: TranslationKey.SERVICES_PATH_TITLE,
+    descriptionKey: TranslationKey.SERVICES_PATH_DESCRIPTION,
     side: {
       key: "InteractiveChat",
       render: (sideWrapperRef) => (
@@ -83,6 +94,8 @@ const routesConfig: RouteConfig[] = [
   },
   {
     location: "cookies",
+    titleKey: TranslationKey.COOKIES_POLICY_PATH_TITLE,
+    descriptionKey: TranslationKey.COOKIES_POLICY_PATH_DESCRIPTION,
     side: {
       key: "InteractiveChat",
       render: (sideWrapperRef) => (
@@ -112,6 +125,8 @@ export const routesSideConfig = routesConfig
   }, [] as Array<RouteSideConfig & { locations: Location[] }>);
 export const routesMainConfig = routesConfig.map((it) => ({
   location: it.location,
+  titleKey: it.titleKey,
+  descriptionKey: it.descriptionKey,
   ...it.main,
 }));
 
