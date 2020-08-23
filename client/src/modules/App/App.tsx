@@ -79,7 +79,7 @@ function App() {
                       </>
                     );
                   }}
-                  exact={true}
+                  exact={it.exact !== undefined ? it.exact : true}
                 />
               );
             })}
@@ -98,7 +98,7 @@ function App() {
                     ? null
                     : it.render(wrapperRef)
                 }
-                exact={true}
+                exact={it.exact !== undefined ? it.exact : true}
               />
             ))}
           </Switch>

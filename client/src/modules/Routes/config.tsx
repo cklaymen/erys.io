@@ -8,6 +8,7 @@ import WorksMain from "src/modules/Works/Main";
 import ServicesMain from "src/modules/Services/Main";
 import CookiesMain from "src/modules/Cookies/Main";
 import { TranslationKey } from "src/modules/Translations/Translation";
+import Main404 from "src/modules/404/main";
 
 type RenderSide = (wrapperRef?: RefObject<HTMLDivElement>) => ReactElement;
 type RenderMain = () => ReactElement;
@@ -18,6 +19,7 @@ interface RouteConfig {
   descriptionKey?: TranslationKey;
   side: RouteSideConfig;
   main: RouteMainConfig;
+  exact?: boolean;
 }
 
 interface RouteMainConfig {
@@ -25,12 +27,14 @@ interface RouteMainConfig {
   titleKey?: TranslationKey;
   descriptionKey?: TranslationKey;
   render: RenderMain;
+  exact?: boolean;
 }
 
 interface RouteSideConfig {
   key: string;
   render: RenderSide;
   onlyOnLargerDevice?: boolean;
+  exact?: boolean;
 }
 
 const routesConfig: RouteConfig[] = [
@@ -108,12 +112,23 @@ const routesConfig: RouteConfig[] = [
       render: () => <CookiesMain />,
     },
   },
+  {
+    location: "home",
+    exact: false,
+    titleKey: TranslationKey.NOT_FOUND_PATH_TITLE,
+    main: { key: "Main404", render: () => <Main404 /> },
+    side: {
+      key: "InteractiveChat",
+      render: () => <></>,
+      onlyOnLargerDevice: true,
+    },
+  },
 ];
 
 export default routesConfig;
 
 export const routesSideConfig = routesConfig
-  .map((it) => ({ location: it.location, ...it.side }))
+  .map((it) => ({ location: it.location, exact: it.exact, ...it.side }))
   .reduce((a, b) => {
     const foundElement = a.find((it) => it.key === b.key);
     if (foundElement) {
@@ -127,6 +142,7 @@ export const routesMainConfig = routesConfig.map((it) => ({
   location: it.location,
   titleKey: it.titleKey,
   descriptionKey: it.descriptionKey,
+  exact: it.exact,
   ...it.main,
 }));
 

@@ -94,9 +94,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
+        background-color: white;
+        z-index: 100;
       }
       .init-spinner {
         display: block;
@@ -111,9 +113,7 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <div class="init-loading"><div class="init-spinner"></div></div>
-    </div>
+    <div id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -124,5 +124,16 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      var initSpinner = document.createElement("div");
+      initSpinner.setAttribute("class", "init-spinner");
+      var initLoading = document.createElement("div");
+      initLoading.setAttribute("class", "init-loading");
+      initLoading.appendChild(initSpinner);
+      document.body.appendChild(initLoading);
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementsByClassName("init-loading")[0].remove();
+      });
+    </script>
   </body>
 </html>
