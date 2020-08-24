@@ -17,7 +17,7 @@ interface RouteConfig {
   location: Location;
   titleKey?: TranslationKey;
   descriptionKey?: TranslationKey;
-  side: RouteSideConfig;
+  side?: RouteSideConfig;
   main: RouteMainConfig;
   exact?: boolean;
 }
@@ -117,18 +117,14 @@ const routesConfig: RouteConfig[] = [
     exact: false,
     titleKey: TranslationKey.NOT_FOUND_PATH_TITLE,
     main: { key: "Main404", render: () => <Main404 /> },
-    side: {
-      key: "InteractiveChat",
-      render: () => <></>,
-      onlyOnLargerDevice: true,
-    },
   },
 ];
 
 export default routesConfig;
 
 export const routesSideConfig = routesConfig
-  .map((it) => ({ location: it.location, exact: it.exact, ...it.side }))
+  .filter((it) => it.side !== undefined)
+  .map((it) => ({ location: it.location, exact: it.exact, ...it.side! }))
   .reduce((a, b) => {
     const foundElement = a.find((it) => it.key === b.key);
     if (foundElement) {

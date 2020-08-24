@@ -19,7 +19,7 @@ function App() {
   const sideOnlyOnLargerDevicePaths = useMemo(
     () =>
       routesConfig
-        .filter((it) => it.side.onlyOnLargerDevice === true)
+        .filter((it) => it.side && it.side.onlyOnLargerDevice === true)
         .map((it) => getPath(it.location, langs))
         .reduce((a, b) => [...a, ...b], []),
     [getPath]
