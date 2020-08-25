@@ -52,5 +52,8 @@
     "@types/react-router-dom": "^5.1.5",
     "react-snap": "^1.23.0"
   },
-  "reactSnap": {}
+  "reactSnap": {
+    "inlineCss": true,
+    "skipThirdPartyRequests": true
+  }
 }
