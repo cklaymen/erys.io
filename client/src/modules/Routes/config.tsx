@@ -17,6 +17,7 @@ interface RouteConfig {
   location: Location;
   titleKey?: TranslationKey;
   descriptionKey?: TranslationKey;
+  keywordsKey?: TranslationKey;
   side?: RouteSideConfig;
   main: RouteMainConfig;
   exact?: boolean;
@@ -26,6 +27,7 @@ interface RouteMainConfig {
   key: string;
   titleKey?: TranslationKey;
   descriptionKey?: TranslationKey;
+  keywordsKey?: TranslationKey;
   render: RenderMain;
   exact?: boolean;
 }
@@ -55,6 +57,7 @@ const routesConfig: RouteConfig[] = [
     location: "about",
     titleKey: TranslationKey.ABOUT_PATH_TITLE,
     descriptionKey: TranslationKey.ABOUT_PATH_DESCRIPTION,
+    keywordsKey: TranslationKey.ABOUT_PATH_KEYWORDS,
     side: {
       key: "AboutSide",
       render: () => <AboutSide />,
@@ -68,6 +71,7 @@ const routesConfig: RouteConfig[] = [
     location: "works",
     titleKey: TranslationKey.WORKS_PATH_TITLE,
     descriptionKey: TranslationKey.WORKS_PATH_DESCRIPTION,
+    keywordsKey: TranslationKey.WORKS_PATH_KEYWORDS,
     side: {
       key: "InteractiveChat",
       render: (sideWrapperRef) => (
@@ -84,6 +88,7 @@ const routesConfig: RouteConfig[] = [
     location: "services",
     titleKey: TranslationKey.SERVICES_PATH_TITLE,
     descriptionKey: TranslationKey.SERVICES_PATH_DESCRIPTION,
+    keywordsKey: TranslationKey.SERVICES_PATH_KEYWORDS,
     side: {
       key: "InteractiveChat",
       render: (sideWrapperRef) => (
@@ -100,6 +105,7 @@ const routesConfig: RouteConfig[] = [
     location: "cookies",
     titleKey: TranslationKey.COOKIES_POLICY_PATH_TITLE,
     descriptionKey: TranslationKey.COOKIES_POLICY_PATH_DESCRIPTION,
+    keywordsKey: TranslationKey.COOKIES_POLICY_PATH_KEYWORDS,
     side: {
       key: "InteractiveChat",
       render: (sideWrapperRef) => (
@@ -138,6 +144,7 @@ export const routesMainConfig = routesConfig.map((it) => ({
   location: it.location,
   titleKey: it.titleKey,
   descriptionKey: it.descriptionKey,
+  keywordsKey: it.keywordsKey,
   exact: it.exact,
   ...it.main,
 }));

@@ -49,6 +49,7 @@ function App() {
                     let helmet;
                     let title;
                     let description;
+                    let keywords;
 
                     if (it.titleKey) {
                       title = t(it.titleKey);
@@ -56,18 +57,22 @@ function App() {
                     if (it.descriptionKey) {
                       description = t(it.descriptionKey);
                     }
+                    if (it.keywordsKey) {
+                      keywords = t(it.keywordsKey);
+                    }
                     if (title || description) {
                       helmet = (
                         <Helmet>
                           {title && <title>{title}</title>}
                           {description && (
-                            <>
-                              <meta
-                                name="description"
-                                property="og:description"
-                                content={description}
-                              />
-                            </>
+                            <meta
+                              name="description"
+                              property="og:description"
+                              content={description}
+                            />
+                          )}
+                          {keywords && (
+                            <meta name="keywords" content={keywords} />
                           )}
                         </Helmet>
                       );

@@ -93,13 +93,21 @@ const pl: Translation = {
   [TranslationKey.ABOUT_PATH_TITLE]: `O mnie | ${HOME_PATH_TITLE}`,
   [TranslationKey.ABOUT_PATH_DESCRIPTION]:
     "Jestem informatykiem programistą. Działam zdalnie na terenie całego kraju, a w miejscowościach: Żory, Rybnik, Gliwice, Katowice i okolice chętnie spotkam się osobiście. Posiadam doświadczenie w tworzeniu programów w technologiach webowych oraz stron internetowych.",
+  [TranslationKey.ABOUT_PATH_KEYWORDS]:
+    "o mnie, programista, żory, rybnik, gliwice, katowice, producent oprogramowania, inżynier, magister, informatyk",
   [TranslationKey.SERVICES_PATH_TITLE]: `Usługi | ${HOME_PATH_TITLE}`,
   [TranslationKey.SERVICES_PATH_DESCRIPTION]:
     "Tworzę dedykowane rozwiązania według wytycznych zamawiającego: programy i strony internetowe z wykorzystaniem technologii webowych: React, Node i pokrewne. Podejmuję się współprac z innymi zespołami wytwarzającymi oprogramowanie.",
+  [TranslationKey.SERVICES_PATH_KEYWORDS]:
+    "producent oprogramowania, strony internetowe, javascript, typescript, usługi programistyczne, oferta, react, node, aplikacje",
   [TranslationKey.WORKS_PATH_TITLE]: `Realizacje | ${HOME_PATH_TITLE}`,
   [TranslationKey.WORKS_PATH_DESCRIPTION]: `Dedykowane programy oraz strony internetowe, które wykonałem jako firma ${COMPANY_NAME}.`,
+  [TranslationKey.WORKS_PATH_KEYWORDS]:
+    "portfolio, projekty, strony internetowe, aplikacje",
   [TranslationKey.COOKIES_POLICY_PATH_TITLE]: `Polityka cookies | ${HOME_PATH_TITLE}`,
   [TranslationKey.COOKIES_POLICY_PATH_DESCRIPTION]: `Zasady wykorzystywania ciasteczek przez stronę firmy ${COMPANY_NAME} - erys.io`,
+  [TranslationKey.COOKIES_POLICY_PATH_KEYWORDS]:
+    "zasady cookies, polityka strony, polityka prywatności",
   [TranslationKey.NOT_FOUND_PATH_TITLE]: `404 | ${HOME_PATH_TITLE}`,
 
   // *** Route paths translations ***
