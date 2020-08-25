@@ -12,7 +12,7 @@ function initTranslations() {
     },
     lng: "pl",
     fallbackLng: "pl",
-    debug: true,
+    debug: process.env.NODE_ENV === "development",
 
     interpolation: {
       escapeValue: false,
