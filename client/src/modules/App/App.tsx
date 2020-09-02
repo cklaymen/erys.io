@@ -12,6 +12,7 @@ import langs from "src/modules/Translations/langs";
 import useDevice from "src/modules/shared/useDevice";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
+import { HOST_NAME } from "src/const";
 
 function App() {
   const { getPath } = usePath();
@@ -74,6 +75,10 @@ function App() {
                           {keywords && (
                             <meta name="keywords" content={keywords} />
                           )}
+                          <link
+                            rel="canonical"
+                            href={HOST_NAME + getPath(it.location)}
+                          />
                         </Helmet>
                       );
                     }

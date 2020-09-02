@@ -12,3 +12,4 @@ NIP: 6511711490, REGON: 385713960
 
 PL 76 1050 1676 1000 0092 7610 6383
 ING Bank Śląski S.A.`;
+export const HOST_NAME = "https://erys.io";
