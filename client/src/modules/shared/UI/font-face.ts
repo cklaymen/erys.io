@@ -73,6 +73,7 @@ const fontFace = () => css`
         format("truetype"),
       /* Safari, Android, iOS */
         url(${open_sans_v17_latin_ext_latin_300_svg + svgSuffix}) format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
   /* open-sans-300italic - latin-ext_latin */
   @font-face {
@@ -93,6 +94,7 @@ const fontFace = () => css`
       /* Safari, Android, iOS */
         url(${open_sans_v17_latin_ext_latin_300italic_svg + svgSuffix})
         format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
   /* open-sans-regular - latin-ext_latin */
   @font-face {
@@ -113,6 +115,7 @@ const fontFace = () => css`
       /* Safari, Android, iOS */
         url(${open_sans_v17_latin_ext_latin_regular_svg + svgSuffix})
         format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
   /* open-sans-italic - latin-ext_latin */
   @font-face {
@@ -133,6 +136,7 @@ const fontFace = () => css`
       /* Safari, Android, iOS */
         url(${open_sans_v17_latin_ext_latin_italic_svg + svgSuffix})
         format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
   /* open-sans-600 - latin-ext_latin */
   @font-face {
@@ -151,6 +155,7 @@ const fontFace = () => css`
         format("truetype"),
       /* Safari, Android, iOS */
         url(${open_sans_v17_latin_ext_latin_600_svg + svgSuffix}) format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
   /* open-sans-600italic - latin-ext_latin */
   @font-face {
@@ -171,6 +176,7 @@ const fontFace = () => css`
       /* Safari, Android, iOS */
         url(${open_sans_v17_latin_ext_latin_600italic_svg + svgSuffix})
         format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
   /* open-sans-700 - latin-ext_latin */
   @font-face {
@@ -189,6 +195,7 @@ const fontFace = () => css`
         format("truetype"),
       /* Safari, Android, iOS */
         url(${open_sans_v17_latin_ext_latin_700_svg + svgSuffix}) format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
   /* open-sans-700italic - latin-ext_latin */
   @font-face {
@@ -209,6 +216,7 @@ const fontFace = () => css`
       /* Safari, Android, iOS */
         url(${open_sans_v17_latin_ext_latin_700italic_svg + svgSuffix})
         format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
   /* open-sans-800 - latin-ext_latin */
   @font-face {
@@ -227,6 +235,7 @@ const fontFace = () => css`
         format("truetype"),
       /* Safari, Android, iOS */
         url(${open_sans_v17_latin_ext_latin_800_svg + svgSuffix}) format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
   /* open-sans-800italic - latin-ext_latin */
   @font-face {
@@ -247,6 +256,7 @@ const fontFace = () => css`
       /* Safari, Android, iOS */
         url(${open_sans_v17_latin_ext_latin_800italic_svg + svgSuffix})
         format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
 `;
 
