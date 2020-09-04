@@ -54,13 +54,21 @@ const Footer: FC = () => {
             </ContactLink>
           </ContactInfo>
           <ContactSocials>
-            <ContactLink href={FB_URL} target="_blank">
+            <ContactLink href={FB_URL} target="_blank" aria-label="Facebook">
               <ContactIcon type="Fb" />
             </ContactLink>
-            <ContactLink href={INSTAGRAM_URL} target="_blank">
+            <ContactLink
+              href={INSTAGRAM_URL}
+              target="_blank"
+              aria-label="Instagram"
+            >
               <ContactIcon type="Instagram" />
             </ContactLink>
-            <ContactLink href={LINKEDIN_URL} target="_blank">
+            <ContactLink
+              href={LINKEDIN_URL}
+              target="_blank"
+              aria-label="LinkedIn"
+            >
               <ContactIcon type="LinkedIn" />
             </ContactLink>
           </ContactSocials>

@@ -123,6 +123,7 @@ const Nav: FC = () => {
           <FloatButtonInternalLink
             location="about"
             onClick={handlePageLinkClick}
+            aria-label={t(TranslationKey.ABOUT_ME)}
           >
             <NavLink>
               <NavLinkText>{t(TranslationKey.ABOUT_ME)}</NavLinkText>
@@ -131,6 +132,7 @@ const Nav: FC = () => {
           <FloatButtonInternalLink
             location="services"
             onClick={handlePageLinkClick}
+            aria-label={t(TranslationKey.SERVICES)}
           >
             <NavLink>
               <NavLinkText>{t(TranslationKey.SERVICES)}</NavLinkText>
@@ -139,6 +141,7 @@ const Nav: FC = () => {
           <FloatButtonInternalLink
             location="works"
             onClick={handlePageLinkClick}
+            aria-label={t(TranslationKey.WORKS)}
           >
             <NavLink>
               <NavLinkText>{t(TranslationKey.WORKS)}</NavLinkText>
@@ -147,25 +150,33 @@ const Nav: FC = () => {
         </NavPages>
         <NavContact>
           <NavSocials>
-            <SocialLink href={FB_URL} target="_blank">
+            <SocialLink href={FB_URL} target="_blank" aria-label="Facebook">
               <SocialIcon type="Fb" />
             </SocialLink>
-            <SocialLink href={INSTAGRAM_URL} target="_blank">
+            <SocialLink
+              href={INSTAGRAM_URL}
+              target="_blank"
+              aria-label="Instagram"
+            >
               <SocialIcon type="Instagram" />
             </SocialLink>
-            <SocialLink href={LINKEDIN_URL} target="_blank">
+            <SocialLink
+              href={LINKEDIN_URL}
+              target="_blank"
+              aria-label="LinkedIn"
+            >
               <SocialIcon type="LinkedIn" />
             </SocialLink>
           </NavSocials>
           <ExternalLink href={`mailto:${EMAIL}`}>
             <NavLink>
-              <NavLinkFloatButton iconType="Mail" />
+              <NavLinkFloatButton iconType="Mail" aria-label="Mail" />
               <NavLinkText>{EMAIL}</NavLinkText>
             </NavLink>
           </ExternalLink>
           <ExternalLink href={`tel:${PHONE_VALUE}`}>
             <NavLink>
-              <NavLinkFloatButton iconType="Phone" />
+              <NavLinkFloatButton iconType="Phone" aria-label="Phone" />
               <NavLinkText>{PHONE}</NavLinkText>
             </NavLink>
           </ExternalLink>

@@ -45,7 +45,7 @@ const Layout: FC<Props> = ({ renderMain, renderSide, hideSide }) => {
             <SideContentWrapper>
               {isLargerDeviceSize && (
                 <LogoWrapper>
-                  <InternalLink location="home">
+                  <InternalLink location="home" aria-label="home">
                     <StyledLogo />
                   </InternalLink>
                 </LogoWrapper>

@@ -25,7 +25,7 @@ const FloatButtonWithLabel: FC<Props> = ({
     <FloatButtonWithLabelContainer>
       <FloatButtonLabel>{label}</FloatButtonLabel>
     </FloatButtonWithLabelContainer>
-    <StyledFloatButton iconType={iconType} />
+    <StyledFloatButton iconType={iconType} aria-label={label} />
   </FloatButtonWithLabelWrapper>
 );
 

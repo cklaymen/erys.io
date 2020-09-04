@@ -7,6 +7,7 @@ import { Location } from "src/modules/Routes/pathKeys";
 interface Props {
   location: Location;
   className?: string;
+  "aria-label"?: string;
   onClick?(event: React.MouseEvent): void;
 }
 
@@ -14,6 +15,7 @@ const InternalLink: FC<Props> = ({
   location,
   children,
   className,
+  "aria-label": ariaLabel,
   onClick,
 }) => {
   const { getPath } = usePath();
@@ -31,7 +33,12 @@ const InternalLink: FC<Props> = ({
   );
 
   return (
-    <StyledLink to={path} onClick={handleClick} className={className}>
+    <StyledLink
+      to={path}
+      onClick={handleClick}
+      className={className}
+      aria-label={ariaLabel}
+    >
       {children}
     </StyledLink>
   );

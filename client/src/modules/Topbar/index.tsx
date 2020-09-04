@@ -16,7 +16,7 @@ const Topbar: FC = () => {
   return (
     <TopbarWrapper>
       <TopbarContainer mini={isMini}>
-        <InternalLink location="home">
+        <InternalLink location="home" aria-label="home">
           <LogoWrapper mini={isMini}>
             <StyledLogo />
           </LogoWrapper>

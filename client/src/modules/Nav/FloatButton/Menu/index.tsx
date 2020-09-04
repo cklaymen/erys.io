@@ -12,7 +12,11 @@ interface Props {
 }
 
 const MenuFloatButton: FC<Props> = ({ className, onClick, icon }) => (
-  <MenuFloatButtonWrapper className={className} onClick={onClick}>
+  <MenuFloatButtonWrapper
+    className={className}
+    onClick={onClick}
+    aria-label="Menu"
+  >
     <MenuIcon icon={icon} />
   </MenuFloatButtonWrapper>
 );
