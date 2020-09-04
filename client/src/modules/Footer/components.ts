@@ -86,12 +86,9 @@ export const ContentParagraph = styled.p`
 
 export const ContactIcon = styled(Icon)`
   color: ${colors.yellow};
-  width: 15px;
+  width: 20px;
   vertical-align: middle;
 
-  ${media.medium`
-    width: 20px;
-  `}
   ${media.large`
     width: 28px;
   `}
@@ -100,6 +97,7 @@ export const ContactIcon = styled(Icon)`
 export const ContactLink = styled(ExternalLink)`
   ${defaultClickable()};
   display: inline-block;
+  font-size: 1.3rem;
   font-weight: 600;
   white-space: nowrap;
 
@@ -109,9 +107,6 @@ export const ContactLink = styled(ExternalLink)`
     }
   }
 
-  ${media.medium`
-    font-size: 1.3rem;
-  `}
   ${media.large`
     font-size: 1.4rem;
   `}
@@ -151,7 +146,7 @@ export const ContactInfo = styled.div`
 
 export const ContactSocials = styled.div`
   margin-top: 10px;
-  padding-left: 25px;
+  padding-left: 30px;
   white-space: nowrap;
 
   & ${ContactLink} + ${ContactLink} {

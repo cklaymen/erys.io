@@ -89,6 +89,7 @@ export const LogoWrapper = styled.div<Props>`
 `;
 
 export const StyledLogo = styled(Logo)`
+  width: auto;
   max-width: 100%;
 
   ${media.medium`

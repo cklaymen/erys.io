@@ -32,7 +32,7 @@ const Button = styled.button.attrs((props) => ({
   color: ${colors.black};
   padding: 7px 25px 8px 25px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 
   &:hover {
     ${buttonHoverStyle()};

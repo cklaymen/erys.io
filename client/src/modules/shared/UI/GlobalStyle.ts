@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   ${fontFace()};
 
   html {
-    font-size: 10px;
+    font-size: 11px;
     ${media.medium`
       font-size: 12px;
     `}

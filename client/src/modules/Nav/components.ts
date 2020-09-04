@@ -229,7 +229,7 @@ export const NavLink = styled.div`
   align-items: center;
   padding: 10px ${NAV_CONTAINER_PADDING_LEFT_IN_PX_EXTRA_SMALL}px;
   font-weight: 600;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   user-select: none;
   color: ${colors.yellow};
   text-decoration: none;
