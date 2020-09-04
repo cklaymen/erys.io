@@ -13,6 +13,7 @@ import {
 } from "src/modules/shared/UI/defaults";
 import media from "src/modules/shared/UI/media";
 import { NAV_FLOAT_BUTTON_BAR_WIDTH_IN_PX_EXTRA_SMALL } from "src/modules/Nav/components";
+import ExternalLink from "src/modules/shared/ExternalLink";
 
 export const FooterWrapper = styled.footer`
   background-color: ${colors.black};
@@ -96,11 +97,9 @@ export const ContactIcon = styled(Icon)`
   `}
 `;
 
-export const ContactLink = styled.a`
+export const ContactLink = styled(ExternalLink)`
   ${defaultClickable()};
   display: inline-block;
-  text-decoration: none;
-  color: inherit;
   font-weight: 600;
   white-space: nowrap;
 

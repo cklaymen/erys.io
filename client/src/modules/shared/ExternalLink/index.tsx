@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ExternalLink = styled.a`
+const ExternalLink = styled.a.attrs({ rel: "noopener" })`
   text-decoration: none;
   color: inherit;
 `;

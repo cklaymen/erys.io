@@ -5,6 +5,7 @@ import Icon from "src/modules/shared/UI/Icon";
 import colors from "src/modules/shared/UI/colors";
 import media from "src/modules/shared/UI/media";
 import { defaultAppearanceAnimationSequence } from "src/modules/shared/UI/defaults";
+import ExternalLink from "src/modules/shared/ExternalLink";
 
 export const AboutSideWrapper = styled.div`
   text-align: center;
@@ -36,10 +37,8 @@ export const AboutContact = styled.div`
   /* font-weight: 600; */
 `;
 
-export const ContactElement = styled.a`
+export const ContactElement = styled(ExternalLink)`
   white-space: nowrap;
-  color: inherit;
-  text-decoration: none;
   display: inline-block;
 
   &:not(:last-child) {
