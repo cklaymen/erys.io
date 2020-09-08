@@ -42,6 +42,9 @@ interface RouteSideConfig {
 const routesConfig: RouteConfig[] = [
   {
     location: "home",
+    titleKey: TranslationKey.HOME_PATH_TITLE,
+    descriptionKey: TranslationKey.HOME_PATH_DESCRIPTION,
+    keywordsKey: TranslationKey.HOME_PATH_KEYWORDS,
     side: {
       key: "InteractiveChat",
       render: (sideWrapperRef) => (

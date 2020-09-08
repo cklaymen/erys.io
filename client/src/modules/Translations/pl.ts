@@ -90,6 +90,11 @@ const pl: Translation = {
     "Aplikacja webowa służąca do konwertowania pliku z fakturami. Dzięki niej zautomatyzowano proces księgowania dużej ilości faktur, przez co oszczędzono pracę księgowych, a tym samym pieniądze klienta.",
 
   // *** Route meta data ***
+  [TranslationKey.HOME_PATH_TITLE]: HOME_PATH_TITLE,
+  [TranslationKey.HOME_PATH_DESCRIPTION]:
+    "Tworzę oprogramowanie na zamówienie z wykorzystaniem technologii webowych 📱💻🖥🌎🔥 - zarówno złożone aplikacje webowe jak i proste strony internetowe. Napisz czego potrzebujesz, a przedstawię najlepsze możliwe rozwiązania.",
+  [TranslationKey.HOME_PATH_KEYWORDS]:
+    "żory,programista,strony internetowe,www,aplikacje,producent oprogramowania,javascript,react,node",
   [TranslationKey.ABOUT_PATH_TITLE]: `O mnie | ${HOME_PATH_TITLE}`,
   [TranslationKey.ABOUT_PATH_DESCRIPTION]:
     "Jestem informatykiem programistą. Działam zdalnie na terenie całego kraju, a w miejscowościach: Żory, Rybnik, Gliwice, Katowice i okolice chętnie spotkam się osobiście. Posiadam doświadczenie w tworzeniu programów w technologiach webowych oraz stron internetowych.",
