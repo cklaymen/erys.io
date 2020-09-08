@@ -19,7 +19,7 @@ export const AboutPortrait = styled.img.attrs({
   alt: "Ryszard Plewnia",
 })`
   ${defaultAppearanceAnimationSequence(1)};
-  width: 50%;
+  width: 45%;
   border-radius: 50%;
 `;
 
