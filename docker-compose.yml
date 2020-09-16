@@ -12,3 +12,18 @@ services:
       - CHOKIDAR_USEPOLLING=true
     tty: true
     restart: always
+  blog:
+    build: ./blog
+    volumes:
+      - ./blog:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3001:3000
+    tty: true
+    restart: always
+  api:
+    image: strapi/strapi
+    volumes:
+      - ./api:/srv/app
+    ports:
+      - 1337:1337
