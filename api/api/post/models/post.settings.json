@@ -31,7 +31,7 @@
       "plugin": "upload",
       "required": true
     },
-    "date": {
+    "published_at": {
       "type": "datetime",
       "required": true
     },
