@@ -1,0 +1,17 @@
+query Posts {
+  posts {
+    user {
+      id
+      username
+      avatar {
+        url
+      }
+    }
+    title
+    date
+    description
+    tags {
+      name
+    }
+  }
+}

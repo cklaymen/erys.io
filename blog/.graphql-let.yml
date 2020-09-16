@@ -1,0 +1,7 @@
+schema: ${API_URI:http://localhost:1337/graphql}
+documents: "**/*.graphql"
+plugins:
+  - typescript
+  - typescript-operations
+  - typescript-react-apollo
+cacheDir: __generated__
