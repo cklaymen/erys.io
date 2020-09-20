@@ -1,4 +1,5 @@
 import Head from "next/head";
+import PostsList from "../components/PostsList/PostsList";
 
 import { initializeApollo } from "../lib/apolloClient";
 import { usePostsQuery, PostsDocument } from "../lib/graphql/posts.graphql";
@@ -13,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>Blog erys.io</h1>
-      <div>{data && data.posts!.map((it: any) => it.title).join(", ")}</div>
+      <PostsList posts={data?.posts} />
     </div>
   );
 }

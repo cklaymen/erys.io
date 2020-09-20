@@ -1,4 +1,5 @@
 query Posts {
+  # Write your query or mutation here
   posts {
     user {
       id
@@ -8,8 +9,11 @@ query Posts {
       }
     }
     title
-    date
+    published_at
     description
+    poster {
+      url
+    }
     tags {
       name
     }
