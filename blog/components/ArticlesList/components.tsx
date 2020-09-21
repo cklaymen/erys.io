@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PostWrapper = styled.article`
+export const ArticleWrapper = styled.article`
   display: flex;
   & + & {
     margin-top: 50px;
@@ -46,4 +46,4 @@ export const Bar = styled.div`
   justify-content: space-between;
 `;
 
-export const PostsListWrapper = styled.section``;
+export const ArticlesListWrapper = styled.section``;

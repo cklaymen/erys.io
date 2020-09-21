@@ -1,12 +1,15 @@
 import Head from "next/head";
-import PostsList from "../components/PostsList/PostsList";
+import ArticlesList from "../components/ArticlesList/ArticlesList";
 
 import { initializeApollo } from "../lib/apolloClient";
-import { usePostsQuery, PostsDocument } from "../lib/graphql/posts.graphql";
+import {
+  ArticlesDocument,
+  useArticlesQuery,
+} from "../lib/graphql/articles.graphql";
 
 export default function Home() {
-  const { data } = usePostsQuery();
-  console.log(data?.posts);
+  const { data } = useArticlesQuery();
+  console.log(data?.articles);
   return (
     <div>
       <Head>
@@ -14,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>Blog erys.io</h1>
-      <PostsList posts={data?.posts} />
+      <ArticlesList articles={data?.articles} />
     </div>
   );
 }
@@ -23,7 +26,7 @@ export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: PostsDocument,
+    query: ArticlesDocument,
   });
 
   return {

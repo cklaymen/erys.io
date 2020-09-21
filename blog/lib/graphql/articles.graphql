@@ -1,6 +1,6 @@
-query Posts {
+query Articles {
   # Write your query or mutation here
-  posts {
+  articles {
     user {
       id
       username

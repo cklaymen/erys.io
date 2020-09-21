@@ -2,18 +2,18 @@ import React, { FC } from "react";
 
 import getAbsoluteApiUrl from "../../helpers/getAbsoluteApiUrl";
 import {
+  ArticleWrapper,
   Author,
   Avatar,
   Bar,
   Description,
   Poster,
-  PostWrapper,
   PublishedDate,
   Title,
 } from "./components";
 
 interface Props {
-  post: {
+  article: {
     title: string;
     description: string;
     posterUrl: string;
@@ -23,8 +23,8 @@ interface Props {
   };
 }
 
-const Post: FC<Props> = ({
-  post: {
+const Article: FC<Props> = ({
+  article: {
     posterUrl,
     title,
     description,
@@ -36,7 +36,7 @@ const Post: FC<Props> = ({
   const publishedDateISO = new Date(publishedDate).toISOString();
 
   return (
-    <PostWrapper>
+    <ArticleWrapper>
       <Poster url={getAbsoluteApiUrl(posterUrl)} />
       <header>
         <Bar>
@@ -50,8 +50,8 @@ const Post: FC<Props> = ({
         <Title>{title}</Title>
         <Description>{description}</Description>
       </header>
-    </PostWrapper>
+    </ArticleWrapper>
   );
 };
 
-export default Post;
+export default Article;

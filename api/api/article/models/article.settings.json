@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "posts",
+  "collectionName": "articles",
   "info": {
-    "name": "post"
+    "name": "article"
   },
   "options": {
     "increments": true,
@@ -20,7 +20,7 @@
     "user": {
       "plugin": "users-permissions",
       "model": "user",
-      "via": "posts"
+      "via": "articles"
     },
     "poster": {
       "model": "file",
@@ -37,7 +37,7 @@
     },
     "tags": {
       "collection": "tag",
-      "via": "posts",
+      "via": "articles",
       "dominant": true
     },
     "description": {
