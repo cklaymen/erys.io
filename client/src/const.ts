@@ -14,5 +14,6 @@ PL 76 1050 1676 1000 0092 7610 6383
 ING Bank Śląski S.A.`;
 export const HOST_NAME = "https://erys.io";
 
+export const API_URL = process.env.REACT_APP_API_URL || "http://localhost:1337";
 export const GRAPHQL_URL =
   process.env.REACT_APP_GRAPHQL_URL || "http://localhost:1337/graphql";

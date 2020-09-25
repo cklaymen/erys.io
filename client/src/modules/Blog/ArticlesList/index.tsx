@@ -1,18 +1,12 @@
 import React, { FC } from "react";
 
 import { useArticlesQuery } from "src/generated/graphql";
+import ArticlesList from "src/modules/Blog/ArticlesList/ArticlesList";
 
-const ArticlesList: FC = () => {
+const ArticlesListContainer: FC = () => {
   const { data } = useArticlesQuery();
-  const mappedArticles = data?.articles?.map((it) => (
-    <li key={it?.id}>{it?.title}</li>
-  ));
 
-  return (
-    <div>
-      <ul>{mappedArticles}</ul>
-    </div>
-  );
+  return <ArticlesList articles={data?.articles} />;
 };
 
-export default ArticlesList;
+export default ArticlesListContainer;

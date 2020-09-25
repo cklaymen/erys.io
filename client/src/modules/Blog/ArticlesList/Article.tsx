@@ -1,0 +1,68 @@
+import React, { FC } from "react";
+import { getAbsoluteApiUrl } from "src/modules/Api/helpers";
+
+import {
+  ArticleWrapper,
+  Author,
+  Avatar,
+  Bar,
+  Content,
+  Description,
+  Poster,
+  PublishedDate,
+  Side,
+  Title,
+} from "./components";
+
+interface Props {
+  article: {
+    title: string;
+    description: string;
+    posterUrl: string;
+    author: string;
+    authorAvatarUrl: string;
+    publishedDate: string;
+  };
+}
+
+const Article: FC<Props> = ({
+  article: {
+    posterUrl,
+    title,
+    description,
+    author,
+    authorAvatarUrl,
+    publishedDate: publishedDateString,
+  },
+}) => {
+  const publishedDate = new Date(publishedDateString);
+  const publishedDateISO = publishedDate.toISOString();
+
+  return (
+    <ArticleWrapper>
+      <header>
+        <Side>
+          <Poster url={getAbsoluteApiUrl(posterUrl)} />
+
+          <Bar>
+            <Author>
+              <Avatar url={getAbsoluteApiUrl(authorAvatarUrl)} title={author} />
+            </Author>
+            <PublishedDate
+              dateTime={publishedDateISO}
+              title={publishedDate.toLocaleString()}
+            >
+              {publishedDateISO.split("T")[0]}
+            </PublishedDate>
+          </Bar>
+        </Side>
+        <Content>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+        </Content>
+      </header>
+    </ArticleWrapper>
+  );
+};
+
+export default Article;

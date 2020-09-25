@@ -1,5 +1,5 @@
 query Articles {
-  articles {
+  articles(sort: "published_at:DESC") {
     id
     user {
       id
@@ -11,8 +11,9 @@ query Articles {
     title
     published_at
     description
-    tags {
-      name
+    poster {
+      url
     }
+    slug
   }
 }
