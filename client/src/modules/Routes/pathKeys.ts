@@ -6,6 +6,7 @@ interface PathKeys {
   readonly services: TranslationKey[];
   readonly works: TranslationKey[];
   readonly cookies: TranslationKey[];
+  readonly blog: TranslationKey[];
 }
 
 const pathKeys: PathKeys = {
@@ -14,6 +15,7 @@ const pathKeys: PathKeys = {
   services: [TranslationKey.SERVICES_PATH],
   works: [TranslationKey.WORKS_PATH],
   cookies: [TranslationKey.COOKIES_POLICY_PATH],
+  blog: [TranslationKey.BLOG_PATH],
 };
 
 export type Location = keyof PathKeys;

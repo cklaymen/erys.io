@@ -9,6 +9,7 @@ import ServicesMain from "src/modules/Services/Main";
 import CookiesMain from "src/modules/Cookies/Main";
 import { TranslationKey } from "src/modules/Translations/Translation";
 import Main404 from "src/modules/404/main";
+import BlogMain from "src/modules/Blog/Main";
 
 type RenderSide = (wrapperRef?: RefObject<HTMLDivElement>) => ReactElement;
 type RenderMain = () => ReactElement;
@@ -121,6 +122,19 @@ const routesConfig: RouteConfig[] = [
       render: () => <CookiesMain />,
     },
   },
+  {
+    location: "blog",
+    main: { key: "BlogMain", render: () => <BlogMain /> },
+    side: {
+      key: "InteractiveChat",
+      render: (sideWrapperRef) => (
+        <InteractiveChat scrollableWrapperRef={sideWrapperRef} />
+      ),
+      onlyOnLargerDevice: true,
+    },
+  },
+
+  // Always on bottom:
   {
     location: "home",
     exact: false,

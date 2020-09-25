@@ -1,0 +1,18 @@
+query Articles {
+  articles {
+    id
+    user {
+      id
+      username
+      avatar {
+        url
+      }
+    }
+    title
+    published_at
+    description
+    tags {
+      name
+    }
+  }
+}

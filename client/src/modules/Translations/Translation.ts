@@ -77,6 +77,7 @@ export enum TranslationKey {
   SERVICES_PATH = "SERVICES_PATH",
   WORKS_PATH = "WORKS_PATH",
   COOKIES_POLICY_PATH = "COOKIES_POLICY_PATH",
+  BLOG_PATH = "BLOG_PATH",
 }
 
 type Translation = {

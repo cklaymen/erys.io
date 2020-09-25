@@ -120,6 +120,7 @@ const pl: Translation = {
   [TranslationKey.SERVICES_PATH]: "uslugi",
   [TranslationKey.WORKS_PATH]: "realizacje",
   [TranslationKey.COOKIES_POLICY_PATH]: "polityka-cookies",
+  [TranslationKey.BLOG_PATH]: "blog",
 };
 
 export default pl;
