@@ -48,17 +48,17 @@ const Nav: FC = () => {
   const { getPath } = usePath();
   const isAbout =
     useRouteMatch({
-      path: getPath("about", langs),
+      path: getPath("about", { langs }),
       exact: true,
     }) !== null;
   const isServices =
     useRouteMatch({
-      path: getPath("services", langs),
+      path: getPath("services", { langs }),
       exact: true,
     }) !== null;
   const isWorks =
     useRouteMatch({
-      path: getPath("works", langs),
+      path: getPath("works", { langs }),
       exact: true,
     }) !== null;
 

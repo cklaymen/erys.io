@@ -17,7 +17,7 @@ const CookiesFloatMessage: FC = () => {
   const { getPath } = usePath();
   const isCookiesPath =
     useRouteMatch({
-      path: getPath("cookies", langs),
+      path: getPath("cookies", { langs }),
       exact: true,
     }) !== null;
 

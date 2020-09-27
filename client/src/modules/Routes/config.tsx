@@ -10,6 +10,8 @@ import CookiesMain from "src/modules/Cookies/Main";
 import { TranslationKey } from "src/modules/Translations/Translation";
 import Main404 from "src/modules/404/main";
 import BlogMain from "src/modules/Blog/Main";
+import ArticleMain from "src/modules/Blog/Article/Main";
+import ArticleSide from "src/modules/Blog/Article/Side";
 
 type RenderSide = (wrapperRef?: RefObject<HTMLDivElement>) => ReactElement;
 type RenderMain = () => ReactElement;
@@ -120,6 +122,14 @@ const routesConfig: RouteConfig[] = [
     main: {
       key: "CookiesMain",
       render: () => <CookiesMain />,
+    },
+  },
+  {
+    location: "blogArticle",
+    main: { key: "ArticleMain", render: () => <ArticleMain /> },
+    side: {
+      key: "ArticleSide",
+      render: () => <ArticleSide />,
     },
   },
   {
