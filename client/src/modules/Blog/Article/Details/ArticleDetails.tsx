@@ -1,5 +1,17 @@
 import React, { FC } from "react";
 
+import {
+  ArticleDetailsWrapper,
+  Author,
+  Avatar,
+  Details,
+  Poster,
+  PublishedDate,
+  Scrollable,
+  Tag,
+  TagsWrapper,
+} from "src/modules/Blog/Article/Details/components";
+
 interface Props {
   article: {
     posterUrl: string;
@@ -8,17 +20,38 @@ interface Props {
       avatarUrl: string;
       name: string;
     };
+    tags: string[];
   };
 }
 
 const ArticleDetails: FC<Props> = ({
-  article: { posterUrl, publishedAt, author },
+  article: { posterUrl, publishedAt, author, tags },
 }) => {
+  const publishedAtISO = publishedAt.toISOString();
+  const formattedPublishedAt =
+    publishedAtISO.split("T")[0] +
+    ", " +
+    publishedAtISO.split("T")[1].split(":").slice(0, 2).join(":");
+
   return (
-    <div>
-      _ARTICLE_DETAILS_ {posterUrl} {publishedAt.toISOString()}{" "}
-      {author.avatarUrl} {author.name}
-    </div>
+    <ArticleDetailsWrapper>
+      <Poster src={posterUrl} />
+      <Details>
+        <Author>
+          <Avatar src={author.avatarUrl} /> {author.name}
+        </Author>
+        <PublishedDate dateTime={publishedAtISO}>
+          {formattedPublishedAt}
+        </PublishedDate>
+        <TagsWrapper>
+          <Scrollable>
+            {tags.map((it) => (
+              <Tag key={it}>#{it}</Tag>
+            ))}
+          </Scrollable>
+        </TagsWrapper>
+      </Details>
+    </ArticleDetailsWrapper>
   );
 };
 

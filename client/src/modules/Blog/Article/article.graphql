@@ -15,6 +15,9 @@ query Article($slug: String!) {
     poster {
       url
     }
+    tags {
+      name
+    }
     slug
   }
 }

@@ -23,6 +23,7 @@ const ArticleDetailsContainer: FC = () => {
           },
           posterUrl: getAbsoluteApiUrl(article.poster?.url!),
           publishedAt: new Date(article.published_at),
+          tags: article.tags?.map((it) => it!.name)!,
         }}
       />
     );
