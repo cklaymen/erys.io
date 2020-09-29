@@ -14,4 +14,17 @@ export const MarkdownWrapper = styled.div`
   & a {
     ${defaultTextLink()}
   }
+
+  & h1 a,
+  & h2 a,
+  & h3 a,
+  & h4 a,
+  & h5 a,
+  & h6 a {
+    text-decoration: none;
+
+    :hover {
+      color: inherit;
+    }
+  }
 `;
