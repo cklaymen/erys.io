@@ -87,6 +87,7 @@ export const defaultAppearanceAnimationSequence = (ordinalNumber: number = 1) =>
 
 export const defaultTextLink = () => css`
   font-weight: bold;
+  color: inherit;
 
   &:hover {
     color: ${colors.yellow};
