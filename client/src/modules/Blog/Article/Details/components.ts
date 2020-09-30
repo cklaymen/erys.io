@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import colors from "src/modules/shared/UI/colors";
 import media from "src/modules/shared/UI/media";
+import { defaultAppearanceAnimationSequence } from "src/modules/shared/UI/defaults";
 
 const RoundImage = styled.div<{ src: string }>`
   background-image: url(${(p) => p.src});
@@ -12,6 +13,7 @@ const RoundImage = styled.div<{ src: string }>`
 `;
 
 export const ArticleDetailsWrapper = styled.header`
+  ${defaultAppearanceAnimationSequence(1)};
   border-radius: 200px;
   overflow: hidden;
   display: flex;
@@ -21,6 +23,8 @@ export const ArticleDetailsWrapper = styled.header`
 `;
 
 export const Poster = styled(RoundImage)`
+  ${defaultAppearanceAnimationSequence(2)};
+
   width: 40%;
   padding-bottom: 40%;
   margin: -5px 0 -5px -5px;
@@ -34,6 +38,7 @@ export const Details = styled.div`
 `;
 
 export const Author = styled.div`
+  ${defaultAppearanceAnimationSequence(3)};
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -45,6 +50,7 @@ export const Author = styled.div`
 `;
 
 export const Avatar = styled(RoundImage)`
+  ${defaultAppearanceAnimationSequence(4)};
   width: 25px;
   height: 25px;
   margin-right: 10px;
@@ -56,6 +62,8 @@ export const Avatar = styled(RoundImage)`
 `;
 
 export const PublishedDate = styled.time`
+  ${defaultAppearanceAnimationSequence(5)};
+
   font-size: 1rem;
   margin-left: 35px;
   display: block;
@@ -66,6 +74,8 @@ export const PublishedDate = styled.time`
 `;
 
 export const TagsWrapper = styled.div`
+  ${defaultAppearanceAnimationSequence(6)};
+
   margin-top: 15px;
   margin-right: 20px;
   position: relative;
