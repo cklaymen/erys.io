@@ -11,10 +11,14 @@ const ArticleDetailsContainer: FC = () => {
   const {
     params: { slug },
   } = useRouteMatch<{ slug: string }>();
-  const { data, loading } = useArticleQuery({ variables: { slug } });
+  const { data, loading, error } = useArticleQuery({ variables: { slug } });
 
   if (loading) {
     return <Loading />;
+  }
+
+  if (error) {
+    return null;
   }
 
   if (data?.articles && data.articles[0]) {
