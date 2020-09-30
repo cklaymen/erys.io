@@ -116,7 +116,12 @@ const pl: Translation = {
   [TranslationKey.COOKIES_POLICY_PATH_DESCRIPTION]: `Zasady wykorzystywania ciasteczek przez stronę firmy ${COMPANY_NAME} - erys.io`,
   [TranslationKey.COOKIES_POLICY_PATH_KEYWORDS]:
     "zasady cookies, polityka strony, polityka prywatności",
+  [TranslationKey.BLOG_PATH_TITLE]: "Blog programistyczny | ERYS'",
+  [TranslationKey.BLOG_PATH_DESCRIPTION]:
+    "Publikacje dotyczące głównie technicznych aspektów programowania w nowoczesnych technologiach webowych. Typescript, React, Node oraz pokrewne.",
   [TranslationKey.NOT_FOUND_PATH_TITLE]: `404 | ${HOME_PATH_TITLE}`,
+  [TranslationKey.BLOG_PATH_KEYWORDS]:
+    "blog programistyczny, nowoczesne programowanie, react, node, javascript, typescript",
 
   // *** Route paths translations ***
   [TranslationKey.ABOUT_PATH]: "o-mnie",

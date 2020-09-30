@@ -134,6 +134,9 @@ const routesConfig: RouteConfig[] = [
   },
   {
     location: "blog",
+    titleKey: TranslationKey.BLOG_PATH_TITLE,
+    descriptionKey: TranslationKey.BLOG_PATH_DESCRIPTION,
+    keywordsKey: TranslationKey.BLOG_PATH_KEYWORDS,
     main: { key: "BlogMain", render: () => <BlogMain /> },
     side: {
       key: "InteractiveChat",
