@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { getAbsoluteApiUrl } from "src/modules/Api/helpers";
+import InternalLink from "src/modules/Routes/InternalLink";
 
 import {
   ArticleWrapper,
@@ -22,6 +23,7 @@ interface Props {
     author: string;
     authorAvatarUrl: string;
     publishedDate: string;
+    slug: string;
   };
 }
 
@@ -33,6 +35,7 @@ const Article: FC<Props> = ({
     author,
     authorAvatarUrl,
     publishedDate: publishedDateString,
+    slug,
   },
 }) => {
   const publishedDate = new Date(publishedDateString);
@@ -40,27 +43,32 @@ const Article: FC<Props> = ({
 
   return (
     <ArticleWrapper>
-      <header>
-        <Side>
-          <Poster url={getAbsoluteApiUrl(posterUrl)} />
+      <InternalLink location="blogArticle" variables={{ slug }}>
+        <header>
+          <Side>
+            <Poster url={getAbsoluteApiUrl(posterUrl)} />
 
-          <Bar>
-            <Author>
-              <Avatar url={getAbsoluteApiUrl(authorAvatarUrl)} title={author} />
-            </Author>
-            <PublishedDate
-              dateTime={publishedDateISO}
-              title={publishedDate.toLocaleString()}
-            >
-              {publishedDateISO.split("T")[0]}
-            </PublishedDate>
-          </Bar>
-        </Side>
-        <Content>
-          <Title>{title}</Title>
-          <Description>{description}</Description>
-        </Content>
-      </header>
+            <Bar>
+              <Author>
+                <Avatar
+                  url={getAbsoluteApiUrl(authorAvatarUrl)}
+                  title={author}
+                />
+              </Author>
+              <PublishedDate
+                dateTime={publishedDateISO}
+                title={publishedDate.toLocaleString()}
+              >
+                {publishedDateISO.split("T")[0]}
+              </PublishedDate>
+            </Bar>
+          </Side>
+          <Content>
+            <Title>{title}</Title>
+            <Description>{description}</Description>
+          </Content>
+        </header>
+      </InternalLink>
     </ArticleWrapper>
   );
 };

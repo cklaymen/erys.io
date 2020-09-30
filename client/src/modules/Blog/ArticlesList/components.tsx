@@ -1,4 +1,5 @@
 import colors from "src/modules/shared/UI/colors";
+import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
 import media from "src/modules/shared/UI/media";
 import styled from "styled-components";
 
@@ -96,4 +97,12 @@ export const Side = styled.div`
 
 export const Content = styled.div``;
 
-export const ArticlesListWrapper = styled.section``;
+export const ArticlesListWrapper = styled.section`
+  & ${ArticleWrapper} {
+    transition: all ${DEFAULT_TRANSITION_TIME};
+  }
+  & ${ArticleWrapper}:hover {
+    transform: scale(1.02);
+    /* filter: drop-shadow(0 10px 5px ${colors.lightBlack}); */
+  }
+`;

@@ -19,6 +19,7 @@ const ArticlesList: FC<Props> = ({ articles }) => {
         authorAvatarUrl: it?.user?.avatar?.url!,
         publishedDate: it?.published_at!,
         posterUrl: it?.poster?.url!,
+        slug: it?.slug!,
       }}
     />
   ));

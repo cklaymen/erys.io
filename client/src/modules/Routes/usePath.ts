@@ -6,7 +6,7 @@ import { Lang } from "src/modules/Translations/langs";
 import pathVariables, { PathVariables } from "src/modules/Routes/pathVariables";
 import { TranslationKey } from "src/modules/Translations/Translation";
 
-type VariablesOption = { [key in keyof PathVariables]?: string };
+export type VariablesOption = { [key in keyof PathVariables]?: string };
 
 interface GetPathOptions {
   variables?: VariablesOption;

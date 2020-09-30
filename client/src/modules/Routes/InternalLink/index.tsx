@@ -1,7 +1,7 @@
 import React, { FC, useMemo, useCallback } from "react";
 
 import { StyledLink } from "src/modules/Routes/InternalLink/components";
-import usePath from "src/modules/Routes/usePath";
+import usePath, { VariablesOption } from "src/modules/Routes/usePath";
 import { Location } from "src/modules/Routes/pathKeys";
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
   className?: string;
   "aria-label"?: string;
   onClick?(event: React.MouseEvent): void;
+  variables?: VariablesOption;
 }
 
 const InternalLink: FC<Props> = ({
@@ -17,10 +18,15 @@ const InternalLink: FC<Props> = ({
   className,
   "aria-label": ariaLabel,
   onClick,
+  variables,
 }) => {
   const { getPath } = usePath();
 
-  const path = useMemo(() => getPath(location), [location, getPath]);
+  const path = useMemo(() => getPath(location, { variables }), [
+    location,
+    getPath,
+    variables,
+  ]);
 
   const handleClick = useCallback(
     (event: React.MouseEvent) => {
