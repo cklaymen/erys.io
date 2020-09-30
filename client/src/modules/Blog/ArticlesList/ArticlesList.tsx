@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ArticlesList: FC<Props> = ({ articles }) => {
-  const mappedArticles = articles?.map((it) => (
+  const mappedArticles = articles?.map((it, i) => (
     <Article
       key={it?.title}
       article={{
@@ -21,6 +21,7 @@ const ArticlesList: FC<Props> = ({ articles }) => {
         posterUrl: it?.poster?.url!,
         slug: it?.slug!,
       }}
+      ordinalNumber={i + 1}
     />
   ));
 

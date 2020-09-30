@@ -25,6 +25,7 @@ interface Props {
     publishedDate: string;
     slug: string;
   };
+  ordinalNumber?: number;
 }
 
 const Article: FC<Props> = ({
@@ -37,12 +38,13 @@ const Article: FC<Props> = ({
     publishedDate: publishedDateString,
     slug,
   },
+  ordinalNumber,
 }) => {
   const publishedDate = new Date(publishedDateString);
   const publishedDateISO = publishedDate.toISOString();
 
   return (
-    <ArticleWrapper>
+    <ArticleWrapper ordinalNumber={ordinalNumber}>
       <InternalLink location="blogArticle" variables={{ slug }}>
         <header>
           <Side>

@@ -1,5 +1,6 @@
 import colors from "src/modules/shared/UI/colors";
 import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
+import { defaultAppearanceAnimationSequence } from "src/modules/shared/UI/defaults";
 import media from "src/modules/shared/UI/media";
 import styled from "styled-components";
 
@@ -7,7 +8,8 @@ const SIDE_WIDTH_EXTRA_SMALL_IN_PX = 120;
 const SIDE_WIDTH_MEDIUM_IN_PX = 130;
 const SIDE_WIDTH_EXTRA_LARGE_IN_PX = 140;
 
-export const ArticleWrapper = styled.article`
+export const ArticleWrapper = styled.article<{ ordinalNumber?: number }>`
+  ${(p) => defaultAppearanceAnimationSequence(p.ordinalNumber)};
   & header {
     display: flex;
   }
