@@ -3,6 +3,7 @@ import { useRouteMatch } from "react-router-dom";
 
 import { useArticleQuery } from "src/generated/graphql";
 import { getAbsoluteApiUrl } from "src/modules/Api/helpers";
+import Loading from "src/modules/shared/UI/Loading";
 import ArticleDetails from "./ArticleDetails";
 
 const ArticleDetailsContainer: FC = () => {
@@ -10,7 +11,11 @@ const ArticleDetailsContainer: FC = () => {
   const {
     params: { slug },
   } = useRouteMatch<{ slug: string }>();
-  const { data } = useArticleQuery({ variables: { slug } });
+  const { data, loading } = useArticleQuery({ variables: { slug } });
+
+  if (loading) {
+    return <Loading />;
+  }
 
   if (data?.articles && data.articles[0]) {
     const article = data.articles[0];
@@ -29,7 +34,7 @@ const ArticleDetailsContainer: FC = () => {
     );
   }
 
-  return <div>BRAK</div>;
+  return null;
 };
 
 export default ArticleDetailsContainer;

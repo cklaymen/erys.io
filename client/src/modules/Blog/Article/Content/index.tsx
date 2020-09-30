@@ -9,13 +9,17 @@ const ArticleContentContainer: FC = () => {
   const {
     params: { slug },
   } = useRouteMatch<{ slug: string }>();
-  const { data } = useArticleQuery({ variables: { slug } });
+  const { data, loading } = useArticleQuery({ variables: { slug } });
+
+  if (loading) {
+    return null;
+  }
 
   if (data?.articles && data.articles[0]) {
     return <ArticleContent article={data?.articles[0]} />;
   }
 
-  return <div>BRAK</div>;
+  return null;
 };
 
 export default ArticleContentContainer;
