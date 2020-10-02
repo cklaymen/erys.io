@@ -59,10 +59,11 @@
     "@graphql-codegen/typescript-react-apollo": "^2.0.6",
     "@types/marked": "^1.1.0",
     "@types/react-router-dom": "^5.1.5",
-    "react-snap": "^1.23.0"
+    "react-snap": "../react-snap"
   },
   "reactSnap": {
     "inlineCss": true,
-    "skipThirdPartyRequests": true
+    "skipThirdPartyRequests": true,
+    "api": "http://localhost:1337"
   }
 }
