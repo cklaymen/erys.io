@@ -65,6 +65,9 @@ function App() {
                       helmet = (
                         <Helmet>
                           {title && <title>{title}</title>}
+                          {title && (
+                            <meta property="og:title" content={title} />
+                          )}
                           {description && (
                             <meta
                               name="description"

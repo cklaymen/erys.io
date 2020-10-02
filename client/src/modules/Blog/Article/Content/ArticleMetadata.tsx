@@ -10,6 +10,7 @@ interface Props {
 const ArticleMetadata: FC<Props> = ({ title, description, keywords }) => (
   <Helmet>
     <title>{title}</title>
+    <meta property="og:title" content={title} />
     <meta name="description" property="og:description" content={description} />
     <meta name="keywords" content={keywords.join(", ")} />
   </Helmet>
