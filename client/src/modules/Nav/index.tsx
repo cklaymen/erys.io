@@ -61,6 +61,10 @@ const Nav: FC = () => {
       path: getPath("works", { langs }),
       exact: true,
     }) !== null;
+  const isBlog =
+    useRouteMatch({
+      path: getPath("blog", { langs }),
+    }) !== null;
 
   const isLargerDevice = isSize("large", "extraLarge");
 
@@ -96,6 +100,16 @@ const Nav: FC = () => {
               iconType="Works"
               label={t(TranslationKey.WORKS)}
               active={isWorks}
+            />
+          </FloatButtonInternalLink>
+          <FloatButtonInternalLink
+            location="blog"
+            onClick={handlePageLinkClick}
+          >
+            <FloatButtonWithLabel
+              iconType="Blog"
+              label={t(TranslationKey.BLOG)}
+              active={isBlog}
             />
           </FloatButtonInternalLink>
         </NavPages>
@@ -145,6 +159,15 @@ const Nav: FC = () => {
           >
             <NavLink>
               <NavLinkText>{t(TranslationKey.WORKS)}</NavLinkText>
+            </NavLink>
+          </FloatButtonInternalLink>
+          <FloatButtonInternalLink
+            location="blog"
+            onClick={handlePageLinkClick}
+            aria-label={t(TranslationKey.BLOG)}
+          >
+            <NavLink>
+              <NavLinkText>{t(TranslationKey.BLOG)}</NavLinkText>
             </NavLink>
           </FloatButtonInternalLink>
         </NavPages>

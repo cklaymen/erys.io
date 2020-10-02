@@ -86,6 +86,7 @@ const pl: Translation = {
   [TranslationKey.SERVER_ERROR]: "Błąd połączenia",
   [TranslationKey.SERVER_ERROR_MESSAGE]:
     "Nie udało się połączyć z serwerem 😔. Spróbuj ponownie za jakiś czas. Jeżeli problem nie ustąpi napisz do mnie.",
+  [TranslationKey.BLOG]: "Blog",
 
   // *** Works data ***
   [TranslationKey.INVOICE_CONVERTER_TITLE]: "Konwerter faktur",
