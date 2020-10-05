@@ -4,12 +4,15 @@ module.exports = ({ env }) => ({
     default: {
       connector: 'bookshelf',
       settings: {
-        client: 'sqlite',
-        filename: env('DATABASE_FILENAME', '.tmp/data.db'),
+        client: 'mysql',
+        host: env('DATABASE_HOST', 'db'),
+        port: env.int('DATABASE_PORT', 3306),
+        database: env('DATABASE_NAME', 'erys'),
+        username: env('DATABASE_USERNAME', 'erys'),
+        password: env('DATABASE_PASSWORD', 'erys'),
+        ssl: env.bool('DATABASE_SSL', false),
       },
-      options: {
-        useNullAsDefault: true,
-      },
+      options: {}
     },
   },
 });
