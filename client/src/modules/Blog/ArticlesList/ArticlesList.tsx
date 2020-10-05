@@ -18,7 +18,7 @@ const ArticlesList: FC<Props> = ({ articles }) => {
         author: it?.user?.username!,
         authorAvatarUrl: it?.user?.avatar?.url!,
         publishedDate: it?.published_at!,
-        posterUrl: it?.poster?.url!,
+        posterUrl: it?.poster?.formats.small.url,
         slug: it?.slug!,
       }}
       ordinalNumber={i + 1}

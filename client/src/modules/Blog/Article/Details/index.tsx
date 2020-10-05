@@ -30,7 +30,7 @@ const ArticleDetailsContainer: FC = () => {
             avatarUrl: getAbsoluteApiUrl(article.user?.avatar?.url!),
             name: article.user?.username!,
           },
-          posterUrl: getAbsoluteApiUrl(article.poster?.url!),
+          posterUrl: getAbsoluteApiUrl(article.poster?.formats.small.url),
           publishedAt: new Date(article.published_at),
           tags: article.tags?.map((it) => it!.name)!,
         }}

@@ -13,7 +13,7 @@ query Article($slug: String!) {
     description
     content
     poster {
-      url
+      formats
     }
     tags {
       name

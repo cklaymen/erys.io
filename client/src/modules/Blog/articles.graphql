@@ -12,7 +12,7 @@ query Articles {
     published_at
     description
     poster {
-      url
+      formats
     }
     slug
   }
