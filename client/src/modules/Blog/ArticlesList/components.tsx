@@ -1,8 +1,12 @@
+import styled from "styled-components";
+
 import colors from "src/modules/shared/UI/colors";
 import { DEFAULT_TRANSITION_TIME } from "src/modules/shared/UI/config";
-import { defaultAppearanceAnimationSequence } from "src/modules/shared/UI/defaults";
+import {
+  defaultAppearanceAnimationSequence,
+  defaultClickable,
+} from "src/modules/shared/UI/defaults";
 import media from "src/modules/shared/UI/media";
-import styled from "styled-components";
 
 const SIDE_WIDTH_EXTRA_SMALL_IN_PX = 120;
 const SIDE_WIDTH_MEDIUM_IN_PX = 130;
@@ -104,7 +108,7 @@ export const ArticlesListWrapper = styled.section`
     transition: all ${DEFAULT_TRANSITION_TIME};
   }
   & ${ArticleWrapper}:hover {
-    transform: scale(1.02);
+    ${defaultClickable()};
     /* filter: drop-shadow(0 10px 5px ${colors.lightBlack}); */
   }
 `;
