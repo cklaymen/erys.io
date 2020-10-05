@@ -53,9 +53,9 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "posts": {
+    "articles": {
       "via": "user",
-      "collection": "post"
+      "collection": "article"
     },
     "avatar": {
       "model": "file",

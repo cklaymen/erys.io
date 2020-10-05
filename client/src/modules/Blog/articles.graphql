@@ -1,0 +1,19 @@
+query Articles {
+  articles(sort: "published_at:DESC") {
+    id
+    user {
+      id
+      username
+      avatar {
+        url
+      }
+    }
+    title
+    published_at
+    description
+    poster {
+      url
+    }
+    slug
+  }
+}

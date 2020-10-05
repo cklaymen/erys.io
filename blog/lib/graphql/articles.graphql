@@ -1,0 +1,21 @@
+query Articles {
+  # Write your query or mutation here
+  articles {
+    user {
+      id
+      username
+      avatar {
+        url
+      }
+    }
+    title
+    published_at
+    description
+    poster {
+      url
+    }
+    tags {
+      name
+    }
+  }
+}

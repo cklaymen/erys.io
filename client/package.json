@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.2.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -14,7 +15,9 @@
     "@types/react-helmet-async": "^1.0.3",
     "@types/react-i18next": "^8.1.0",
     "@types/styled-components": "^5.1.0",
+    "graphql": "^15.3.0",
     "i18next": "^19.5.4",
+    "marked": "^1.2.0",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
@@ -26,11 +29,13 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "postbuild": "react-snap",
+    "start": "npm run graphql-codegen && react-scripts start",
+    "build": "npm run graphql-codegen && react-scripts build",
+    "postbuild": "react-snap && npm run generate-sitemap",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "graphql-codegen": "graphql-codegen --config codegen.yml -r dotenv/config",
+    "generate-sitemap": "ts-node --project ./generate-sitemap/tsconfig.json ./generate-sitemap/index.ts"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,11 +54,18 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.17.8",
+    "@graphql-codegen/typescript": "1.17.8",
+    "@graphql-codegen/typescript-operations": "1.17.8",
+    "@graphql-codegen/typescript-react-apollo": "^2.0.6",
+    "@types/marked": "^1.1.0",
     "@types/react-router-dom": "^5.1.5",
-    "react-snap": "^1.23.0"
+    "react-snap": "../react-snap",
+    "ts-node": "^9.0.0"
   },
   "reactSnap": {
     "inlineCss": true,
-    "skipThirdPartyRequests": true
+    "skipThirdPartyRequests": true,
+    "api": "http://localhost:1337"
   }
 }

@@ -83,6 +83,10 @@ const pl: Translation = {
   [TranslationKey.COOKIES_POLICY_DESCRIPTION]:
     "<0>W celach dostosowania strony do potrzeb użytkowników oraz gromadzeniastatystyk witryna ta wykorzystuje pliki cookies. Pliki te niezawierają żadnych danych osobowych, a informacje w nich zawartewykorzystywane są do:</0><1><0>Zbierania statystyk odnośnie użytkowników odwiedzających witrynę zwykorzystaniem narzędzi Google Analytics - szczegóły dotyczącedziałania znajdują się pod adresem <1>https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage</1>,</0><1>Obserwowania aktywności odwiedzających z wykorzystaniem narzędziHotjar do tworzenia tzw. map cieplnych, które odwzorowują np.najczęściej klikane elementy - szczegóły dotyczące działaniaznajdują się pod adresem <1>https://help.hotjar.com/hc/en-us/articles/115011789248-Hotjar-Cookies</1>,</1><2>Dopasowania zawartości strony do preferencji użytkownika poprzezzapamiętanie wybranych ustawień.</2></1><2>Użytkownik w każdej chwili może zmienić ustawienia przeglądarkiinternetowej w celu włączenia lub wyłączenia obsługi wspomnianychplików. Instrukcje dla poszczególnych przeglądarek znajdują się podwymienionymi adresami:</2><3><0>Google Chrome - <1>https://support.google.com/chrome/answer/95647?hl=pl</1></0><1>Mozilla Firefox - <1>https://support.mozilla.org/pl/kb/ciasteczka</1></1><2>Internet Explorer - <1>https://support.microsoft.com/pl-pl/help/17442/windows-internet-explorer-delete-manage-cookies</1></2><3>Safari - <1>https://support.apple.com/pl-pl/guide/safari/sfri11471/mac</1></3></3>",
   [TranslationKey.PAGE_NOT_FOUND]: "Nie znaleziono strony o podanym adresie 😔",
+  [TranslationKey.SERVER_ERROR]: "Błąd połączenia",
+  [TranslationKey.SERVER_ERROR_MESSAGE]:
+    "Nie udało się połączyć z serwerem 😔. Spróbuj ponownie za jakiś czas. Jeżeli problem nie ustąpi napisz do mnie.",
+  [TranslationKey.BLOG]: "Blog",
 
   // *** Works data ***
   [TranslationKey.INVOICE_CONVERTER_TITLE]: "Konwerter faktur",
@@ -113,13 +117,19 @@ const pl: Translation = {
   [TranslationKey.COOKIES_POLICY_PATH_DESCRIPTION]: `Zasady wykorzystywania ciasteczek przez stronę firmy ${COMPANY_NAME} - erys.io`,
   [TranslationKey.COOKIES_POLICY_PATH_KEYWORDS]:
     "zasady cookies, polityka strony, polityka prywatności",
+  [TranslationKey.BLOG_PATH_TITLE]: "Blog programistyczny | ERYS'",
+  [TranslationKey.BLOG_PATH_DESCRIPTION]:
+    "Publikacje dotyczące głównie technicznych aspektów programowania w nowoczesnych technologiach webowych. Typescript, React, Node oraz pokrewne.",
   [TranslationKey.NOT_FOUND_PATH_TITLE]: `404 | ${HOME_PATH_TITLE}`,
+  [TranslationKey.BLOG_PATH_KEYWORDS]:
+    "blog programistyczny, nowoczesne programowanie, react, node, javascript, typescript",
 
   // *** Route paths translations ***
   [TranslationKey.ABOUT_PATH]: "o-mnie",
   [TranslationKey.SERVICES_PATH]: "uslugi",
   [TranslationKey.WORKS_PATH]: "realizacje",
   [TranslationKey.COOKIES_POLICY_PATH]: "polityka-cookies",
+  [TranslationKey.BLOG_PATH]: "blog",
 };
 
 export default pl;

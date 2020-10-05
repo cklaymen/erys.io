@@ -135,6 +135,11 @@ export const NavWrapper = styled.nav<NavWrapperProps>`
               START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER + 3
             )}
           }
+          & ${FloatButtonInternalLink}:nth-child(4) ${NavLink} {
+            ${defaultAppearanceAnimationSequence(
+              START_APPEARANCE_ANIMATION_NAVBAR_ORDINAL_NUMBER + 4
+            )}
+          }
 
           & ${SocialLink}:nth-child(1) {
             ${defaultAppearanceAnimationSequence(
@@ -356,6 +361,9 @@ export const FloatButtonInternalLink = styled(InternalLink)`
   &:nth-child(3) {
     ${defaultAppearanceAnimationSequence(2)};
   }
+  &:nth-child(4) {
+    ${defaultAppearanceAnimationSequence(3)};
+  }
 `;
 
 export const FloatButtonExternalLink = styled(ExternalLink)`
@@ -392,7 +400,7 @@ export const FloatButtonsWrapper = styled.div`
     + ${FloatButtonInternalLink},
     ${FloatButtonExternalLink}
     + ${FloatButtonExternalLink} {
-    margin-top: 30px;
+    margin-top: 25px;
   }
   & ${NavPages}, & ${NavContact} {
     display: flex;

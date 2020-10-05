@@ -21,7 +21,7 @@ function App() {
     () =>
       routesConfig
         .filter((it) => it.side && it.side.onlyOnLargerDevice === true)
-        .map((it) => getPath(it.location, langs))
+        .map((it) => getPath(it.location, { langs }))
         .reduce((a, b) => [...a, ...b], []),
     [getPath]
   );
@@ -45,7 +45,7 @@ function App() {
               return (
                 <Route
                   key={index}
-                  path={getPath(it.location, langs)}
+                  path={getPath(it.location, { langs })}
                   render={() => {
                     let helmet;
                     let title;
@@ -65,6 +65,9 @@ function App() {
                       helmet = (
                         <Helmet>
                           {title && <title>{title}</title>}
+                          {title && (
+                            <meta property="og:title" content={title} />
+                          )}
                           {description && (
                             <meta
                               name="description"
@@ -101,7 +104,7 @@ function App() {
               <Route
                 key={index}
                 path={it.locations
-                  .map((location) => getPath(location, langs))
+                  .map((location) => getPath(location, { langs }))
                   .reduce((a, b) => [...a, ...b], [])}
                 render={() =>
                   it.onlyOnLargerDevice && !isLargerDevice

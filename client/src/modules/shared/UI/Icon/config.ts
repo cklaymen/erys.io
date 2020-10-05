@@ -12,6 +12,7 @@ import { ReactComponent as About } from "src/assets/images/icons/About.svg";
 import { ReactComponent as Services } from "src/assets/images/icons/Services.svg";
 import { ReactComponent as Works } from "src/assets/images/icons/Works.svg";
 import { ReactComponent as Close } from "src/assets/images/icons/Close.svg";
+import { ReactComponent as Blog } from "src/assets/images/icons/Blog.svg";
 
 export const icons = {
   Docker,
@@ -28,6 +29,7 @@ export const icons = {
   Services,
   Works,
   Close,
+  Blog,
 } as const;
 
 export type IconType = keyof typeof icons;
