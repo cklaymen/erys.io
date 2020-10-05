@@ -1,5 +1,5 @@
 query Articles {
-  articles(sort: "published_at:DESC") {
+  articles(sort: "published_at:DESC", where: { isPublic: true }) {
     id
     user {
       id

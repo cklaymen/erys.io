@@ -51,6 +51,11 @@
       "regex": "^[a-z0-9-]*$",
       "maxLength": 128,
       "required": true
+    },
+    "isPublic": {
+      "type": "boolean",
+      "default": true,
+      "required": false
     }
   }
 }
