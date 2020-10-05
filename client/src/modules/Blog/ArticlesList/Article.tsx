@@ -59,9 +59,13 @@ const Article: FC<Props> = ({
               </Author>
               <PublishedDate
                 dateTime={publishedDateISO}
-                title={publishedDate.toLocaleString()}
+                title={publishedDate
+                  .toLocaleString()
+                  .split(":")
+                  .slice(0, 2)
+                  .join(":")}
               >
-                {publishedDateISO.split("T")[0]}
+                {publishedDate.toLocaleDateString()}
               </PublishedDate>
             </Bar>
           </Side>

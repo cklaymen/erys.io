@@ -28,10 +28,11 @@ const ArticleDetails: FC<Props> = ({
   article: { posterUrl, publishedAt, author, tags },
 }) => {
   const publishedAtISO = publishedAt.toISOString();
-  const formattedPublishedAt =
-    publishedAtISO.split("T")[0] +
-    ", " +
-    publishedAtISO.split("T")[1].split(":").slice(0, 2).join(":");
+  const formattedPublishedAt = publishedAt
+    .toLocaleString()
+    .split(":")
+    .slice(0, 2)
+    .join(":");
 
   return (
     <ArticleDetailsWrapper>
