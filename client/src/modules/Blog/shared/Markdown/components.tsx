@@ -27,4 +27,6 @@ export const MarkdownWrapper = styled.div`
       color: inherit;
     }
   }
+
+  line-height: 1.5;
 `;
