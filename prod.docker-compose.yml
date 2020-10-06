@@ -11,6 +11,7 @@ services:
       - DATABASE_NAME=erys
       - DATABASE_USERNAME=erys
       - DATABASE_PASSWORD=erys
+      - DATABASE_CHARSET=utf8mb4_unicode_ci
     volumes:
       - ./api:/srv/app
     ports:

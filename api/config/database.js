@@ -11,8 +11,11 @@ module.exports = ({ env }) => ({
         username: env('DATABASE_USERNAME', 'erys'),
         password: env('DATABASE_PASSWORD', 'erys'),
         ssl: env.bool('DATABASE_SSL', false),
+        charset: env('DATABASE_CHARSET', 'utf8mb4_unicode_ci'),
       },
-      options: {}
+      options: {
+        charset: env('DATABASE_CHARSET', 'utf8mb4_unicode_ci'),
+      },
     },
   },
 });
