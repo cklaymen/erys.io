@@ -66,6 +66,6 @@
   "reactSnap": {
     "inlineCss": true,
     "skipThirdPartyRequests": true,
-    "api": "http://localhost:1337"
+    "api": "https://api.erys.io"
   }
 }
