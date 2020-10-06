@@ -15,7 +15,8 @@ query Article($slug: String!) {
     poster {
       formats
     }
-    tags {
+    # where condition - workaround to sort by relation order instead tags table order
+    tags(where: { articles: { slug: $slug } }) {
       name
     }
     slug
