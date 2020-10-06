@@ -13,7 +13,8 @@ function parseTextToId(text: string) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/ /g, "-");
+    .replace(/[\W_]+/g, "-")
+    .replace(/^\*-|-*$/, "");
 }
 
 const renderer = new marked.Renderer();
