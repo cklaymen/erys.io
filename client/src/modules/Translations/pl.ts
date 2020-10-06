@@ -99,7 +99,7 @@ const pl: Translation = {
     "Tworzę oprogramowanie na zamówienie z wykorzystaniem technologii webowych 📱💻🖥🌎🔥 - zarówno złożone aplikacje webowe jak i proste strony internetowe. Napisz czego potrzebujesz, a przedstawię najlepsze możliwe rozwiązania.",
   [TranslationKey.HOME_PATH_KEYWORDS]:
     "producent oprogramowania,programista żory,programista rybnik,strony internetowe żory,strony internetowe rybnik,aplikacje żory,aplikacje rybnik,javascript,react,node",
-  [TranslationKey.ABOUT_PATH_TITLE]: `O mnie | Programista Żory, Rybnik, Gliwice, Katowice`,
+  [TranslationKey.ABOUT_PATH_TITLE]: `O mnie | Programista freelancer Żory, Rybnik, Gliwice, Katowice`,
   [TranslationKey.ABOUT_PATH_DESCRIPTION]:
     "Jestem informatykiem programistą. Działam zdalnie na terenie całego kraju, a w miejscowościach: Żory, Rybnik, Gliwice, Katowice i okolice chętnie spotkam się osobiście. Posiadam doświadczenie w tworzeniu programów w technologiach webowych oraz stron internetowych.",
   [TranslationKey.ABOUT_PATH_KEYWORDS]:
