@@ -98,18 +98,18 @@ const pl: Translation = {
   [TranslationKey.HOME_PATH_DESCRIPTION]:
     "Tworzę oprogramowanie na zamówienie z wykorzystaniem technologii webowych 📱💻🖥🌎🔥 - zarówno złożone aplikacje webowe jak i proste strony internetowe. Napisz czego potrzebujesz, a przedstawię najlepsze możliwe rozwiązania.",
   [TranslationKey.HOME_PATH_KEYWORDS]:
-    "żory,programista,strony internetowe,www,aplikacje,producent oprogramowania,javascript,react,node",
-  [TranslationKey.ABOUT_PATH_TITLE]: `O mnie | ${HOME_PATH_TITLE}`,
+    "producent oprogramowania,programista żory,programista rybnik,strony internetowe żory,strony internetowe rybnik,aplikacje żory,aplikacje rybnik,javascript,react,node",
+  [TranslationKey.ABOUT_PATH_TITLE]: `O mnie | Programista Żory, Rybnik, Gliwice, Katowice`,
   [TranslationKey.ABOUT_PATH_DESCRIPTION]:
     "Jestem informatykiem programistą. Działam zdalnie na terenie całego kraju, a w miejscowościach: Żory, Rybnik, Gliwice, Katowice i okolice chętnie spotkam się osobiście. Posiadam doświadczenie w tworzeniu programów w technologiach webowych oraz stron internetowych.",
   [TranslationKey.ABOUT_PATH_KEYWORDS]:
-    "o mnie, programista, żory, rybnik, gliwice, katowice, producent oprogramowania, inżynier, magister, informatyk",
-  [TranslationKey.SERVICES_PATH_TITLE]: `Usługi | ${HOME_PATH_TITLE}`,
+    "o mnie, programista żory, programista rybnik, programista gliwice, programista katowice, producent oprogramowania żory, inżynier, magister, informatyk",
+  [TranslationKey.SERVICES_PATH_TITLE]: `Usługi programistyczne | Oprogramowanie biznesowe, aplikacje webowe, strony internetowe`,
   [TranslationKey.SERVICES_PATH_DESCRIPTION]:
     "Tworzę dedykowane rozwiązania według wytycznych zamawiającego: programy i strony internetowe z wykorzystaniem technologii webowych: React, Node i pokrewne. Podejmuję się współprac z innymi zespołami wytwarzającymi oprogramowanie.",
   [TranslationKey.SERVICES_PATH_KEYWORDS]:
     "producent oprogramowania, strony internetowe, javascript, typescript, usługi programistyczne, oferta, react, node, aplikacje",
-  [TranslationKey.WORKS_PATH_TITLE]: `Realizacje | ${HOME_PATH_TITLE}`,
+  [TranslationKey.WORKS_PATH_TITLE]: `Realizacje | Dedykowane oprogramowanie React, Node, GraphQL`,
   [TranslationKey.WORKS_PATH_DESCRIPTION]: `Dedykowane programy oraz strony internetowe, które wykonałem jako firma ${COMPANY_NAME}.`,
   [TranslationKey.WORKS_PATH_KEYWORDS]:
     "portfolio, projekty, strony internetowe, aplikacje",
