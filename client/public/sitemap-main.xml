@@ -3,27 +3,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://erys.io</loc>
-    <lastmod>2020-08-07</lastmod>
+    <lastmod>2021-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://erys.io/o-mnie</loc>
-    <lastmod>2020-08-07</lastmod>
+    <lastmod>2020-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://erys.io/uslugi</loc>
-    <lastmod>2020-08-07</lastmod>
+    <lastmod>2020-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://erys.io/realizacje</loc>
-    <lastmod>2020-08-07</lastmod>
+    <lastmod>2021-02-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://erys.io/blog</loc>

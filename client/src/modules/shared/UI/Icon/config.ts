@@ -13,6 +13,9 @@ import { ReactComponent as Services } from "src/assets/images/icons/Services.svg
 import { ReactComponent as Works } from "src/assets/images/icons/Works.svg";
 import { ReactComponent as Close } from "src/assets/images/icons/Close.svg";
 import { ReactComponent as Blog } from "src/assets/images/icons/Blog.svg";
+import { ReactComponent as Nest } from "src/assets/images/icons/Nest.svg";
+import { ReactComponent as Next } from "src/assets/images/icons/Next.svg";
+import { ReactComponent as Netlify } from "src/assets/images/icons/Netlify.svg";
 
 export const icons = {
   Docker,
@@ -30,6 +33,9 @@ export const icons = {
   Works,
   Close,
   Blog,
+  Nest,
+  Next,
+  Netlify,
 } as const;
 
 export type IconType = keyof typeof icons;

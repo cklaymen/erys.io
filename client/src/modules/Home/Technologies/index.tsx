@@ -10,6 +10,17 @@ import {
   IconWrapper,
 } from "src/modules/Home/Technologies/components";
 import Section from "src/modules/shared/UI/Section";
+import { IconType } from "src/modules/shared/UI/Icon/config";
+
+const technologies: IconType[] = [
+  "React",
+  "Node",
+  "Next",
+  "Nest",
+  "Netlify",
+  "GraphQL",
+  "Docker",
+];
 
 const Technologies: FC = () => {
   const { t } = useTranslation();
@@ -19,18 +30,11 @@ const Technologies: FC = () => {
       <Heading>{t(TranslationKey.TECHNOLOGIES)}</Heading>
       <P>{t(TranslationKey.TECHNOLOGIES_SHORT_DESCRIPTION)}</P>
       <IconsWrapper>
-        <IconWrapper>
-          <IconWithFlex type="React" />
-        </IconWrapper>
-        <IconWrapper>
-          <IconWithFlex type="Node" />
-        </IconWrapper>
-        <IconWrapper>
-          <IconWithFlex type="GraphQL" />
-        </IconWrapper>
-        <IconWrapper>
-          <IconWithFlex type="Docker" />
-        </IconWrapper>
+        {technologies.map((it) => (
+          <IconWrapper>
+            <IconWithFlex type={it} title={it} />
+          </IconWrapper>
+        ))}
       </IconsWrapper>
     </Section>
   );

@@ -92,6 +92,9 @@ const pl: Translation = {
   [TranslationKey.INVOICE_CONVERTER_TITLE]: "Konwerter faktur",
   [TranslationKey.INVOICE_CONVERTER_DESCRIPTION]:
     "Aplikacja webowa służąca do konwertowania pliku z fakturami. Dzięki niej zautomatyzowano proces księgowania dużej ilości faktur, przez co oszczędzono pracę księgowych, a tym samym pieniądze klienta.",
+  [TranslationKey.EDUCATION_GAME_TITLE]: "Gra edukacyjna",
+  [TranslationKey.EDUCATION_GAME_DESCRIPTION]:
+    "Gra językowa typu Taboo wykonana w nowoczesnych technologiach webowych. Wzorowana na grze karcianej stworzonej przez klienta. Zawiera szereg funkcjonalności ułatwiających prowadzenie nauczycielowi zajęć. Wersja dostępna online jest szczególnie przydatna w dobie istniejących ograniczeń w kontaktach bezpośrednich. Realizacja obejmowała: analizę potrzeb, projekt interfejsu aplikacji (z zachowaniem kolorystyki oraz znaków szczególnych wersji karcianej), jej wykonanie oraz wdrożenie.",
 
   // *** Route meta data ***
   [TranslationKey.HOME_PATH_TITLE]: HOME_PATH_TITLE,
