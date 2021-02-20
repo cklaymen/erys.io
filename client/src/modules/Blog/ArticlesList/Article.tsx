@@ -45,7 +45,11 @@ const Article: FC<Props> = ({
 
   return (
     <ArticleWrapper ordinalNumber={ordinalNumber}>
-      <InternalLink location="blogArticle" variables={{ slug }}>
+      <InternalLink
+        location="blogArticle"
+        variables={{ slug }}
+        aria-label={title}
+      >
         <header>
           <Side>
             <Poster url={getAbsoluteApiUrl(posterUrl)} />
