@@ -16,6 +16,7 @@ import { ReactComponent as Blog } from "src/assets/images/icons/Blog.svg";
 import { ReactComponent as Nest } from "src/assets/images/icons/Nest.svg";
 import { ReactComponent as Next } from "src/assets/images/icons/Next.svg";
 import { ReactComponent as Netlify } from "src/assets/images/icons/Netlify.svg";
+import { ReactComponent as TypeScript } from "src/assets/images/icons/TypeScript.svg";
 
 export const icons = {
   Docker,
@@ -36,6 +37,7 @@ export const icons = {
   Nest,
   Next,
   Netlify,
+  TypeScript,
 } as const;
 
 export type IconType = keyof typeof icons;

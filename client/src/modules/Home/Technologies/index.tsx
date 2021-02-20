@@ -13,6 +13,7 @@ import Section from "src/modules/shared/UI/Section";
 import { IconType } from "src/modules/shared/UI/Icon/config";
 
 const technologies: IconType[] = [
+  "TypeScript",
   "React",
   "Node",
   "Next",
@@ -31,7 +32,7 @@ const Technologies: FC = () => {
       <P>{t(TranslationKey.TECHNOLOGIES_SHORT_DESCRIPTION)}</P>
       <IconsWrapper>
         {technologies.map((it) => (
-          <IconWrapper>
+          <IconWrapper key={it}>
             <IconWithFlex type={it} title={it} />
           </IconWrapper>
         ))}

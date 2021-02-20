@@ -2,7 +2,11 @@ import { TranslationKey } from "src/modules/Translations/Translation";
 import { IconType } from "src/modules/shared/UI/Icon/config";
 import invoiceConverterVideo from "src/assets/videos/invoices_converter.mov";
 import invoiceConverterPoster from "src/assets/images/invoices_converter.jpg";
-import educationGamePoster from "src/assets/images/education_game.jpg";
+import languageGameBatbPoster from "src/assets/images/language_game_batb.jpg";
+import { API_URL } from "src/const";
+
+const languageGameBatbVideo =
+  API_URL + "/uploads/language_game_batb_c17b00507d.mp4";
 
 export interface WorkConfig {
   videoSrc: string;
@@ -18,14 +22,14 @@ const worksConfig: WorkConfig[] = [
     videoPosterSrc: invoiceConverterPoster,
     titleKey: TranslationKey.INVOICE_CONVERTER_TITLE,
     descriptionKey: TranslationKey.INVOICE_CONVERTER_DESCRIPTION,
-    technologies: ["React"],
+    technologies: ["TypeScript", "React"],
   },
   {
-    videoSrc: "http://localhost:1337/uploads/gra_edukacyjna_a5bdc0a07a.mp4",
-    videoPosterSrc: educationGamePoster,
+    videoSrc: languageGameBatbVideo,
+    videoPosterSrc: languageGameBatbPoster,
     titleKey: TranslationKey.EDUCATION_GAME_TITLE,
     descriptionKey: TranslationKey.EDUCATION_GAME_DESCRIPTION,
-    technologies: ["Nest", "React", "GraphQL"],
+    technologies: ["TypeScript", "React", "Nest", "GraphQL"],
   },
 ];
 
