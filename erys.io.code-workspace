@@ -3,6 +3,9 @@
     {
       "path": "client"
     },
+    {
+      "path": "client2"
+    },
     { "path": "blog" },
     { "path": "api" },
     {
